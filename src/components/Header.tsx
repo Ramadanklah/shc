@@ -34,11 +34,13 @@ const Header = () => {
           <Link to="/volunteer" className="text-gray-700 hover:text-syria-teal font-medium transition-colors">
             Volunteer
           </Link>
+          <Link to="/register-organisation" className="text-gray-700 hover:text-syria-teal font-semibold transition-colors">
+            Register Organisation
+          </Link>
           <Button className="bg-syria-teal hover:bg-syria-teal-dark text-white ml-2">
             Donate Now
           </Button>
         </nav>
-
         {/* Mobile Menu Button */}
         <div className="md:hidden">
           <Button 
@@ -83,6 +85,13 @@ const Header = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Volunteer
+            </Link>
+            <Link 
+              to="/register-organisation"
+              className="text-gray-700 hover:text-syria-teal font-semibold py-2 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Register Organisation
             </Link>
             <Button 
               className="bg-syria-teal hover:bg-syria-teal-dark text-white mt-2 w-full"
