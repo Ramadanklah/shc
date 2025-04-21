@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -45,6 +44,9 @@ const Header = () => {
           </Link>
           <Link to="/register-organisation" className="text-gray-700 hover:text-syria-teal font-semibold transition-colors">
             Register Organisation
+          </Link>
+          <Link to="/organisations/contributions" className="text-gray-700 hover:text-syria-teal font-semibold transition-colors">
+            Organisation Contributions
           </Link>
           <Button 
             className="bg-syria-teal hover:bg-syria-teal-dark text-white ml-2"
@@ -104,6 +106,13 @@ const Header = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Register Organisation
+            </Link>
+            <Link 
+              to="/organisations/contributions"
+              className="text-gray-700 hover:text-syria-teal font-semibold py-2 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Organisation Contributions
             </Link>
             <Button 
               className="bg-syria-teal hover:bg-syria-teal-dark text-white mt-2 w-full"
