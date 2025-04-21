@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -47,21 +48,25 @@ const ContributionForm: React.FC<FormProps> = ({ onSubmit }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    onSubmit({
-      ...form,
-      image: form.imageUrl,
-    });
-    setSubmitting(false);
-    setForm({
-      title: "",
-      description: "",
-      quantity: 1,
-      image: null,
-      imageUrl: "",
-      category: categories[0],
-      location: "",
-    });
-    setPreview(null);
+    
+    // Simulate submitting to a backend
+    setTimeout(() => {
+      onSubmit({
+        ...form,
+        image: form.imageUrl,
+      });
+      setSubmitting(false);
+      setForm({
+        title: "",
+        description: "",
+        quantity: 1,
+        image: null,
+        imageUrl: "",
+        category: categories[0],
+        location: "",
+      });
+      setPreview(null);
+    }, 500); // Small timeout to simulate processing
   };
 
   return (
@@ -120,7 +125,7 @@ const ContributionForm: React.FC<FormProps> = ({ onSubmit }) => {
           </select>
         </div>
       </div>
-      <div className="flex flex-col sm:flex-row gap-4 items-center">
+      <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
         <div className="flex-1">
           <label className="font-medium mb-1 block">Location <span className="text-xs text-gray-400">(optional)</span></label>
           <Input
@@ -133,19 +138,21 @@ const ContributionForm: React.FC<FormProps> = ({ onSubmit }) => {
         </div>
         <div className="flex-1">
           <label className="font-medium mb-1 block">Image <span className="text-xs text-gray-400">(optional)</span></label>
-          <label className="flex items-center cursor-pointer bg-syria-teal text-white px-4 py-2 rounded hover:bg-syria-teal-dark gap-2 w-max">
-            <Upload className="w-4 h-4" />
-            <span>Upload</span>
-            <input 
-              type="file" 
-              accept="image/*" 
-              className="hidden" 
-              onChange={handleFileChange}
-            />
-          </label>
-          {preview && (
-            <img src={preview} alt="Preview" className="w-12 h-12 object-cover rounded border mt-2" />
-          )}
+          <div className="flex items-center gap-3">
+            <label className="flex items-center cursor-pointer bg-syria-teal text-white px-4 py-2 rounded hover:bg-syria-teal-dark gap-2 w-max">
+              <Upload className="w-4 h-4" />
+              <span>Upload</span>
+              <input 
+                type="file" 
+                accept="image/*" 
+                className="hidden" 
+                onChange={handleFileChange}
+              />
+            </label>
+            {preview && (
+              <img src={preview} alt="Preview" className="w-12 h-12 object-cover rounded border" />
+            )}
+          </div>
         </div>
       </div>
       <Button
@@ -154,7 +161,7 @@ const ContributionForm: React.FC<FormProps> = ({ onSubmit }) => {
         size="lg"
         disabled={submitting}
       >
-        Submit Contribution
+        {submitting ? "Submitting..." : "Submit Contribution"}
       </Button>
     </form>
   );
