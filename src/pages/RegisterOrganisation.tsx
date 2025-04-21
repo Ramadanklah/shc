@@ -1,10 +1,10 @@
-
 import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Link } from "react-router-dom";
-import { Upload } from "lucide-react";
+import { Upload, Whatsapp } from "lucide-react";
+import { toast } from "sonner";
 
 const RegisterOrganisation = () => {
   // Form state
@@ -16,6 +16,7 @@ const RegisterOrganisation = () => {
   const [license, setLicense] = useState("");
   const [about, setAbout] = useState("");
   const [logoPreview, setLogoPreview] = useState<string | null>(null);
+  const [whatsapp, setWhatsapp] = useState("");
 
   const handleLogoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -29,6 +30,12 @@ const RegisterOrganisation = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (whatsapp && !whatsapp.match(/^\+?[1-9]\d{1,14}$/)) {
+      toast.error("Please enter a valid WhatsApp number");
+      return;
+    }
+
     // Placeholder for submit logic (to be replaced with backend/API logic)
     alert(
       "Organisation Registration Submitted!\n\nThis is a UI prototype. Backend integration and admin approval will be added later."
@@ -136,6 +143,22 @@ const RegisterOrganisation = () => {
               className="bg-gray-50"
               rows={3}
             />
+          </div>
+          <div>
+            <label className="block font-semibold mb-1">
+              WhatsApp Number
+              <span className="text-xs text-gray-500"> (with country code)</span>
+            </label>
+            <div className="flex items-center gap-2">
+              <Whatsapp className="w-5 h-5 text-green-600" />
+              <Input
+                value={whatsapp}
+                onChange={e => setWhatsapp(e.target.value)}
+                placeholder="+1234567890"
+                className="bg-gray-50"
+                type="tel"
+              />
+            </div>
           </div>
           <div className="flex justify-between items-center mt-4">
             <Button

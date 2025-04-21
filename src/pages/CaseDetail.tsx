@@ -1,9 +1,9 @@
-
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
+import { Whatsapp } from "lucide-react";
 import DonationModal from "@/components/DonationModal";
 
 // Demo data (should be replaced by real backend query later)
@@ -37,7 +37,6 @@ const CASES = [
 const CaseDetailPage: React.FC = () => {
   const { id } = useParams();
   const caseDetail = CASES.find((c) => c.id === id);
-
   const [showModal, setShowModal] = useState(false);
 
   if (!caseDetail) {
@@ -54,6 +53,12 @@ const CaseDetailPage: React.FC = () => {
   }
 
   const percent = Math.min((caseDetail.amountRaised / caseDetail.goalAmount) * 100, 100);
+  
+  // Demo WhatsApp number - in a real app this would come from the organization's data
+  const whatsappNumber = "+1234567890";
+  const whatsappMessage = encodeURIComponent(
+    `Hi, I'm interested in case "${caseDetail.title}" (ID: ${caseDetail.id})`
+  );
 
   return (
     <main className="min-h-[70vh] bg-white py-16">
@@ -67,12 +72,29 @@ const CaseDetailPage: React.FC = () => {
             <span className="font-semibold">${caseDetail.amountRaised.toLocaleString()} raised</span>
             <span className="text-gray-500">of ${caseDetail.goalAmount.toLocaleString()}</span>
           </div>
-          <Button
-            className="mt-4 bg-syria-teal hover:bg-syria-teal-dark text-white"
-            onClick={() => setShowModal(true)}
-          >
-            Donate
-          </Button>
+          
+          <div className="flex gap-4 mt-4">
+            <Button
+              className="flex-1 bg-syria-teal hover:bg-syria-teal-dark text-white"
+              onClick={() => setShowModal(true)}
+            >
+              Donate
+            </Button>
+            <Button
+              variant="outline"
+              className="flex items-center gap-2 text-green-600 border-green-600 hover:bg-green-50"
+              asChild
+            >
+              <a
+                href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Whatsapp className="w-5 h-5" />
+                Contact via WhatsApp
+              </a>
+            </Button>
+          </div>
           <DonationModal open={showModal} onOpenChange={setShowModal} />
         </Card>
         <div className="text-center">
