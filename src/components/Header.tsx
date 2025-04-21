@@ -1,14 +1,23 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import DonationModal from './DonationModal';
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDonateModalOpen, setIsDonateModalOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const openDonateModal = () => {
+    setIsDonateModalOpen(true);
+    if (isMenuOpen) {
+      setIsMenuOpen(false); // Close mobile menu when opening donate modal
+    }
   };
 
   return (
@@ -37,7 +46,10 @@ const Header = () => {
           <Link to="/register-organisation" className="text-gray-700 hover:text-syria-teal font-semibold transition-colors">
             Register Organisation
           </Link>
-          <Button className="bg-syria-teal hover:bg-syria-teal-dark text-white ml-2">
+          <Button 
+            className="bg-syria-teal hover:bg-syria-teal-dark text-white ml-2"
+            onClick={openDonateModal}
+          >
             Donate Now
           </Button>
         </nav>
@@ -95,13 +107,16 @@ const Header = () => {
             </Link>
             <Button 
               className="bg-syria-teal hover:bg-syria-teal-dark text-white mt-2 w-full"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={openDonateModal}
             >
               Donate Now
             </Button>
           </div>
         </div>
       )}
+
+      {/* Donation Modal */}
+      <DonationModal open={isDonateModalOpen} onOpenChange={setIsDonateModalOpen} />
     </header>
   );
 };

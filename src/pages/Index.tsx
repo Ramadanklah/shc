@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import LatestCases from "../components/LatestCases";
@@ -8,14 +7,21 @@ import AboutSection from "../components/AboutSection";
 import Footer from "../components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import DonationModal from "../components/DonationModal";
 
 const Index = () => {
+  const [isDonateModalOpen, setIsDonateModalOpen] = useState(false);
+
+  const openDonateModal = () => {
+    setIsDonateModalOpen(true);
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
       
       <main className="flex-grow">
-        <Hero />
+        <Hero openDonateModal={openDonateModal} />
         
         <LatestCases />
         
@@ -69,9 +75,9 @@ const Index = () => {
                 <Button 
                   className="bg-syria-teal hover:bg-syria-teal-dark text-white animate-pulse-gentle"
                   size="lg"
-                  asChild
+                  onClick={openDonateModal}
                 >
-                  <Link to="/donate">Donate Now</Link>
+                  Donate Now
                 </Button>
               </div>
               
@@ -156,9 +162,9 @@ const Index = () => {
               <Button 
                 className="bg-white text-syria-teal hover:bg-gray-100"
                 size="lg"
-                asChild
+                onClick={openDonateModal}
               >
-                <Link to="/donate">Make a Donation</Link>
+                Make a Donation
               </Button>
               <Button 
                 variant="outline" 
@@ -174,6 +180,9 @@ const Index = () => {
       </main>
       
       <Footer />
+      
+      {/* Donation Modal */}
+      <DonationModal open={isDonateModalOpen} onOpenChange={setIsDonateModalOpen} />
     </div>
   );
 };

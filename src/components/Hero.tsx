@@ -3,7 +3,11 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
-const Hero = () => {
+interface HeroProps {
+  openDonateModal?: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ openDonateModal }) => {
   return (
     <div className="bg-syria-light clip-path-slant relative overflow-hidden">
       <div 
@@ -24,9 +28,9 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <Button 
               className="bg-syria-teal hover:bg-syria-teal-dark text-white text-lg py-6 px-8" 
-              asChild
+              onClick={openDonateModal}
             >
-              <Link to="/donate">Donate Now</Link>
+              Donate Now
             </Button>
             <Button 
               variant="outline" 
