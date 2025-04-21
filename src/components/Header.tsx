@@ -1,0 +1,100 @@
+
+import React from 'react';
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  return (
+    <header className="w-full bg-white shadow-sm sticky top-0 z-50">
+      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <Link to="/" className="flex items-center gap-2">
+          <span className="text-2xl font-bold text-syria-teal">
+            SyriaHealthcare<span className="text-syria-red">.com</span>
+          </span>
+        </Link>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-6">
+          <Link to="/" className="text-gray-700 hover:text-syria-teal font-medium transition-colors">
+            Home
+          </Link>
+          <Link to="/cases" className="text-gray-700 hover:text-syria-teal font-medium transition-colors">
+            Medical Cases
+          </Link>
+          <Link to="/about" className="text-gray-700 hover:text-syria-teal font-medium transition-colors">
+            About Us
+          </Link>
+          <Link to="/volunteer" className="text-gray-700 hover:text-syria-teal font-medium transition-colors">
+            Volunteer
+          </Link>
+          <Button className="bg-syria-teal hover:bg-syria-teal-dark text-white ml-2">
+            Donate Now
+          </Button>
+        </nav>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            onClick={toggleMenu}
+            aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+          >
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </Button>
+        </div>
+      </div>
+
+      {/* Mobile Navigation */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-white shadow-md">
+          <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
+            <Link 
+              to="/" 
+              className="text-gray-700 hover:text-syria-teal font-medium py-2 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Home
+            </Link>
+            <Link 
+              to="/cases" 
+              className="text-gray-700 hover:text-syria-teal font-medium py-2 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Medical Cases
+            </Link>
+            <Link 
+              to="/about" 
+              className="text-gray-700 hover:text-syria-teal font-medium py-2 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              About Us
+            </Link>
+            <Link 
+              to="/volunteer" 
+              className="text-gray-700 hover:text-syria-teal font-medium py-2 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Volunteer
+            </Link>
+            <Button 
+              className="bg-syria-teal hover:bg-syria-teal-dark text-white mt-2 w-full"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Donate Now
+            </Button>
+          </div>
+        </div>
+      )}
+    </header>
+  );
+};
+
+export default Header;
