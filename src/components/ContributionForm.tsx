@@ -1,13 +1,12 @@
-
 import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Upload, Image, List, Folder, MedicalBed } from "lucide-react";
+import { Upload, Image, List, Folder, BedDouble } from "lucide-react";
 
 const categories = [
   "Equipment",
-  "Consumables",
+  "Consumables", 
   "Services",
 ];
 
@@ -68,7 +67,7 @@ const ContributionForm: React.FC<FormProps> = ({ onSubmit }) => {
   return (
     <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-sm px-6 py-6 mb-8 space-y-5">
       <h3 className="text-lg font-semibold text-syria-dark mb-2 flex gap-2 items-center">
-        <MedicalBed className="w-5 h-5 text-syria-teal" /> Submit a New Contribution
+        <BedDouble className="w-5 h-5 text-syria-teal" /> Submit a New Contribution
       </h3>
       <div>
         <label className="font-medium mb-1 block">Contribution Title *</label>
