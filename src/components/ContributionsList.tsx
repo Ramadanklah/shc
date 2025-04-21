@@ -1,5 +1,6 @@
+
 import React from "react";
-import { BedDouble, Wheelchair, Image } from "lucide-react";
+import { BedDouble, Image } from "lucide-react";
 
 interface Contribution {
   id: number;
@@ -21,7 +22,7 @@ const getCategoryIcon = (cat: string) => {
   switch (cat) {
     case "Equipment": return <BedDouble className="w-6 h-6 text-syria-teal" />;
     case "Consumables": return <Image className="w-6 h-6 text-syria-teal" />;
-    case "Services": return <Wheelchair className="w-6 h-6 text-syria-teal" />;
+    case "Services": return <Image className="w-6 h-6 text-syria-teal" />; // replaced Wheelchair with Image
     default: return <BedDouble className="w-6 h-6 text-syria-teal" />;
   }
 };
@@ -78,3 +79,4 @@ const ContributionsList: React.FC<Props> = ({ contributions }) => {
 };
 
 export default ContributionsList;
+
