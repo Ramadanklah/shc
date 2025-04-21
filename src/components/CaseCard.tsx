@@ -51,7 +51,7 @@ const CaseCard: React.FC<CaseCardProps> = ({
               className="bg-white text-syria-teal hover:bg-syria-teal hover:text-white"
               asChild
             >
-              <Link to={`/case/${id}`}>View Details</Link>
+              <Link to={`/cases/${id}`}>View Details</Link>
             </Button>
           </div>
         </div>
@@ -81,7 +81,7 @@ const CaseCard: React.FC<CaseCardProps> = ({
             className="bg-syria-teal hover:bg-syria-teal-dark text-white"
             asChild
           >
-            <Link to={`/donate?case=${id}`}>Donate</Link>
+            <Link to={`/cases/${id}`}>View Case</Link>
           </Button>
         </div>
       </div>
