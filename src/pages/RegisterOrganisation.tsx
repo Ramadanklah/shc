@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Link } from "react-router-dom";
-import { Upload, Whatsapp } from "lucide-react";
+import { Upload, WhatsApp } from "lucide-react";
 import { toast } from "sonner";
 
 const RegisterOrganisation = () => {
@@ -144,13 +144,13 @@ const RegisterOrganisation = () => {
               rows={3}
             />
           </div>
-          <div>
+          <div className="text-center">
             <label className="block font-semibold mb-1">
               WhatsApp Number
               <span className="text-xs text-gray-500"> (with country code)</span>
             </label>
             <div className="flex items-center gap-2">
-              <Whatsapp className="w-5 h-5 text-green-600" />
+              <WhatsApp className="w-5 h-5 text-green-600" />
               <Input
                 value={whatsapp}
                 onChange={e => setWhatsapp(e.target.value)}

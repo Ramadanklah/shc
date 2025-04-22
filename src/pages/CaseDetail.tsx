@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { Whatsapp } from "lucide-react";
+import { WhatsApp } from "lucide-react";
 import DonationModal from "@/components/DonationModal";
 
 // Demo data (should be replaced by real backend query later)
@@ -90,7 +90,7 @@ const CaseDetailPage: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Whatsapp className="w-5 h-5" />
+                <WhatsApp className="w-5 h-5" />
                 Contact via WhatsApp
               </a>
             </Button>
