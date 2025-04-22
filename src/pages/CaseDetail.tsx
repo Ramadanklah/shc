@@ -3,10 +3,9 @@ import { useParams, Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { WhatsApp } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import DonationModal from "@/components/DonationModal";
 
-// Demo data (should be replaced by real backend query later)
 const CASES = [
   {
     id: "001",
@@ -54,7 +53,6 @@ const CaseDetailPage: React.FC = () => {
 
   const percent = Math.min((caseDetail.amountRaised / caseDetail.goalAmount) * 100, 100);
   
-  // Demo WhatsApp number - in a real app this would come from the organization's data
   const whatsappNumber = "+1234567890";
   const whatsappMessage = encodeURIComponent(
     `Hi, I'm interested in case "${caseDetail.title}" (ID: ${caseDetail.id})`
@@ -90,7 +88,7 @@ const CaseDetailPage: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <WhatsApp className="w-5 h-5" />
+                <MessageCircle className="w-5 h-5" />
                 Contact via WhatsApp
               </a>
             </Button>
