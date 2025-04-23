@@ -1,5 +1,4 @@
 
-
 import React, { useState } from 'react';
 import Header from "../components/Header";
 import Hero from "../components/Hero";
@@ -7,9 +6,8 @@ import LatestCases from "../components/LatestCases";
 import DonationForm from "../components/DonationForm";
 import AboutSection from "../components/AboutSection";
 import Footer from "../components/Footer";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import DonationModal from "../components/DonationModal";
+import SyriaMap from "../components/SyriaMap";
 import { useTranslation } from 'react-i18next';
 
 const Index = () => {
@@ -26,6 +24,20 @@ const Index = () => {
       
       <main className="flex-grow">
         <Hero openDonateModal={openDonateModal} />
+        
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4 text-syria-dark">
+                {t('map.title', 'Our Medical Facilities')}
+              </h2>
+              <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+                {t('map.description', 'Explore our network of hospitals and medical centers across Syria')}
+              </p>
+            </div>
+            <SyriaMap />
+          </div>
+        </section>
         
         <LatestCases />
         
@@ -182,7 +194,6 @@ const Index = () => {
       
       <Footer />
       
-      {/* Donation Modal */}
       <DonationModal open={isDonateModalOpen} onOpenChange={setIsDonateModalOpen} />
     </div>
   );
