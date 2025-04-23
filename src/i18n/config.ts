@@ -23,9 +23,19 @@ i18n
       }
     },
     fallbackLng: 'en',
+    detection: {
+      order: ['localStorage', 'navigator'],
+      caches: ['localStorage'],
+    },
     interpolation: {
       escapeValue: false
     }
   });
+
+// Handle RTL for Arabic
+document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
+i18n.on('languageChanged', (lng) => {
+  document.documentElement.dir = lng === 'ar' ? 'rtl' : 'ltr';
+});
 
 export default i18n;

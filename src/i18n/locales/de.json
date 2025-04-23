@@ -15,5 +15,38 @@
     "donateButton": "Jetzt Spenden",
     "viewCases": "Medizinische Fälle ansehen",
     "joinedDonors": "Spender haben bereits einen Unterschied gemacht"
+  },
+  "cases": {
+    "title": "Aktuelle Medizinische Fälle",
+    "subtitle": "Diese Personen und Gemeinden benötigen dringend medizinische Hilfe. Ihr Beitrag kann den Unterschied zwischen Leben und Tod bedeuten.",
+    "viewAll": "Alle Medizinischen Fälle ansehen",
+    "urgent": "Dringend",
+    "highNeed": "Hoher Bedarf",
+    "details": "Details anzeigen",
+    "amountRaised": "gesammelt",
+    "of": "von",
+    "funded": "finanziert"
+  },
+  "about": {
+    "title": "Über Uns",
+    "mission": "Unsere Mission",
+    "missionText": "SyriaHealthcare.com verbindet Spender und Gesundheitsexperten, um lebenswichtige medizinische Hilfe für die von der Krise in Syrien Betroffenen zu leisten. Wir stellen sicher, dass Ihre Spenden direkt in die lebensrettende Versorgung fließen.",
+    "whoWeAre": "Wer Wir Sind",
+    "whoWeAreText": "Unser Team ist eine Koalition aus syrischen und internationalen Freiwilligen, medizinischen Mitarbeitern, Technikspezialisten und Fürsprechern, die transparent arbeiten, um die Wirkung jeder Spende zu maximieren.",
+    "contact": "Kontakt",
+    "generalInquiries": "Allgemeine Anfragen",
+    "email": "E-Mail"
+  },
+  "donate": {
+    "title": "Für diesen Fall spenden",
+    "chooseOption": "Wählen Sie eine Zahlungsoption.",
+    "bankTransfer": "Banküberweisung",
+    "bankName": "Bank Name",
+    "accountHolder": "Kontoinhaber",
+    "currency": "Währung",
+    "copy": "Kopieren",
+    "copied": "Kopiert!",
+    "close": "Schließen",
+    "note": "Nach dem Senden Ihrer Spende senden Sie bitte eine Kopie Ihrer Transaktion an donations@syriahealthcare.com, um uns bei der Überprüfung und Verfolgung Ihres Beitrags zu helfen."
   }
 }
