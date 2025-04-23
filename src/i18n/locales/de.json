@@ -1,4 +1,3 @@
-
 {
   "nav": {
     "home": "Startseite",
@@ -149,5 +148,22 @@
     "text": "Jede Spende, egal wie klein, trägt dazu bei, Leben zu retten und kritische Gesundheitsversorgung für diejenigen bereitzustellen, die sie in Syrien am dringendsten benötigen.",
     "donate": "Eine Spende machen",
     "volunteer": "Mit uns Freiwillig arbeiten"
+  },
+  "medicalCases": {
+    "case1": {
+      "patient": "Layla (9 Jahre)",
+      "title": "Notoperation für die 9-jährige Layla",
+      "description": "Layla benötigt eine dringende Operation nach Verletzungen in Aleppo. Ihre Unterstützung hilft, die Operationskosten und die wichtige postoperative Versorgung zu decken."
+    },
+    "case2": {
+      "patient": "Ahmad (45 Jahre)",
+      "title": "Dialysebehandlung für Ahmad",
+      "description": "Ahmad benötigt nach Nierenversagen eine fortlaufende Dialyse. Spenden decken 6 Monate Therapie."
+    },
+    "case3": {
+      "patient": "Anonym",
+      "title": "Medizinische Versorgung für ländliche Klinik",
+      "description": "Diese Klinik im ländlichen Idlib versorgt wöchentlich über 200 Patienten. Ihre Spende ermöglicht wichtige Medikamente und Versorgungsmaterial für drei Monate."
+    }
   }
 }

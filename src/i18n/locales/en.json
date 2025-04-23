@@ -1,4 +1,3 @@
-
 {
   "nav": {
     "home": "Home",
@@ -149,5 +148,22 @@
     "text": "Every donation, no matter how small, contributes to saving lives and providing critical healthcare to those who need it most in Syria.",
     "donate": "Make a Donation",
     "volunteer": "Volunteer With Us"
+  },
+  "medicalCases": {
+    "case1": {
+      "patient": "Layla (9yo)",
+      "title": "Emergency Surgery for 9-year-old Layla",
+      "description": "Layla needs urgent surgery following injuries sustained in Aleppo. Your support will help cover surgical costs and essential post-operative care."
+    },
+    "case2": {
+      "patient": "Ahmad (45yo)",
+      "title": "Dialysis Treatment for Ahmad",
+      "description": "Ahmad requires ongoing dialysis after kidney failure. Donations cover 6 months of therapy."
+    },
+    "case3": {
+      "patient": "Anonymous",
+      "title": "Medical Supplies for Rural Clinic",
+      "description": "This clinic in rural Idlib serves over 200 patients weekly. Your donation will provide essential medicines and supplies for three months."
+    }
   }
 }

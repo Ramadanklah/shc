@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
@@ -8,36 +7,35 @@ import { useTranslation } from 'react-i18next';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-// Demo data for cases — real data would come from backend/Supabase later
-const medicalCases = [
-  {
-    id: "001",
-    patient: "Layla (9yo)", // could be "Anonymous" or code
-    title: "Emergency Surgery",
-    description: "Layla needs urgent surgery following injuries sustained in Aleppo. Help fund her post-operative treatment and care.",
-    amountRaised: 4230,
-    goalAmount: 7500,
-  },
-  {
-    id: "002",
-    patient: "Ahmad (45yo)",
-    title: "Dialysis Treatment",
-    description: "Ahmad requires ongoing dialysis after kidney failure. Donations cover 6 months of therapy.",
-    amountRaised: 2845,
-    goalAmount: 5000,
-  },
-  {
-    id: "003",
-    patient: "Anonymous",
-    title: "Clinic Supplies",
-    description: "A rural Idlib clinic needs medicines and consumables to serve over 200 patients weekly.",
-    amountRaised: 12300,
-    goalAmount: 15000,
-  },
-];
-
 const CasesPage: React.FC = () => {
   const { t } = useTranslation();
+
+  const medicalCases = [
+    {
+      id: "001",
+      patient: t('medicalCases.case1.patient'),
+      title: t('medicalCases.case1.title'),
+      description: t('medicalCases.case1.description'),
+      amountRaised: 4230,
+      goalAmount: 7500,
+    },
+    {
+      id: "002",
+      patient: t('medicalCases.case2.patient'),
+      title: t('medicalCases.case2.title'),
+      description: t('medicalCases.case2.description'),
+      amountRaised: 2845,
+      goalAmount: 5000,
+    },
+    {
+      id: "003",
+      patient: t('medicalCases.case3.patient'),
+      title: t('medicalCases.case3.title'),
+      description: t('medicalCases.case3.description'),
+      amountRaised: 12300,
+      goalAmount: 15000,
+    },
+  ];
 
   return (
     <div className="min-h-screen flex flex-col">

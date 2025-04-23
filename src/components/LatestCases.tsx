@@ -5,40 +5,40 @@ import CaseCard from "./CaseCard";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-// Sample data for the latest cases
-const LATEST_CASES = [
-  {
-    id: "case-001",
-    title: "Emergency Surgery for 9-year-old Layla",
-    description: "Layla needs urgent surgery following injuries sustained in Aleppo. Your support will help cover surgical costs and essential post-operative care.",
-    image: "https://images.unsplash.com/photo-1612531385446-f7e6d131e1d0?auto=format&fit=crop&q=80",
-    amountRaised: 4230,
-    goalAmount: 7500,
-    urgency: 'high' as const,
-  },
-  {
-    id: "case-002",
-    title: "Dialysis Treatment for Ahmad",
-    description: "Ahmad, 45, requires ongoing dialysis treatment after kidney failure. Help fund his life-saving weekly treatments for the next six months.",
-    image: "https://images.unsplash.com/photo-1504813184591-01572f98c85f?auto=format&fit=crop&q=80",
-    amountRaised: 2845,
-    goalAmount: 5000,
-    urgency: 'medium' as const,
-  },
-  {
-    id: "case-003",
-    title: "Medical Supplies for Rural Clinic",
-    description: "This clinic in rural Idlib serves over 200 patients weekly. Your donation will provide essential medicines and supplies for three months.",
-    image: "https://images.unsplash.com/photo-1504439468489-c8920d796a29?auto=format&fit=crop&q=80",
-    amountRaised: 12300,
-    goalAmount: 15000,
-    urgency: 'low' as const,
-  }
-];
-
 const LatestCases = () => {
   const { t } = useTranslation();
   
+  // Sample data for the latest cases with translations
+  const LATEST_CASES = [
+    {
+      id: "case-001",
+      title: t('medicalCases.case1.title'),
+      description: t('medicalCases.case1.description'),
+      image: "https://images.unsplash.com/photo-1612531385446-f7e6d131e1d0?auto=format&fit=crop&q=80",
+      amountRaised: 4230,
+      goalAmount: 7500,
+      urgency: 'high' as const,
+    },
+    {
+      id: "case-002",
+      title: t('medicalCases.case2.title'),
+      description: t('medicalCases.case2.description'),
+      image: "https://images.unsplash.com/photo-1504813184591-01572f98c85f?auto=format&fit=crop&q=80",
+      amountRaised: 2845,
+      goalAmount: 5000,
+      urgency: 'medium' as const,
+    },
+    {
+      id: "case-003",
+      title: t('medicalCases.case3.title'),
+      description: t('medicalCases.case3.description'),
+      image: "https://images.unsplash.com/photo-1504439468489-c8920d796a29?auto=format&fit=crop&q=80",
+      amountRaised: 12300,
+      goalAmount: 15000,
+      urgency: 'low' as const,
+    }
+  ];
+
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
