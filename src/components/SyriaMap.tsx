@@ -51,8 +51,9 @@ const SyriaMap = () => {
             </div>
           `);
 
+        // Fix for the type error - properly cast the coordinates as LngLatLike
         new mapboxgl.Marker(markerEl)
-          .setLngLat(location.coordinates)
+          .setLngLat(location.coordinates as [number, number])
           .setPopup(popup)
           .addTo(map.current!);
       });
