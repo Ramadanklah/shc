@@ -1,26 +1,22 @@
 
 import React from 'react';
-import { Heart, Hospital } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Logo = () => {
   return (
-    <div className="flex items-center gap-3 group">
-      <div className="relative transform transition-transform duration-300 group-hover:scale-110">
-        <Hospital 
-          className="h-7 w-7 text-syria-teal transition-colors duration-300 group-hover:text-syria-teal-dark" 
-          strokeWidth={1.5}
-        />
-        <Heart 
-          className="h-5 w-5 text-syria-red absolute -bottom-1.5 -right-1.5 animate-pulse" 
-          fill="currentColor"
-          strokeWidth={1.5}
-        />
+    <Link to="/" className="flex flex-col items-center gap-2 group">
+      <div className="flex flex-col items-center">
+        <div className="relative">
+          <img 
+            src="/lovable-uploads/338db15b-c9ba-4e53-a069-85d1fcf8e4df.png" 
+            alt="Syria Healthcare Logo" 
+            className="h-16 w-auto transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
       </div>
-      <span className="text-2xl font-bold bg-gradient-to-r from-syria-teal to-syria-teal-dark bg-clip-text text-transparent">
-        SyriaHealthcare
-      </span>
-    </div>
+    </Link>
   );
 };
 
 export default Logo;
+
