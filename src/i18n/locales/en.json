@@ -1,0 +1,19 @@
+
+{
+  "nav": {
+    "home": "Home",
+    "medicalCases": "Medical Cases",
+    "about": "About Us",
+    "volunteer": "Volunteer",
+    "registerOrg": "Register Organisation",
+    "orgContributions": "Organisation Contributions",
+    "donate": "Donate Now"
+  },
+  "hero": {
+    "title": "Help Save Lives in Syria",
+    "subtitle": "Your donation directly funds critical medical care for those who need it most. Join us in providing hope and healing to Syrian families affected by crisis.",
+    "donateButton": "Donate Now",
+    "viewCases": "View Medical Cases",
+    "joinedDonors": "donors who've already made a difference"
+  }
+}

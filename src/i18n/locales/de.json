@@ -1,0 +1,19 @@
+
+{
+  "nav": {
+    "home": "Startseite",
+    "medicalCases": "Medizinische Fälle",
+    "about": "Über Uns",
+    "volunteer": "Freiwilligenarbeit",
+    "registerOrg": "Organisation Registrieren",
+    "orgContributions": "Organisationsbeiträge",
+    "donate": "Jetzt Spenden"
+  },
+  "hero": {
+    "title": "Helfen Sie, Leben in Syrien zu retten",
+    "subtitle": "Ihre Spende finanziert direkt wichtige medizinische Versorgung für die Bedürftigsten. Helfen Sie uns, syrischen Familien in der Krise Hoffnung und Heilung zu bringen.",
+    "donateButton": "Jetzt Spenden",
+    "viewCases": "Medizinische Fälle ansehen",
+    "joinedDonors": "Spender haben bereits einen Unterschied gemacht"
+  }
+}

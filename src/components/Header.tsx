@@ -1,10 +1,14 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import DonationModal from './DonationModal';
+import LanguageSwitcher from './LanguageSwitcher';
+import { useTranslation } from 'react-i18next';
 
 const Header = () => {
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDonateModalOpen, setIsDonateModalOpen] = useState(false);
 
@@ -31,32 +35,35 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
           <Link to="/" className="text-gray-700 hover:text-syria-teal font-medium transition-colors">
-            Home
+            {t('nav.home')}
           </Link>
           <Link to="/cases" className="text-gray-700 hover:text-syria-teal font-medium transition-colors">
-            Medical Cases
+            {t('nav.medicalCases')}
           </Link>
           <Link to="/about" className="text-gray-700 hover:text-syria-teal font-medium transition-colors">
-            About Us
+            {t('nav.about')}
           </Link>
           <Link to="/volunteer" className="text-gray-700 hover:text-syria-teal font-medium transition-colors">
-            Volunteer
+            {t('nav.volunteer')}
           </Link>
           <Link to="/register-organisation" className="text-gray-700 hover:text-syria-teal font-semibold transition-colors">
-            Register Organisation
+            {t('nav.registerOrg')}
           </Link>
           <Link to="/organisations/contributions" className="text-gray-700 hover:text-syria-teal font-semibold transition-colors">
-            Organisation Contributions
+            {t('nav.orgContributions')}
           </Link>
+          <LanguageSwitcher />
           <Button 
             className="bg-syria-teal hover:bg-syria-teal-dark text-white ml-2"
             onClick={openDonateModal}
           >
-            Donate Now
+            {t('nav.donate')}
           </Button>
         </nav>
+
         {/* Mobile Menu Button */}
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-2">
+          <LanguageSwitcher />
           <Button 
             variant="ghost" 
             size="icon" 
@@ -77,48 +84,48 @@ const Header = () => {
               className="text-gray-700 hover:text-syria-teal font-medium py-2 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Home
+              {t('nav.home')}
             </Link>
             <Link 
               to="/cases" 
               className="text-gray-700 hover:text-syria-teal font-medium py-2 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Medical Cases
+              {t('nav.medicalCases')}
             </Link>
             <Link 
               to="/about" 
               className="text-gray-700 hover:text-syria-teal font-medium py-2 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              About Us
+              {t('nav.about')}
             </Link>
             <Link 
               to="/volunteer" 
               className="text-gray-700 hover:text-syria-teal font-medium py-2 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Volunteer
+              {t('nav.volunteer')}
             </Link>
             <Link 
               to="/register-organisation"
               className="text-gray-700 hover:text-syria-teal font-semibold py-2 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Register Organisation
+              {t('nav.registerOrg')}
             </Link>
             <Link 
               to="/organisations/contributions"
               className="text-gray-700 hover:text-syria-teal font-semibold py-2 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Organisation Contributions
+              {t('nav.orgContributions')}
             </Link>
             <Button 
               className="bg-syria-teal hover:bg-syria-teal-dark text-white mt-2 w-full"
               onClick={openDonateModal}
             >
-              Donate Now
+              {t('nav.donate')}
             </Button>
           </div>
         </div>
