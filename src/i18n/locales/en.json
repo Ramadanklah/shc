@@ -15,5 +15,122 @@
     "donateButton": "Donate Now",
     "viewCases": "View Medical Cases",
     "joinedDonors": "donors who've already made a difference"
+  },
+  "cases": {
+    "title": "Current Medical Cases",
+    "subtitle": "These individuals and communities urgently need medical assistance. Your contribution can make the difference between life and death.",
+    "viewAll": "View All Medical Cases",
+    "urgent": "Urgent",
+    "highNeed": "High Need",
+    "details": "View Details",
+    "amountRaised": "raised",
+    "of": "of",
+    "funded": "funded"
+  },
+  "about": {
+    "title": "About Us",
+    "mission": "Our Mission",
+    "missionText": "SyriaHealthcare.com connects donors and health professionals to deliver vital medical assistance to those affected by the crisis in Syria. We ensure your donations go directly to lifesaving care.",
+    "whoWeAre": "Who We Are",
+    "whoWeAreText": "Our team is a coalition of Syrian and international volunteers, medical workers, tech specialists, and advocates, working transparently to maximize the impact of every donation.",
+    "contact": "Contact",
+    "generalInquiries": "General Inquiries",
+    "email": "Email"
+  },
+  "donate": {
+    "title": "Donate to This Case",
+    "chooseOption": "Choose a payment option.",
+    "bankTransfer": "Bank Transfer",
+    "bankName": "Bank Name",
+    "accountHolder": "Account Holder",
+    "currency": "Currency",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "close": "Close",
+    "note": "After sending your donation, please email a copy of your transaction to donations@syriahealthcare.com to help us verify and track your contribution."
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oops! Page not found",
+    "description": "We can't seem to find the page you're looking for. Let's get you back to where you can make a difference.",
+    "returnButton": "Return to Home"
+  },
+  "testimonials": {
+    "title": "Testimonials",
+    "subtitle": "Hear from those who have been helped by your generous contributions and the difference it has made in their lives."
+  },
+  "volunteer": {
+    "title": "Volunteer With Us",
+    "subtitle": "We're looking for doctors, nurses, paramedics, pharmacists, drivers, translators, field coordinators, and others who want to make a difference. Whether in Syria or remote, your skills are needed!",
+    "form": {
+      "title": "Volunteer Sign-Up",
+      "name": "Name",
+      "speciality": "Speciality / Skills",
+      "location": "Location",
+      "contact": "Contact Info (Email or Phone)",
+      "cv": "Upload CV / Credentials (Optional)",
+      "submit": "Submit Application"
+    },
+    "questions": "Have questions? Email us at"
+  },
+  "register": {
+    "title": "Register Your Organisation",
+    "orgName": "Organisation Name",
+    "logo": "Organisation Logo",
+    "uploadLogo": "Upload Logo",
+    "location": "Location",
+    "contactPerson": "Contact Person",
+    "contactEmail": "Contact Email",
+    "license": "Licence / Registration Number",
+    "licenseOptional": "if applicable",
+    "about": "About Organisation",
+    "aboutPlaceholder": "Briefly describe your organisation and its humanitarian/medical activities.",
+    "whatsapp": "WhatsApp Number",
+    "whatsappCode": "with country code",
+    "submit": "Register Organisation",
+    "cancel": "Cancel",
+    "alreadyRegistered": "Already registered?",
+    "login": "Login here"
+  },
+  "contributions": {
+    "title": "Organisation Contributions",
+    "description": "Submit the medical equipment, tools, or services your organisation is donating or needs. All submissions are reviewed by admin before becoming available to NGOs and cases in need.",
+    "offers": "What our organisation offers",
+    "needs": "What our organisation needs",
+    "form": {
+      "title": "Submit a New Contribution",
+      "contributionTitle": "Contribution Title",
+      "description": "Description",
+      "quantity": "Quantity",
+      "category": "Category",
+      "location": "Location",
+      "locationOptional": "optional",
+      "submit": "Submit Contribution"
+    }
+  },
+  "caseDetail": {
+    "notFound": "Case Not Found",
+    "back": "Back to Medical Cases",
+    "donate": "Donate",
+    "contact": "Contact via WhatsApp"
+  },
+  "mission": {
+    "title": "Our Mission",
+    "text1": "SyriaHealthcare.com connects medical professionals and donors to provide critical healthcare to families affected by the ongoing crisis in Syria.",
+    "text2": "We ensure your donation directly funds medical procedures, supplies, and transportation for patients who would otherwise have no access to care.",
+    "text3": "Through transparency and accountability, we focus on making the biggest impact possible with every dollar contributed.",
+    "learnMore": "Learn More",
+    "stats": {
+      "cases": "Medical Cases Funded",
+      "donations": "Total Donations",
+      "hospitals": "Partner Hospitals",
+      "doctors": "Volunteer Doctors"
+    }
+  },
+  "joinMission": {
+    "title": "Join Our Mission Today",
+    "text": "Every donation, no matter how small, contributes to saving lives and providing critical healthcare to those who need it most in Syria.",
+    "donate": "Make a Donation",
+    "volunteer": "Volunteer With Us"
   }
 }
