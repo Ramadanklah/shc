@@ -2,39 +2,39 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 const AboutSection = () => {
+  const { t } = useTranslation();
+  
   return (
     <section className="py-16 bg-syria-light">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1">
-            <h2 className="text-3xl font-bold mb-6 text-syria-dark">Our Mission</h2>
+            <h2 className="text-3xl font-bold mb-6 text-syria-dark">{t('mission.title')}</h2>
             <p className="text-gray-700 mb-4">
-              SyriaHealthcare.com connects medical professionals and donors to provide 
-              critical healthcare to families affected by the ongoing crisis in Syria.
+              {t('mission.text1')}
             </p>
             <p className="text-gray-700 mb-4">
-              We ensure your donation directly funds medical procedures, supplies, and 
-              transportation for patients who would otherwise have no access to care.
+              {t('mission.text2')}
             </p>
             <p className="text-gray-700 mb-6">
-              Through transparency and accountability, we focus on making the biggest 
-              impact possible with every dollar contributed.
+              {t('mission.text3')}
             </p>
             <div className="flex flex-wrap gap-4">
               <Button 
                 className="bg-syria-teal hover:bg-syria-teal-dark text-white"
                 asChild
               >
-                <Link to="/about">Learn More</Link>
+                <Link to="/about">{t('mission.learnMore')}</Link>
               </Button>
               <Button 
                 variant="outline" 
                 className="border-syria-teal text-syria-teal hover:bg-syria-teal/10"
                 asChild
               >
-                <Link to="/volunteer">Volunteer With Us</Link>
+                <Link to="/volunteer">{t('joinMission.volunteer')}</Link>
               </Button>
             </div>
           </div>
@@ -50,7 +50,7 @@ const AboutSection = () => {
                 <div className="flex items-center gap-4">
                   <div className="flex flex-col">
                     <span className="text-3xl font-bold text-syria-teal">100%</span>
-                    <span className="text-sm text-gray-600">of donations go to medical aid</span>
+                    <span className="text-sm text-gray-600">{t('mission.donationImpact')}</span>
                   </div>
                 </div>
               </div>
@@ -61,19 +61,19 @@ const AboutSection = () => {
         <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="bg-white p-6 rounded-lg shadow-md text-center">
             <div className="text-syria-teal text-4xl font-bold mb-2">2,471</div>
-            <div className="text-gray-600">Medical Cases Funded</div>
+            <div className="text-gray-600">{t('mission.stats.cases')}</div>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md text-center">
             <div className="text-syria-teal text-4xl font-bold mb-2">$1.3M</div>
-            <div className="text-gray-600">Total Donations</div>
+            <div className="text-gray-600">{t('mission.stats.donations')}</div>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md text-center">
             <div className="text-syria-teal text-4xl font-bold mb-2">17</div>
-            <div className="text-gray-600">Partner Hospitals</div>
+            <div className="text-gray-600">{t('mission.stats.hospitals')}</div>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md text-center">
             <div className="text-syria-teal text-4xl font-bold mb-2">97</div>
-            <div className="text-gray-600">Volunteer Doctors</div>
+            <div className="text-gray-600">{t('mission.stats.doctors')}</div>
           </div>
         </div>
       </div>

@@ -8,6 +8,7 @@ import NeedsList from "@/components/needs/NeedsList";
 import Footer from "@/components/Footer";
 import { Upload, Heart } from "lucide-react";
 import { toast } from "sonner";
+import { useTranslation } from 'react-i18next';
 
 // Dummy initial offers for demo
 const initialContributions = [
@@ -50,6 +51,7 @@ const initialNeeds = [
 ];
 
 const OrganisationContributions = () => {
+  const { t } = useTranslation();
   const [contributions, setContributions] = useState(initialContributions);
   const [needs, setNeeds] = useState(initialNeeds);
 
@@ -63,8 +65,8 @@ const OrganisationContributions = () => {
     
     setContributions([newContribution, ...contributions]);
     
-    toast.success("Contribution submitted successfully", {
-      description: "Your contribution of " + form.title + " is pending approval."
+    toast.success(t('contributions.submitSuccess'), {
+      description: t('contributions.submitDescription', { title: form.title })
     });
   };
 
@@ -84,20 +86,20 @@ const OrganisationContributions = () => {
       <main className="flex-grow max-w-4xl mx-auto w-full px-4 py-10">
         <h1 className="text-3xl font-bold text-syria-teal mb-2 flex items-center gap-2">
           <Upload className="w-7 h-7 text-syria-teal" />
-          Organisation Contributions
+          {t('contributions.title')}
         </h1>
         <p className="text-gray-600 mb-6">
-          Submit the medical equipment, tools, or services your organisation is donating or needs. All submissions are reviewed by admin before becoming available to NGOs and cases in need.
+          {t('contributions.description')}
         </p>
         
         <section className="mb-12">
-          <h2 className="text-xl font-semibold text-syria-teal mb-3">What our organisation offers</h2>
+          <h2 className="text-xl font-semibold text-syria-teal mb-3">{t('contributions.offers')}</h2>
           <ContributionForm onSubmit={handleContributionSubmit} />
           <ContributionsList contributions={contributions} />
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold text-syria-teal mb-3">What our organisation needs</h2>
+          <h2 className="text-xl font-semibold text-syria-teal mb-3">{t('contributions.needs')}</h2>
           <NeedForm onSubmit={handleNeedSubmit} />
           <NeedsList needs={needs} />
         </section>

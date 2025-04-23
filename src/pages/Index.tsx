@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Header from "../components/Header";
 import Hero from "../components/Hero";
@@ -8,9 +9,11 @@ import Footer from "../components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import DonationModal from "../components/DonationModal";
+import { useTranslation } from 'react-i18next';
 
 const Index = () => {
   const [isDonateModalOpen, setIsDonateModalOpen] = useState(false);
+  const { t } = useTranslation();
 
   const openDonateModal = () => {
     setIsDonateModalOpen(true);
@@ -30,12 +33,10 @@ const Index = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl font-bold mb-6 text-syria-dark">
-                  Make a Difference Today
+                  {t('joinMission.title')}
                 </h2>
                 <p className="text-gray-700 mb-6">
-                  Your donation directly funds life-saving medical care for Syrian 
-                  patients in desperate need. We ensure that 100% of your contribution 
-                  goes to medical treatment, supplies, and support.
+                  {t('joinMission.text')}
                 </p>
                 <div className="bg-white p-6 rounded-lg shadow-md mb-6">
                   <div className="flex items-center gap-4 mb-4">
@@ -45,8 +46,8 @@ const Index = () => {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-syria-dark">Transparent Tracking</h3>
-                      <p className="text-sm text-gray-600">Follow your donation's impact with regular updates</p>
+                      <h3 className="font-semibold text-syria-dark">{t('donate.tracking')}</h3>
+                      <p className="text-sm text-gray-600">{t('donate.trackingDesc')}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4 mb-4">
@@ -56,8 +57,8 @@ const Index = () => {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-syria-dark">Secure Processing</h3>
-                      <p className="text-sm text-gray-600">Fully encrypted transactions and data protection</p>
+                      <h3 className="font-semibold text-syria-dark">{t('donate.secure')}</h3>
+                      <p className="text-sm text-gray-600">{t('donate.secureDesc')}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
@@ -67,8 +68,8 @@ const Index = () => {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-syria-dark">Tax-Deductible</h3>
-                      <p className="text-sm text-gray-600">Donations eligible for tax deduction in many countries</p>
+                      <h3 className="font-semibold text-syria-dark">{t('donate.taxDeductible')}</h3>
+                      <p className="text-sm text-gray-600">{t('donate.taxDeductibleDesc')}</p>
                     </div>
                   </div>
                 </div>
@@ -77,7 +78,7 @@ const Index = () => {
                   size="lg"
                   onClick={openDonateModal}
                 >
-                  Donate Now
+                  {t('nav.donate')}
                 </Button>
               </div>
               
@@ -93,9 +94,9 @@ const Index = () => {
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4 text-syria-dark">Testimonials</h2>
+              <h2 className="text-3xl font-bold mb-4 text-syria-dark">{t('testimonials.title')}</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                Hear from those who have been helped by your generous contributions and the difference it has made in their lives.
+                {t('testimonials.subtitle')}
               </p>
             </div>
             
@@ -104,13 +105,13 @@ const Index = () => {
                 <div className="text-syria-teal text-5xl absolute -top-4 left-4">"</div>
                 <div className="pt-4">
                   <p className="text-gray-700 mb-4 italic">
-                    "Without this surgery, I wouldn't be able to walk today. Thank you to everyone who donated to help me recover from my injuries."
+                    {t('testimonials.quote1')}
                   </p>
                   <div className="flex items-center gap-3 mt-6">
                     <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
                     <div>
                       <h4 className="font-semibold text-syria-dark">Fatima S.</h4>
-                      <p className="text-xs text-gray-500">Received emergency surgery in Idlib</p>
+                      <p className="text-xs text-gray-500">{t('testimonials.patient1')}</p>
                     </div>
                   </div>
                 </div>
@@ -120,13 +121,13 @@ const Index = () => {
                 <div className="text-syria-teal text-5xl absolute -top-4 left-4">"</div>
                 <div className="pt-4">
                   <p className="text-gray-700 mb-4 italic">
-                    "As a doctor working in northern Syria, the medical supplies we receive through this platform have saved countless lives in our community clinic."
+                    {t('testimonials.quote2')}
                   </p>
                   <div className="flex items-center gap-3 mt-6">
                     <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
                     <div>
                       <h4 className="font-semibold text-syria-dark">Dr. Hassan M.</h4>
-                      <p className="text-xs text-gray-500">Physician at Aleppo Regional Hospital</p>
+                      <p className="text-xs text-gray-500">{t('testimonials.doctor')}</p>
                     </div>
                   </div>
                 </div>
@@ -136,13 +137,13 @@ const Index = () => {
                 <div className="text-syria-teal text-5xl absolute -top-4 left-4">"</div>
                 <div className="pt-4">
                   <p className="text-gray-700 mb-4 italic">
-                    "My son needed specialized care that wasn't available locally. This platform connected us with doctors and funded his treatment. He's now recovering well."
+                    {t('testimonials.quote3')}
                   </p>
                   <div className="flex items-center gap-3 mt-6">
                     <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
                     <div>
                       <h4 className="font-semibold text-syria-dark">Amina K.</h4>
-                      <p className="text-xs text-gray-500">Mother of patient from Homs</p>
+                      <p className="text-xs text-gray-500">{t('testimonials.mother')}</p>
                     </div>
                   </div>
                 </div>
@@ -153,10 +154,9 @@ const Index = () => {
         
         <section className="py-16 bg-syria-teal text-white">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-6">Join Our Mission Today</h2>
+            <h2 className="text-3xl font-bold mb-6">{t('joinMission.title')}</h2>
             <p className="text-white/90 max-w-2xl mx-auto mb-8">
-              Every donation, no matter how small, contributes to saving lives and providing critical 
-              healthcare to those who need it most in Syria.
+              {t('joinMission.text')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -164,7 +164,7 @@ const Index = () => {
                 size="lg"
                 onClick={openDonateModal}
               >
-                Make a Donation
+                {t('joinMission.donate')}
               </Button>
               <Button 
                 variant="outline" 
@@ -172,7 +172,7 @@ const Index = () => {
                 size="lg"
                 asChild
               >
-                <Link to="/volunteer">Volunteer With Us</Link>
+                <Link to="/volunteer">{t('joinMission.volunteer')}</Link>
               </Button>
             </div>
           </div>

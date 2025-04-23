@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import CaseCard from "./CaseCard";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 // Sample data for the latest cases
 const LATEST_CASES = [
@@ -36,14 +37,15 @@ const LATEST_CASES = [
 ];
 
 const LatestCases = () => {
+  const { t } = useTranslation();
+  
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-syria-dark">Recent Medical Cases</h2>
+          <h2 className="text-3xl font-bold mb-4 text-syria-dark">{t('cases.title')}</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            These individuals and communities urgently need medical assistance. 
-            Your contribution can make the difference between life and death.
+            {t('cases.subtitle')}
           </p>
         </div>
         
@@ -68,7 +70,7 @@ const LatestCases = () => {
             className="border-syria-teal text-syria-teal hover:bg-syria-teal/10"
             asChild
           >
-            <Link to="/cases">View All Medical Cases</Link>
+            <Link to="/cases">{t('cases.viewAll')}</Link>
           </Button>
         </div>
       </div>

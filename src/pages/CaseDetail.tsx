@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
@@ -5,6 +6,9 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { MessageCircle } from "lucide-react";
 import DonationModal from "@/components/DonationModal";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { useTranslation } from 'react-i18next';
 
 const CASES = [
   {
@@ -37,17 +41,22 @@ const CaseDetailPage: React.FC = () => {
   const { id } = useParams();
   const caseDetail = CASES.find((c) => c.id === id);
   const [showModal, setShowModal] = useState(false);
+  const { t } = useTranslation();
 
   if (!caseDetail) {
     return (
-      <main className="min-h-[70vh] bg-white py-16 flex flex-col items-center justify-center">
-        <div className="bg-gray-100 rounded p-8 shadow text-center">
-          <p className="text-xl font-bold mb-4">Case Not Found</p>
-          <Link to="/cases">
-            <Button variant="outline">Back to Medical Cases</Button>
-          </Link>
-        </div>
-      </main>
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-grow bg-white py-16 flex flex-col items-center justify-center">
+          <div className="bg-gray-100 rounded p-8 shadow text-center">
+            <p className="text-xl font-bold mb-4">{t('caseDetail.notFound')}</p>
+            <Link to="/cases">
+              <Button variant="outline">{t('caseDetail.back')}</Button>
+            </Link>
+          </div>
+        </main>
+        <Footer />
+      </div>
     );
   }
 
@@ -59,49 +68,53 @@ const CaseDetailPage: React.FC = () => {
   );
 
   return (
-    <main className="min-h-[70vh] bg-white py-16">
-      <div className="container mx-auto px-4 max-w-2xl">
-        <Card className="p-8 shadow flex flex-col mb-8">
-          <div className="mb-2 text-syria-teal font-medium text-sm">{caseDetail.patient}</div>
-          <h1 className="text-2xl font-bold mb-2">{caseDetail.title}</h1>
-          <p className="mb-4 text-gray-600">{caseDetail.description}</p>
-          <Progress value={percent} className="mb-3" />
-          <div className="flex justify-between text-sm mb-2">
-            <span className="font-semibold">${caseDetail.amountRaised.toLocaleString()} raised</span>
-            <span className="text-gray-500">of ${caseDetail.goalAmount.toLocaleString()}</span>
-          </div>
-          
-          <div className="flex gap-4 mt-4">
-            <Button
-              className="flex-1 bg-syria-teal hover:bg-syria-teal-dark text-white"
-              onClick={() => setShowModal(true)}
-            >
-              Donate
-            </Button>
-            <Button
-              variant="outline"
-              className="flex items-center gap-2 text-green-600 border-green-600 hover:bg-green-50"
-              asChild
-            >
-              <a
-                href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
-                target="_blank"
-                rel="noopener noreferrer"
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-grow bg-white py-16">
+        <div className="container mx-auto px-4 max-w-2xl">
+          <Card className="p-8 shadow flex flex-col mb-8">
+            <div className="mb-2 text-syria-teal font-medium text-sm">{caseDetail.patient}</div>
+            <h1 className="text-2xl font-bold mb-2">{caseDetail.title}</h1>
+            <p className="mb-4 text-gray-600">{caseDetail.description}</p>
+            <Progress value={percent} className="mb-3" />
+            <div className="flex justify-between text-sm mb-2">
+              <span className="font-semibold">${caseDetail.amountRaised.toLocaleString()} {t('cases.amountRaised')}</span>
+              <span className="text-gray-500">{t('cases.of')} ${caseDetail.goalAmount.toLocaleString()}</span>
+            </div>
+            
+            <div className="flex gap-4 mt-4">
+              <Button
+                className="flex-1 bg-syria-teal hover:bg-syria-teal-dark text-white"
+                onClick={() => setShowModal(true)}
               >
-                <MessageCircle className="w-5 h-5" />
-                Contact via WhatsApp
-              </a>
-            </Button>
+                {t('caseDetail.donate')}
+              </Button>
+              <Button
+                variant="outline"
+                className="flex items-center gap-2 text-green-600 border-green-600 hover:bg-green-50"
+                asChild
+              >
+                <a
+                  href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  {t('caseDetail.contact')}
+                </a>
+              </Button>
+            </div>
+            <DonationModal open={showModal} onOpenChange={setShowModal} />
+          </Card>
+          <div className="text-center">
+            <Link to="/cases">
+              <Button variant="outline" className="mt-2">{t('caseDetail.back')}</Button>
+            </Link>
           </div>
-          <DonationModal open={showModal} onOpenChange={setShowModal} />
-        </Card>
-        <div className="text-center">
-          <Link to="/cases">
-            <Button variant="outline" className="mt-2">Back to All Cases</Button>
-          </Link>
         </div>
-      </div>
-    </main>
+      </main>
+      <Footer />
+    </div>
   );
 };
 

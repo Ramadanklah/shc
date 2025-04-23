@@ -33,9 +33,15 @@ i18n
   });
 
 // Handle RTL for Arabic
-document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
-i18n.on('languageChanged', (lng) => {
+const handleLanguageChange = (lng: string) => {
   document.documentElement.dir = lng === 'ar' ? 'rtl' : 'ltr';
-});
+  document.documentElement.lang = lng;
+};
+
+// Set initial language direction
+handleLanguageChange(i18n.language);
+
+// Listen for language changes
+i18n.on('languageChanged', handleLanguageChange);
 
 export default i18n;

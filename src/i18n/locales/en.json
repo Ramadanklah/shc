@@ -47,7 +47,15 @@
     "copy": "Copy",
     "copied": "Copied!",
     "close": "Close",
-    "note": "After sending your donation, please email a copy of your transaction to donations@syriahealthcare.com to help us verify and track your contribution."
+    "note": "After sending your donation, please email a copy of your transaction to donations@syriahealthcare.com to help us verify and track your contribution.",
+    "tracking": "Transparent Tracking",
+    "trackingDesc": "Follow your donation's impact with regular updates",
+    "secure": "Secure Processing",
+    "secureDesc": "Fully encrypted transactions and data protection",
+    "taxDeductible": "Tax-Deductible",
+    "taxDeductibleDesc": "Donations eligible for tax deduction in many countries",
+    "submitSuccess": "Contribution submitted successfully",
+    "submitDescription": "Your contribution of {title} is pending approval."
   },
   "notFound": {
     "title": "404",
@@ -57,7 +65,13 @@
   },
   "testimonials": {
     "title": "Testimonials",
-    "subtitle": "Hear from those who have been helped by your generous contributions and the difference it has made in their lives."
+    "subtitle": "Hear from those who have been helped by your generous contributions and the difference it has made in their lives.",
+    "quote1": "Without this surgery, I wouldn't be able to walk today. Thank you to everyone who donated to help me recover from my injuries.",
+    "quote2": "As a doctor working in northern Syria, the medical supplies we receive through this platform have saved countless lives in our community clinic.",
+    "quote3": "My son needed specialized care that wasn't available locally. This platform connected us with doctors and funded his treatment. He's now recovering well.",
+    "patient1": "Received emergency surgery in Idlib",
+    "doctor": "Physician at Aleppo Regional Hospital",
+    "mother": "Mother of patient from Homs"
   },
   "volunteer": {
     "title": "Volunteer With Us",
@@ -106,7 +120,9 @@
       "location": "Location",
       "locationOptional": "optional",
       "submit": "Submit Contribution"
-    }
+    },
+    "submitSuccess": "Contribution submitted successfully",
+    "submitDescription": "Your contribution of {title} is pending approval."
   },
   "caseDetail": {
     "notFound": "Case Not Found",
@@ -120,6 +136,7 @@
     "text2": "We ensure your donation directly funds medical procedures, supplies, and transportation for patients who would otherwise have no access to care.",
     "text3": "Through transparency and accountability, we focus on making the biggest impact possible with every dollar contributed.",
     "learnMore": "Learn More",
+    "donationImpact": "of donations go to medical aid",
     "stats": {
       "cases": "Medical Cases Funded",
       "donations": "Total Donations",

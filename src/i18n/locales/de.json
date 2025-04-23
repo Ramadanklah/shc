@@ -47,6 +47,107 @@
     "copy": "Kopieren",
     "copied": "Kopiert!",
     "close": "Schließen",
-    "note": "Nach dem Senden Ihrer Spende senden Sie bitte eine Kopie Ihrer Transaktion an donations@syriahealthcare.com, um uns bei der Überprüfung und Verfolgung Ihres Beitrags zu helfen."
+    "note": "Nach dem Senden Ihrer Spende senden Sie bitte eine Kopie Ihrer Transaktion an donations@syriahealthcare.com, um uns bei der Überprüfung und Verfolgung Ihres Beitrags zu helfen.",
+    "tracking": "Transparente Verfolgung",
+    "trackingDesc": "Verfolgen Sie die Wirkung Ihrer Spende mit regelmäßigen Updates",
+    "secure": "Sichere Verarbeitung",
+    "secureDesc": "Vollständig verschlüsselte Transaktionen und Datenschutz",
+    "taxDeductible": "Steuerlich absetzbar",
+    "taxDeductibleDesc": "Spenden sind in vielen Ländern steuerlich absetzbar",
+    "submitSuccess": "Beitrag erfolgreich eingereicht",
+    "submitDescription": "Ihr Beitrag von {title} wartet auf Genehmigung."
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Hoppla! Seite nicht gefunden",
+    "description": "Wir können die gesuchte Seite nicht finden. Lassen Sie uns dorthin zurückkehren, wo Sie einen Unterschied machen können.",
+    "returnButton": "Zurück zur Startseite"
+  },
+  "testimonials": {
+    "title": "Erfahrungsberichte",
+    "subtitle": "Hören Sie von denjenigen, denen durch Ihre großzügigen Beiträge geholfen wurde und welchen Unterschied dies in ihrem Leben gemacht hat.",
+    "quote1": "Ohne diese Operation könnte ich heute nicht laufen. Danke an alle, die gespendet haben, damit ich mich von meinen Verletzungen erholen kann.",
+    "quote2": "Als Arzt, der im Norden Syriens arbeitet, haben die medizinischen Hilfsgüter, die wir über diese Plattform erhalten, unzählige Leben in unserer Gemeindeklinik gerettet.",
+    "quote3": "Mein Sohn brauchte eine spezielle Behandlung, die vor Ort nicht verfügbar war. Diese Plattform hat uns mit Ärzten verbunden und seine Behandlung finanziert. Er erholt sich jetzt gut.",
+    "patient1": "Erhielt eine Notoperation in Idlib",
+    "doctor": "Arzt am Regionalkrankenhaus Aleppo",
+    "mother": "Mutter eines Patienten aus Homs"
+  },
+  "volunteer": {
+    "title": "Mit Uns Freiwillig Arbeiten",
+    "subtitle": "Wir suchen Ärzte, Krankenschwestern, Sanitäter, Apotheker, Fahrer, Übersetzer, Feldkoordinatoren und andere, die einen Unterschied machen wollen. Egal ob in Syrien oder aus der Ferne, Ihre Fähigkeiten werden benötigt!",
+    "form": {
+      "title": "Freiwilligen-Anmeldung",
+      "name": "Name",
+      "speciality": "Fachgebiet / Fähigkeiten",
+      "location": "Standort",
+      "contact": "Kontaktinfo (E-Mail oder Telefon)",
+      "cv": "Lebenslauf / Referenzen hochladen (Optional)",
+      "submit": "Bewerbung einreichen"
+    },
+    "questions": "Haben Sie Fragen? Mailen Sie uns unter"
+  },
+  "register": {
+    "title": "Registrieren Sie Ihre Organisation",
+    "orgName": "Name der Organisation",
+    "logo": "Logo der Organisation",
+    "uploadLogo": "Logo hochladen",
+    "location": "Standort",
+    "contactPerson": "Kontaktperson",
+    "contactEmail": "Kontakt-E-Mail",
+    "license": "Lizenz- / Registrierungsnummer",
+    "licenseOptional": "falls zutreffend",
+    "about": "Über die Organisation",
+    "aboutPlaceholder": "Beschreiben Sie kurz Ihre Organisation und ihre humanitären/medizinischen Aktivitäten.",
+    "whatsapp": "WhatsApp-Nummer",
+    "whatsappCode": "mit Landesvorwahl",
+    "submit": "Organisation registrieren",
+    "cancel": "Abbrechen",
+    "alreadyRegistered": "Bereits registriert?",
+    "login": "Hier anmelden"
+  },
+  "contributions": {
+    "title": "Organisationsbeiträge",
+    "description": "Reichen Sie die medizinische Ausrüstung, Werkzeuge oder Dienstleistungen ein, die Ihre Organisation spendet oder benötigt. Alle Einreichungen werden vom Administrator überprüft, bevor sie für NGOs und bedürftige Fälle verfügbar werden.",
+    "offers": "Was unsere Organisation anbietet",
+    "needs": "Was unsere Organisation benötigt",
+    "form": {
+      "title": "Neuen Beitrag einreichen",
+      "contributionTitle": "Beitragstitel",
+      "description": "Beschreibung",
+      "quantity": "Menge",
+      "category": "Kategorie",
+      "location": "Standort",
+      "locationOptional": "optional",
+      "submit": "Beitrag einreichen"
+    },
+    "submitSuccess": "Beitrag erfolgreich eingereicht",
+    "submitDescription": "Ihr Beitrag von {title} wartet auf Genehmigung."
+  },
+  "caseDetail": {
+    "notFound": "Fall nicht gefunden",
+    "back": "Zurück zu medizinischen Fällen",
+    "donate": "Spenden",
+    "contact": "Kontakt über WhatsApp"
+  },
+  "mission": {
+    "title": "Unsere Mission",
+    "text1": "SyriaHealthcare.com verbindet medizinisches Fachpersonal und Spender, um kritische Gesundheitsversorgung für Familien zu leisten, die von der anhaltenden Krise in Syrien betroffen sind.",
+    "text2": "Wir stellen sicher, dass Ihre Spende direkt medizinische Verfahren, Hilfsmittel und Transport für Patienten finanziert, die sonst keinen Zugang zu Versorgung hätten.",
+    "text3": "Durch Transparenz und Verantwortlichkeit konzentrieren wir uns darauf, mit jedem beigetragenen Euro die größtmögliche Wirkung zu erzielen.",
+    "learnMore": "Mehr erfahren",
+    "donationImpact": "der Spenden fließen in medizinische Hilfe",
+    "stats": {
+      "cases": "Finanzierte medizinische Fälle",
+      "donations": "Gesamtspenden",
+      "hospitals": "Partnerkrankenhäuser",
+      "doctors": "Freiwillige Ärzte"
+    }
+  },
+  "joinMission": {
+    "title": "Beteiligen Sie sich heute an unserer Mission",
+    "text": "Jede Spende, egal wie klein, trägt dazu bei, Leben zu retten und kritische Gesundheitsversorgung für diejenigen bereitzustellen, die sie in Syrien am dringendsten benötigen.",
+    "donate": "Eine Spende machen",
+    "volunteer": "Mit uns Freiwillig arbeiten"
   }
 }
