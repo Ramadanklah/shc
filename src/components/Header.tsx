@@ -33,9 +33,11 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
-          <Link to="/" className="text-gray-700 hover:text-syria-teal font-medium transition-colors">
-            {t('nav.home')}
-          </Link>
+          <div className="ml-6">
+            <Link to="/" className="text-gray-700 hover:text-syria-teal font-medium transition-colors">
+              {t('nav.home')}
+            </Link>
+          </div>
           <Link to="/cases" className="text-gray-700 hover:text-syria-teal font-medium transition-colors">
             {t('nav.medicalCases')}
           </Link>
