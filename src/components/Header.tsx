@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import DonationModal from './DonationModal';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
+import Logo from './Logo';
 
 const Header = () => {
   const { t } = useTranslation();
@@ -26,9 +27,7 @@ const Header = () => {
     <header className="w-full bg-white shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-2">
-          <span className="text-2xl font-bold text-syria-teal">
-            SyriaHealthcare<span className="text-syria-red hidden"></span>
-          </span>
+          <Logo />
         </Link>
 
         {/* Desktop Navigation */}
