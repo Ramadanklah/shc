@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -19,7 +18,7 @@ const Header = () => {
   const openDonateModal = () => {
     setIsDonateModalOpen(true);
     if (isMenuOpen) {
-      setIsMenuOpen(false); // Close mobile menu when opening donate modal
+      setIsMenuOpen(false);
     }
   };
 
@@ -28,7 +27,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-2">
           <span className="text-2xl font-bold text-syria-teal">
-            SyriaHealthcare<span className="text-syria-red">.com</span>
+            SyriaHealthcare<span className="text-syria-red hidden"></span>
           </span>
         </Link>
 

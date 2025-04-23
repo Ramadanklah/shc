@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from "react-router-dom";
 
@@ -8,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-1">
-            <h3 className="text-xl font-bold mb-4">SyriaHealthcare<span className="text-syria-red">.com</span></h3>
+            <h3 className="text-xl font-bold mb-4">SyriaHealthcare<span className="text-syria-red hidden"></span></h3>
             <p className="text-gray-300 mb-4">
               Connecting donors with medical needs in Syria to save lives 
               and provide essential healthcare.
@@ -73,7 +72,7 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-gray-700">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              &copy; 2023 SyriaHealthcare.com. All rights reserved.
+              &copy; 2023 SyriaHealthcare. All rights reserved.
             </p>
             <div className="mt-4 md:mt-0 flex space-x-6">
               <Link to="/privacy" className="text-gray-400 hover:text-white text-sm">
