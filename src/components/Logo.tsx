@@ -10,7 +10,7 @@ const Logo = () => {
           <img 
             src="/lovable-uploads/338db15b-c9ba-4e53-a069-85d1fcf8e4df.png" 
             alt="Syria Healthcare Logo" 
-            className="h-24 w-auto transition-transform duration-300 group-hover:scale-105"
+            className="h-40 w-auto transition-transform duration-300 group-hover:scale-105"
           />
         </div>
       </div>
