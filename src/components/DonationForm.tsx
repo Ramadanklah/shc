@@ -1,11 +1,13 @@
 
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Loader2 } from "lucide-react";
+import { toast } from "sonner";
+import { supabase } from '@/integrations/supabase/client';
 
 const DONATION_OPTIONS = [50, 100, 250, 500, 1000];
 
@@ -14,6 +16,13 @@ const DonationForm = () => {
   const [customAmount, setCustomAmount] = useState("");
   const [isMonthly, setIsMonthly] = useState(false);
   const [step, setStep] = useState(1);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  // Form data for step 2
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [isAnonymous, setIsAnonymous] = useState(false);
+  const [receiveUpdates, setReceiveUpdates] = useState(true);
 
   const handleAmountSelect = (amount: number) => {
     setSelectedAmount(amount);
@@ -34,14 +43,64 @@ const DonationForm = () => {
     return 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
     if (step === 1) {
       setStep(2);
-    } else {
-      // In real implementation, this would process the payment
-      console.log("Processing donation of $", getActualAmount(), isMonthly ? "(monthly)" : "(one-time)");
-      alert("Thank you for your donation! This is a demo, so no payment will be processed.");
+      return;
+    }
+    
+    // Process payment in step 2
+    setIsSubmitting(true);
+    
+    try {
+      const amount = getActualAmount();
+      
+      // In a real implementation, this would integrate with a payment processor
+      // For now, we'll just add an entry to the donations table
+      
+      // Generate a mock transaction ID
+      const transactionId = `DEMO-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
+      
+      // Get current user if logged in
+      const { data: { session } } = await supabase.auth.getSession();
+      const userId = session?.user?.id;
+      
+      // Record donation
+      const { error } = await supabase.from('donations').insert({
+        amount,
+        is_monthly: isMonthly,
+        is_anonymous: isAnonymous,
+        donor_id: userId, // Will be null for non-logged in users
+        transaction_id: transactionId,
+        payment_status: 'completed' // In a real app, this would be updated by the payment processor webhook
+      });
+      
+      if (error) throw error;
+      
+      // Show success message
+      toast.success("Thank you for your donation!", {
+        description: `Your ${isMonthly ? "monthly" : "one-time"} donation of $${amount} has been processed.`,
+      });
+      
+      // Reset form
+      setStep(1);
+      setSelectedAmount(100);
+      setCustomAmount("");
+      setIsMonthly(false);
+      setFullName("");
+      setEmail("");
+      setIsAnonymous(false);
+      setReceiveUpdates(true);
+      
+    } catch (error) {
+      console.error("Donation error:", error);
+      toast.error("Donation processing error", {
+        description: "There was an error processing your donation. Please try again later.",
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -85,8 +144,10 @@ const DonationForm = () => {
                     key={amount}
                     type="button"
                     onClick={() => handleAmountSelect(amount)}
-                    className={`donation-option py-3 px-4 border-2 rounded-md font-medium transition-colors focus:outline-none ${
-                      selectedAmount === amount ? 'selected' : ''
+                    className={`py-3 px-4 border-2 rounded-md font-medium transition-colors focus:outline-none ${
+                      selectedAmount === amount 
+                        ? 'border-syria-teal text-syria-teal bg-syria-teal/5' 
+                        : 'border-gray-200 text-gray-700 hover:border-syria-teal/30'
                     }`}
                   >
                     ${amount}
@@ -124,11 +185,24 @@ const DonationForm = () => {
             <div className="space-y-4 mb-6">
               <div>
                 <Label htmlFor="full-name">Full Name</Label>
-                <Input id="full-name" placeholder="John Doe" required />
+                <Input 
+                  id="full-name" 
+                  placeholder="John Doe" 
+                  required 
+                  value={fullName}
+                  onChange={e => setFullName(e.target.value)}
+                />
               </div>
               <div>
                 <Label htmlFor="email">Email Address</Label>
-                <Input id="email" type="email" placeholder="john@example.com" required />
+                <Input 
+                  id="email" 
+                  type="email" 
+                  placeholder="john@example.com" 
+                  required
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                />
               </div>
               
               <div className="p-4 bg-gray-50 rounded-lg">
@@ -139,14 +213,22 @@ const DonationForm = () => {
               </div>
               
               <div className="flex items-start space-x-2">
-                <Checkbox id="anonymous" />
+                <Checkbox 
+                  id="anonymous" 
+                  checked={isAnonymous}
+                  onCheckedChange={(checked) => setIsAnonymous(checked === true)}
+                />
                 <Label htmlFor="anonymous" className="text-sm leading-tight">
                   Make this donation anonymous
                 </Label>
               </div>
               
               <div className="flex items-start space-x-2">
-                <Checkbox id="newsletter" defaultChecked />
+                <Checkbox 
+                  id="newsletter" 
+                  checked={receiveUpdates}
+                  onCheckedChange={(checked) => setReceiveUpdates(checked === true)}
+                />
                 <Label htmlFor="newsletter" className="text-sm leading-tight">
                   Send me updates about the impact of my donation
                 </Label>
@@ -159,14 +241,23 @@ const DonationForm = () => {
                 variant="outline" 
                 className="flex-1"
                 onClick={() => setStep(1)}
+                disabled={isSubmitting}
               >
                 Back
               </Button>
               <Button 
                 type="submit" 
                 className="bg-syria-teal hover:bg-syria-teal-dark text-white flex-1"
+                disabled={isSubmitting}
               >
-                Complete Donation
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    Processing...
+                  </>
+                ) : (
+                  "Complete Donation"
+                )}
               </Button>
             </div>
           </>

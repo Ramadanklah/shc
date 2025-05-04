@@ -3,15 +3,17 @@ import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { Link } from "react-router-dom";
-import { Upload, MessageCircle } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { Upload, MessageCircle, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { useTranslation } from 'react-i18next';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { supabase } from "@/integrations/supabase/client";
 
 const RegisterOrganisation = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   
   // Form state
   const [orgName, setOrgName] = useState("");
@@ -23,6 +25,7 @@ const RegisterOrganisation = () => {
   const [about, setAbout] = useState("");
   const [logoPreview, setLogoPreview] = useState<string | null>(null);
   const [whatsapp, setWhatsapp] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleLogoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -34,18 +37,114 @@ const RegisterOrganisation = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+    
+    // Validate form
     if (whatsapp && !whatsapp.match(/^\+?[1-9]\d{1,14}$/)) {
-      toast.error("Please enter a valid WhatsApp number");
+      toast.error(t('register.invalidWhatsapp'));
       return;
     }
 
-    // Placeholder for submit logic (to be replaced with backend/API logic)
-    alert(
-      "Organisation Registration Submitted!\n\nThis is a UI prototype. Backend integration and admin approval will be added later."
-    );
+    setIsSubmitting(true);
+    
+    try {
+      // Step 1: Register user account with email
+      const { data: authData, error: authError } = await supabase.auth.signUp({
+        email,
+        password: generateSecurePassword(), // In a real app, you would let the user choose their password
+        options: {
+          data: {
+            full_name: contactPerson,
+            org_name: orgName
+          }
+        }
+      });
+      
+      if (authError) throw authError;
+      
+      if (!authData.user) {
+        throw new Error("User registration failed");
+      }
+      
+      // Step 2: Create organization record
+      const { error: orgError } = await supabase
+        .from('organisations')
+        .insert({
+          id: authData.user.id,
+          name: orgName,
+          description: about,
+          location,
+          contact_person: contactPerson,
+          contact_email: email,
+          license,
+          whatsapp
+        });
+      
+      if (orgError) throw orgError;
+      
+      // Step 3: Upload logo if provided
+      if (logo) {
+        const fileExt = logo.name.split('.').pop();
+        const filePath = `${authData.user.id}/${Date.now()}.${fileExt}`;
+        
+        const { error: uploadError } = await supabase.storage
+          .from('org_logos')
+          .upload(filePath, logo);
+        
+        if (uploadError) {
+          console.error("Logo upload failed:", uploadError);
+          // Continue anyway, logo is optional
+        } else {
+          // Update organization with logo URL
+          const { data: urlData } = supabase.storage
+            .from('org_logos')
+            .getPublicUrl(filePath);
+          
+          await supabase
+            .from('organisations')
+            .update({ logo_url: urlData.publicUrl })
+            .eq('id', authData.user.id);
+        }
+      }
+      
+      // Success!
+      toast.success(t('register.success'), {
+        description: t('register.successDescription')
+      });
+      
+      // Clear form
+      setOrgName("");
+      setLogo(null);
+      setLocation("");
+      setContactPerson("");
+      setEmail("");
+      setLicense("");
+      setAbout("");
+      setLogoPreview(null);
+      setWhatsapp("");
+      
+      // Redirect to home page
+      setTimeout(() => navigate('/'), 2000);
+      
+    } catch (error) {
+      console.error("Registration error:", error);
+      toast.error(t('register.error'), {
+        description: error instanceof Error ? error.message : t('register.errorDescription')
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+  
+  // Generate a secure random password
+  const generateSecurePassword = () => {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()';
+    let password = '';
+    for (let i = 0; i < 16; i++) {
+      password += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return password;
   };
 
   return (
@@ -173,8 +272,16 @@ const RegisterOrganisation = () => {
                 className="bg-syria-teal hover:bg-syria-teal-dark text-white"
                 type="submit"
                 size="lg"
+                disabled={isSubmitting}
               >
-                {t('register.submit')}
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    {t('register.submitting')}
+                  </>
+                ) : (
+                  t('register.submit')
+                )}
               </Button>
               <Link to="/" className="text-syria-teal underline">
                 {t('register.cancel')}

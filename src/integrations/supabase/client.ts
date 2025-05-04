@@ -3,10 +3,15 @@
 import { createClient } from '@supabase/supabase-js';
 import type { Database } from './types';
 
+// The values below are safe to expose in the client-side code since they are public keys
+// and are restricted by Row Level Security policies on the server
 const SUPABASE_URL = "https://ckpgfjqinvxjlbbyiujh.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNrcGdmanFpbnZ4amxiYnlpdWpoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDYzNzc2NDksImV4cCI6MjA2MTk1MzY0OX0.wFCYP29g-QIesoM6Ai5qJB8fn22h19_64IhSYU0gN9Q";
 
-// Import the supabase client like this:
-// import { supabase } from "@/integrations/supabase/client";
-
-export const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+export const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
+  auth: {
+    autoRefreshToken: true,
+    persistSession: true,
+    storage: localStorage
+  }
+});
