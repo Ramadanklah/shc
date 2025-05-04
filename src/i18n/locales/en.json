@@ -6,7 +6,9 @@
     "volunteer": "Volunteer",
     "registerOrg": "Register Organisation",
     "orgContributions": "Organisation Contributions",
-    "donate": "Donate Now"
+    "donate": "Donate Now",
+    "signin": "Sign In",
+    "signout": "Sign Out"
   },
   "hero": {
     "title": "Help Save Lives in Syria",
@@ -165,5 +167,36 @@
       "title": "Medical Supplies for Rural Clinic",
       "description": "This clinic in rural Idlib serves over 200 patients weekly. Your donation will provide essential medicines and supplies for three months."
     }
+  },
+  "auth": {
+    "signinTitle": "Sign In",
+    "signinDescription": "Sign in to your account to access your organization profile",
+    "signupTitle": "Sign Up",
+    "signupDescription": "Create a new account to get started",
+    "signin": "Sign In",
+    "signup": "Sign Up",
+    "signingIn": "Signing in...",
+    "signingUp": "Signing up...",
+    "email": "Email",
+    "password": "Password",
+    "noAccount": "Don't have an account? Sign up",
+    "haveAccount": "Already have an account? Sign in",
+    "signinSuccess": "Signed in successfully!",
+    "signupSuccess": "Account created successfully!",
+    "signupVerification": "Please check your email for verification instructions",
+    "signinError": "Failed to sign in",
+    "signupError": "Failed to sign up",
+    "errorDescription": "Please try again later"
+  },
+  "organisations": {
+    "noProfile": "No Organization Profile",
+    "registerFirst": "You need to register your organization before you can access this page.",
+    "register": "Register Organization",
+    "createProfile": "Please register your organization to continue"
+  },
+  "errors": {
+    "fetchFailed": "Failed to fetch data",
+    "submissionFailed": "Failed to submit form",
+    "unknown": "An unknown error occurred"
   }
 }

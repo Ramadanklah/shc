@@ -80,8 +80,18 @@ export const registerOrganisation = async (
   
   // Send password reset email so user can set their own password
   await supabase.auth.resetPasswordForEmail(values.email, {
-    redirectTo: `${window.location.origin}/reset-password`,
+    redirectTo: `${window.location.origin}/auth`,
   });
+
+  // Attempt to sign in the user immediately 
+  const { error: signInError } = await supabase.auth.signInWithPassword({
+    email: values.email,
+    password: password
+  });
+  
+  if (signInError) {
+    console.error("Auto sign-in failed, user will need to check email for password reset:", signInError);
+  }
 
   return authData.user;
 };

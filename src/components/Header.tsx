@@ -1,15 +1,25 @@
 
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { Menu, X, User, LogOut } from "lucide-react";
 import DonationModal from './DonationModal';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
 import Logo from './Logo';
+import { useAuth } from '@/contexts/AuthContext';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const { user, signOut } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDonateModalOpen, setIsDonateModalOpen] = useState(false);
 
@@ -22,6 +32,11 @@ const Header = () => {
     if (isMenuOpen) {
       setIsMenuOpen(false);
     }
+  };
+
+  const handleSignOut = async () => {
+    await signOut();
+    navigate('/');
   };
 
   return (
@@ -47,13 +62,44 @@ const Header = () => {
           <Link to="/volunteer" className="text-gray-700 hover:text-syria-teal font-medium transition-colors">
             {t('nav.volunteer')}
           </Link>
-          <Link to="/register-organisation" className="text-gray-700 hover:text-syria-teal font-semibold transition-colors">
-            {t('nav.registerOrg')}
-          </Link>
-          <Link to="/organisations/contributions" className="text-gray-700 hover:text-syria-teal font-semibold transition-colors">
-            {t('nav.orgContributions')}
-          </Link>
+          {!user ? (
+            <Link to="/register-organisation" className="text-gray-700 hover:text-syria-teal font-semibold transition-colors">
+              {t('nav.registerOrg')}
+            </Link>
+          ) : (
+            <Link to="/organisations/contributions" className="text-gray-700 hover:text-syria-teal font-semibold transition-colors">
+              {t('nav.orgContributions')}
+            </Link>
+          )}
           <LanguageSwitcher />
+          {!user ? (
+            <Link to="/auth">
+              <Button variant="outline" className="border-syria-teal text-syria-teal hover:bg-syria-teal hover:text-white">
+                {t('nav.signin')}
+              </Button>
+            </Link>
+          ) : (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" className="border-syria-teal">
+                  <User className="w-4 h-4 mr-2" />
+                  {user.email?.split('@')[0]}
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem>
+                  <Link to="/organisations/contributions" className="flex items-center w-full">
+                    {t('nav.orgContributions')}
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={handleSignOut} className="text-red-600 cursor-pointer">
+                  <LogOut className="w-4 h-4 mr-2" />
+                  {t('nav.signout')}
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          )}
           <Button 
             className="bg-syria-teal hover:bg-syria-teal-dark text-white ml-2"
             onClick={openDonateModal}
@@ -108,20 +154,45 @@ const Header = () => {
             >
               {t('nav.volunteer')}
             </Link>
-            <Link 
-              to="/register-organisation"
-              className="text-gray-700 hover:text-syria-teal font-semibold py-2 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t('nav.registerOrg')}
-            </Link>
-            <Link 
-              to="/organisations/contributions"
-              className="text-gray-700 hover:text-syria-teal font-semibold py-2 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t('nav.orgContributions')}
-            </Link>
+            {!user ? (
+              <Link 
+                to="/register-organisation"
+                className="text-gray-700 hover:text-syria-teal font-semibold py-2 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('nav.registerOrg')}
+              </Link>
+            ) : (
+              <Link 
+                to="/organisations/contributions"
+                className="text-gray-700 hover:text-syria-teal font-semibold py-2 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('nav.orgContributions')}
+              </Link>
+            )}
+            {!user ? (
+              <Link 
+                to="/auth"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <Button className="w-full bg-syria-teal hover:bg-syria-teal-dark">
+                  {t('nav.signin')}
+                </Button>
+              </Link>
+            ) : (
+              <Button 
+                onClick={async () => {
+                  await handleSignOut();
+                  setIsMenuOpen(false);
+                }}
+                variant="outline"
+                className="w-full text-red-600 border-red-600 hover:bg-red-50"
+              >
+                <LogOut className="w-4 h-4 mr-2" />
+                {t('nav.signout')}
+              </Button>
+            )}
             <Button 
               className="bg-syria-teal hover:bg-syria-teal-dark text-white mt-2 w-full"
               onClick={openDonateModal}
