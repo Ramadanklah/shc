@@ -12,6 +12,6 @@ export const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABL
   auth: {
     autoRefreshToken: true,
     persistSession: true,
-    storage: localStorage
+    storage: typeof localStorage !== 'undefined' ? localStorage : undefined
   }
 });
