@@ -1,5 +1,6 @@
 
 import { supabase } from "@/integrations/supabase/client";
+import { OrganisationFormValues } from "./schema";
 
 // Generate a secure random password
 export const generateSecurePassword = () => {
@@ -12,15 +13,7 @@ export const generateSecurePassword = () => {
 };
 
 export const registerOrganisation = async (
-  values: {
-    orgName: string;
-    location: string;
-    contactPerson: string;
-    email: string;
-    license?: string;
-    about?: string;
-    whatsapp?: string;
-  }, 
+  values: OrganisationFormValues, 
   logo: File | null
 ) => {
   // Generate a secure password
