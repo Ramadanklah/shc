@@ -1,3 +1,4 @@
+
 {
   "nav": {
     "home": "Startseite",
@@ -25,6 +26,13 @@
     "amountRaised": "gesammelt",
     "of": "von",
     "funded": "finanziert"
+  },
+  "hospitals": {
+    "title": "Krankenhäuser in Syrien",
+    "subtitle": "Diese Krankenhäuser bieten wesentliche Gesundheitsversorgung in ganz Syrien.",
+    "viewAll": "Alle Krankenhäuser anzeigen",
+    "bedCount": "Betten",
+    "location": "Standort"
   },
   "about": {
     "title": "Über Uns",
@@ -124,8 +132,8 @@
     "submitDescription": "Ihr Beitrag von {title} wartet auf Genehmigung."
   },
   "caseDetail": {
-    "notFound": "Fall nicht gefunden",
-    "back": "Zurück zu medizinischen Fällen",
+    "notFound": "Krankenhaus nicht gefunden",
+    "back": "Zurück zur Krankenhausliste",
     "donate": "Spenden",
     "contact": "Kontakt über WhatsApp"
   },

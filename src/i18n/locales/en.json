@@ -1,3 +1,4 @@
+
 {
   "nav": {
     "home": "Home",
@@ -27,6 +28,13 @@
     "amountRaised": "raised",
     "of": "of",
     "funded": "funded"
+  },
+  "hospitals": {
+    "title": "Hospitals in Syria",
+    "subtitle": "These hospitals provide essential healthcare services across Syria.",
+    "viewAll": "View All Hospitals",
+    "bedCount": "Beds",
+    "location": "Location"
   },
   "about": {
     "title": "About Us",
@@ -126,8 +134,8 @@
     "submitDescription": "Your contribution of {title} is pending approval."
   },
   "caseDetail": {
-    "notFound": "Equipment Need Not Found",
-    "back": "Back to Equipment Needs",
+    "notFound": "Hospital Not Found",
+    "back": "Back to Hospitals List",
     "donate": "Donate",
     "contact": "Contact via WhatsApp"
   },

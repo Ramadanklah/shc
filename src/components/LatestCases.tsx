@@ -1,35 +1,36 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import CaseCard from "./CaseCard";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { Card } from "@/components/ui/card";
+import { Hospital, MapPin } from "lucide-react";
 
 const LatestCases = () => {
   const { t } = useTranslation();
   
-  // Sample data for the latest equipment needs
-  const LATEST_EQUIPMENT = [
+  // Sample data for featured hospitals
+  const FEATURED_HOSPITALS = [
     {
-      id: "case-001",
-      title: t('medicalCases.case1.title'),
-      description: t('medicalCases.case1.description'),
-      image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80",
-      urgency: 'high' as const,
+      id: "001",
+      name: "Al-Assad Krankenhaus",
+      location: "Damaskus",
+      beds: 800,
+      description: "Ein großes, staatliches Krankenhaus, das eine breite Palette an Fachrichtungen abdeckt."
     },
     {
-      id: "case-002",
-      title: t('medicalCases.case2.title'),
-      description: t('medicalCases.case2.description'),
-      image: "https://images.unsplash.com/photo-1631815588090-d4bfec5b19b1?auto=format&fit=crop&q=80",
-      urgency: 'medium' as const,
+      id: "006",
+      name: "Al-Kindi Krankenhaus",
+      location: "Aleppo",
+      beds: 350,
+      description: "Ein bedeutendes Krankenhaus, das sowohl die Bevölkerung in Aleppo als auch die umliegenden Regionen versorgt."
     },
     {
-      id: "case-003",
-      title: t('medicalCases.case3.title'),
-      description: t('medicalCases.case3.description'),
-      image: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&q=80",
-      urgency: 'low' as const,
+      id: "020",
+      name: "Deir ez-Zor Krankenhaus",
+      location: "Deir ez-Zor",
+      beds: 150,
+      description: "Ein Krankenhaus, das die Gesundheitsversorgung für die Region Deir ez-Zor übernimmt."
     }
   ];
 
@@ -37,22 +38,39 @@ const LatestCases = () => {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-syria-dark">{t('cases.title')}</h2>
+          <h2 className="text-3xl font-bold mb-4 text-syria-dark">{t('hospitals.title')}</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            {t('cases.subtitle')}
+            {t('hospitals.subtitle')}
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {LATEST_EQUIPMENT.map(caseItem => (
-            <CaseCard 
-              key={caseItem.id}
-              id={caseItem.id}
-              title={caseItem.title}
-              description={caseItem.description}
-              image={caseItem.image}
-              urgency={caseItem.urgency}
-            />
+          {FEATURED_HOSPITALS.map(hospital => (
+            <Card key={hospital.id} className="overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+              <div className="p-5">
+                <div className="flex items-center mb-2">
+                  <Hospital className="w-5 h-5 text-syria-teal mr-2" />
+                  <div className="text-syria-teal font-medium">{hospital.name}</div>
+                </div>
+                <div className="flex items-center mb-2 text-sm text-gray-500">
+                  <MapPin className="w-4 h-4 mr-1" />
+                  {hospital.location}
+                </div>
+                <div className="mb-3 text-sm font-medium">
+                  {t('hospitals.bedCount')}: ~{hospital.beds}
+                </div>
+                <p className="mb-4 text-gray-600 text-sm">{hospital.description}</p>
+                
+                <div className="mt-4">
+                  <Button 
+                    className="w-full bg-syria-teal hover:bg-syria-teal-dark"
+                    asChild
+                  >
+                    <Link to={`/cases/${hospital.id}`}>{t('cases.details')}</Link>
+                  </Button>
+                </div>
+              </div>
+            </Card>
           ))}
         </div>
         
@@ -62,7 +80,7 @@ const LatestCases = () => {
             className="border-syria-teal text-syria-teal hover:bg-syria-teal/10"
             asChild
           >
-            <Link to="/cases">{t('cases.viewAll')}</Link>
+            <Link to="/cases">{t('hospitals.viewAll')}</Link>
           </Button>
         </div>
       </div>
