@@ -5,7 +5,6 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { MessageCircle } from "lucide-react";
-import DonationModal from "@/components/DonationModal";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useTranslation } from 'react-i18next';
@@ -40,7 +39,6 @@ const CASES = [
 const CaseDetailPage: React.FC = () => {
   const { id } = useParams();
   const caseDetail = CASES.find((c) => c.id === id);
-  const [showModal, setShowModal] = useState(false);
   const { t } = useTranslation();
 
   if (!caseDetail) {
@@ -84,10 +82,13 @@ const CaseDetailPage: React.FC = () => {
             
             <div className="flex gap-4 mt-4">
               <Button
-                className="flex-1 bg-syria-teal hover:bg-syria-teal-dark text-white"
-                onClick={() => setShowModal(true)}
+                variant="outline"
+                className="flex-1 border-syria-teal text-syria-teal hover:bg-syria-teal/10"
+                asChild
               >
-                {t('caseDetail.donate')}
+                <Link to="/register-organisation">
+                  {t('register.submit')}
+                </Link>
               </Button>
               <Button
                 variant="outline"
@@ -104,7 +105,6 @@ const CaseDetailPage: React.FC = () => {
                 </a>
               </Button>
             </div>
-            <DonationModal open={showModal} onOpenChange={setShowModal} />
           </Card>
           <div className="text-center">
             <Link to="/cases">

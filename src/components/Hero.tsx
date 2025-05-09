@@ -1,5 +1,4 @@
 
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -30,10 +29,10 @@ const Hero: React.FC<HeroProps> = ({ openDonateModal }) => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button 
-              className="bg-syria-teal hover:bg-syria-teal-dark text-white text-lg py-6 px-8" 
-              onClick={openDonateModal}
+              className="bg-syria-teal hover:bg-syria-teal-dark text-white text-lg py-6 px-8"
+              asChild
             >
-              {t('hero.donateButton')}
+              <Link to="/register-organisation">{t('register.submit')}</Link>
             </Button>
             <Button 
               variant="outline" 

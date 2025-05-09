@@ -104,7 +104,7 @@ const Header = () => {
             className="bg-syria-teal hover:bg-syria-teal-dark text-white ml-2"
             onClick={openDonateModal}
           >
-            {t('nav.donate')}
+            {t('about.about')}
           </Button>
         </nav>
 
@@ -197,13 +197,13 @@ const Header = () => {
               className="bg-syria-teal hover:bg-syria-teal-dark text-white mt-2 w-full"
               onClick={openDonateModal}
             >
-              {t('nav.donate')}
+              {t('about.about')}
             </Button>
           </div>
         </div>
       )}
 
-      {/* Donation Modal */}
+      {/* About Modal (replaced Donation Modal) */}
       <DonationModal open={isDonateModalOpen} onOpenChange={setIsDonateModalOpen} />
     </header>
   );

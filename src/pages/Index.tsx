@@ -1,10 +1,10 @@
+
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import LatestCases from "../components/LatestCases";
-import DonationForm from "../components/DonationForm";
 import AboutSection from "../components/AboutSection";
 import Footer from "../components/Footer";
 import DonationModal from "../components/DonationModal";
@@ -72,16 +72,28 @@ const Index = () => {
                   </div>
                 </div>
                 <Button 
-                  className="bg-syria-teal hover:bg-syria-teal-dark text-white animate-pulse-gentle"
+                  className="bg-syria-teal hover:bg-syria-teal-dark text-white"
                   size="lg"
-                  onClick={openDonateModal}
+                  asChild
                 >
-                  {t('nav.donate')}
+                  <Link to="/register-organisation">{t('nav.registerOrg')}</Link>
                 </Button>
               </div>
               
-              <div>
-                <DonationForm />
+              <div className="bg-white p-8 rounded-lg shadow-md">
+                <h3 className="text-2xl font-bold mb-4 text-syria-dark text-center">
+                  {t('register.title')}
+                </h3>
+                <p className="text-gray-600 mb-6 text-center">
+                  Register your organization to contribute resources, equipment, or volunteer services.
+                </p>
+                <Button 
+                  className="w-full bg-syria-teal hover:bg-syria-teal-dark text-white py-6"
+                  size="lg"
+                  asChild
+                >
+                  <Link to="/register-organisation">{t('register.submit')}</Link>
+                </Button>
               </div>
             </div>
           </div>
@@ -160,9 +172,9 @@ const Index = () => {
               <Button 
                 className="bg-white text-syria-teal hover:bg-gray-100"
                 size="lg"
-                onClick={openDonateModal}
+                asChild
               >
-                {t('joinMission.donate')}
+                <Link to="/register-organisation">{t('register.submit')}</Link>
               </Button>
               <Button 
                 variant="outline" 
