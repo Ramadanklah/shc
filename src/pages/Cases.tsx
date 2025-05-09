@@ -16,21 +16,18 @@ const CasesPage: React.FC = () => {
       patient: t('medicalCases.case1.patient'),
       title: t('medicalCases.case1.title'),
       description: t('medicalCases.case1.description'),
-      goalAmount: 175000,
     },
     {
       id: "002",
       patient: t('medicalCases.case2.patient'),
       title: t('medicalCases.case2.title'),
       description: t('medicalCases.case2.description'),
-      goalAmount: 50000,
     },
     {
       id: "003",
       patient: t('medicalCases.case3.patient'),
       title: t('medicalCases.case3.title'),
       description: t('medicalCases.case3.description'),
-      goalAmount: 25000,
     },
   ];
 
@@ -47,9 +44,6 @@ const CasesPage: React.FC = () => {
                   <div className="mb-2 text-syria-teal font-medium text-sm">{c.patient}</div>
                   <h2 className="text-xl font-bold mb-2">{c.title}</h2>
                   <p className="mb-4 text-gray-600">{c.description}</p>
-                  <div className="text-sm mb-2">
-                    <span className="text-gray-500">{t('cases.estimatedCost')}: ${c.goalAmount.toLocaleString()}</span>
-                  </div>
                   <Button asChild className="mt-auto bg-syria-teal hover:bg-syria-teal-dark">
                     <Link to={`/cases/${c.id}`}>{t('cases.details')}</Link>
                   </Button>

@@ -9,7 +9,6 @@ interface CaseCardProps {
   title: string;
   description: string;
   image: string;
-  goalAmount: number;
   urgency: 'low' | 'medium' | 'high';
 }
 

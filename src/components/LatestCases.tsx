@@ -15,7 +15,6 @@ const LatestCases = () => {
       title: t('medicalCases.case1.title'),
       description: t('medicalCases.case1.description'),
       image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80",
-      goalAmount: 175000,
       urgency: 'high' as const,
     },
     {
@@ -23,7 +22,6 @@ const LatestCases = () => {
       title: t('medicalCases.case2.title'),
       description: t('medicalCases.case2.description'),
       image: "https://images.unsplash.com/photo-1631815588090-d4bfec5b19b1?auto=format&fit=crop&q=80",
-      goalAmount: 50000,
       urgency: 'medium' as const,
     },
     {
@@ -31,7 +29,6 @@ const LatestCases = () => {
       title: t('medicalCases.case3.title'),
       description: t('medicalCases.case3.description'),
       image: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&q=80",
-      goalAmount: 25000,
       urgency: 'low' as const,
     }
   ];
@@ -54,7 +51,6 @@ const LatestCases = () => {
               title={caseItem.title}
               description={caseItem.description}
               image={caseItem.image}
-              goalAmount={caseItem.goalAmount}
               urgency={caseItem.urgency}
             />
           ))}

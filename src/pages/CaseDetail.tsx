@@ -14,21 +14,18 @@ const EQUIPMENT_NEEDS = [
     patient: "Deir al-Zor Hospital",
     title: "MRI Machine for Deir al-Zor Hospital",
     description: "The main hospital in Deir al-Zor urgently needs an MRI machine to diagnose hundreds of patients monthly. This 1.5T MRI system will enable accurate diagnosis of neurological conditions, injuries, and other critical health issues. The hospital currently transfers patients over 100km for these scans, delaying critical care and putting patients at risk during transport. Your support will help purchase and install this critical equipment, serving a population of over 500,000 people in eastern Syria.",
-    goalAmount: 175000,
   },
   {
     id: "002",
     patient: "Idlib Medical Center",
     title: "Ventilators for Idlib Medical Center",
     description: "Idlib Medical Center requires additional ventilators to treat respiratory conditions and support critical care patients. These advanced life-support devices will be used in the ICU for patients with severe breathing difficulties. Contributions will fund 5 units for their intensive care department, helping save lives during emergencies and for ongoing respiratory support.",
-    goalAmount: 50000,
   },
   {
     id: "003",
     patient: "Rural Damascus Clinic",
     title: "Ultrasound Equipment for Rural Clinics",
     description: "Mobile clinics serving rural Damascus need portable ultrasound devices to provide essential diagnostic services to remote communities. These portable units will enable prenatal care, emergency diagnostics, and general healthcare in areas with limited access to medical facilities. Your contribution will provide 3 high-quality portable ultrasound machines serving over 200 patients weekly across multiple villages.",
-    goalAmount: 25000,
   },
 ];
 
@@ -68,10 +65,6 @@ const CaseDetailPage: React.FC = () => {
             <div className="mb-2 text-syria-teal font-medium text-sm">{equipmentNeed.patient}</div>
             <h1 className="text-2xl font-bold mb-2">{equipmentNeed.title}</h1>
             <p className="mb-4 text-gray-600">{equipmentNeed.description}</p>
-            
-            <div className="text-sm mb-4">
-              <span className="text-gray-500">{t('cases.estimatedCost')}: ${equipmentNeed.goalAmount.toLocaleString()}</span>
-            </div>
             
             <div className="flex gap-4 mt-4">
               <Button
