@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Card } from "@/components/ui/card";
-import { Hospital, MapPin } from "lucide-react";
+import { Hospital, MapPin, TestTube } from "lucide-react";
 
 const LatestCases = () => {
   const { t } = useTranslation();
@@ -16,21 +16,33 @@ const LatestCases = () => {
       name: "Al-Assad Krankenhaus",
       location: "Damaskus",
       beds: 800,
-      description: "Ein großes, staatliches Krankenhaus, das eine breite Palette an Fachrichtungen abdeckt."
+      description: "Ein großes, staatliches Krankenhaus, das eine breite Palette an Fachrichtungen abdeckt.",
+      equipment_needs: [
+        { id: "e001", name: "MRI-Gerät", urgency: "high", quantity: 1 },
+        { id: "e002", name: "Beatmungsgeräte", urgency: "medium", quantity: 5 }
+      ]
     },
     {
       id: "006",
       name: "Al-Kindi Krankenhaus",
       location: "Aleppo",
       beds: 350,
-      description: "Ein bedeutendes Krankenhaus, das sowohl die Bevölkerung in Aleppo als auch die umliegenden Regionen versorgt."
+      description: "Ein bedeutendes Krankenhaus, das sowohl die Bevölkerung in Aleppo als auch die umliegenden Regionen versorgt.",
+      equipment_needs: [
+        { id: "e012", name: "Röntgengerät", urgency: "high", quantity: 1 },
+        { id: "e013", name: "Notfallwagen", urgency: "high", quantity: 3 }
+      ]
     },
     {
       id: "020",
       name: "Deir ez-Zor Krankenhaus",
       location: "Deir ez-Zor",
       beds: 150,
-      description: "Ein Krankenhaus, das die Gesundheitsversorgung für die Region Deir ez-Zor übernimmt."
+      description: "Ein Krankenhaus, das die Gesundheitsversorgung für die Region Deir ez-Zor übernimmt.",
+      equipment_needs: [
+        { id: "e040", name: "MRI-Gerät", urgency: "high", quantity: 1 },
+        { id: "e042", name: "Dialysegeräte", urgency: "high", quantity: 3 }
+      ]
     }
   ];
 
@@ -60,6 +72,26 @@ const LatestCases = () => {
                   {t('hospitals.bedCount')}: ~{hospital.beds}
                 </div>
                 <p className="mb-4 text-gray-600 text-sm">{hospital.description}</p>
+                
+                {/* Equipment Needs */}
+                <div className="mb-4">
+                  <h3 className="text-sm font-medium mb-2 flex items-center">
+                    <TestTube className="w-4 h-4 mr-1 text-syria-teal" />
+                    {t('hospitals.topNeeds')}:
+                  </h3>
+                  <ul className="text-sm text-gray-600 space-y-1">
+                    {hospital.equipment_needs.map((need, index) => (
+                      <li key={need.id} className="flex items-center justify-between">
+                        <span>{need.name}</span>
+                        {need.urgency === 'high' && (
+                          <span className="bg-syria-red text-white px-2 py-0.5 rounded-full text-xs">
+                            {t('cases.urgent')}
+                          </span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
                 
                 <div className="mt-4">
                   <Button 

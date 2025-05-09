@@ -1,4 +1,3 @@
-
 {
   "nav": {
     "home": "Startseite",
@@ -32,7 +31,16 @@
     "subtitle": "Diese Krankenhäuser bieten wesentliche Gesundheitsversorgung in ganz Syrien.",
     "viewAll": "Alle Krankenhäuser anzeigen",
     "bedCount": "Betten",
-    "location": "Standort"
+    "location": "Standort",
+    "generalInfo": "Allgemeine Informationen",
+    "equipmentNeeds": "Ausrüstungsbedarf",
+    "requiredEquipment": "Benötigte Medizinische Ausrüstung",
+    "quantity": "Benötigte Menge",
+    "equipmentNeeded": "Benötigte Ausrüstung",
+    "topNeeds": "Wichtigster Ausrüstungsbedarf",
+    "filterByLocation": "Nach Standort filtern",
+    "allLocations": "Alle Standorte",
+    "moreItems": "weitere Artikel"
   },
   "about": {
     "title": "Über Uns",

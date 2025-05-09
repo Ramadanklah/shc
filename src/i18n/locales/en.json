@@ -34,7 +34,16 @@
     "subtitle": "These hospitals provide essential healthcare services across Syria.",
     "viewAll": "View All Hospitals",
     "bedCount": "Beds",
-    "location": "Location"
+    "location": "Location",
+    "generalInfo": "General Information",
+    "equipmentNeeds": "Equipment Needs",
+    "requiredEquipment": "Required Medical Equipment",
+    "quantity": "Quantity Needed",
+    "equipmentNeeded": "Equipment Needed",
+    "topNeeds": "Top Equipment Needs",
+    "filterByLocation": "Filter by Location",
+    "allLocations": "All Locations",
+    "moreItems": "more items"
   },
   "about": {
     "title": "About Us",
