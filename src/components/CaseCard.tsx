@@ -81,7 +81,7 @@ const CaseCard: React.FC<CaseCardProps> = ({
             className="bg-syria-teal hover:bg-syria-teal-dark text-white"
             asChild
           >
-            <Link to={`/cases/${id}`}>View Case</Link>
+            <Link to={`/cases/${id}`}>View Details</Link>
           </Button>
         </div>
       </div>

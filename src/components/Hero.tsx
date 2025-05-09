@@ -16,7 +16,7 @@ const Hero: React.FC<HeroProps> = ({ openDonateModal }) => {
       <div 
         className="absolute inset-0 bg-cover bg-center opacity-10"
         style={{ 
-          backgroundImage: "url('https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&q=80')" 
+          backgroundImage: "url('https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80')" 
         }}
       ></div>
       <div className="container mx-auto px-4 py-20 md:py-32 relative">

@@ -11,22 +11,22 @@ import Footer from "@/components/Footer";
 const CasesPage: React.FC = () => {
   const { t } = useTranslation();
 
-  const medicalCases = [
+  const equipmentNeeds = [
     {
       id: "001",
       patient: t('medicalCases.case1.patient'),
       title: t('medicalCases.case1.title'),
       description: t('medicalCases.case1.description'),
-      amountRaised: 4230,
-      goalAmount: 7500,
+      amountRaised: 42300,
+      goalAmount: 175000,
     },
     {
       id: "002",
       patient: t('medicalCases.case2.patient'),
       title: t('medicalCases.case2.title'),
       description: t('medicalCases.case2.description'),
-      amountRaised: 2845,
-      goalAmount: 5000,
+      amountRaised: 28450,
+      goalAmount: 50000,
     },
     {
       id: "003",
@@ -34,7 +34,7 @@ const CasesPage: React.FC = () => {
       title: t('medicalCases.case3.title'),
       description: t('medicalCases.case3.description'),
       amountRaised: 12300,
-      goalAmount: 15000,
+      goalAmount: 25000,
     },
   ];
 
@@ -45,7 +45,7 @@ const CasesPage: React.FC = () => {
         <div className="container mx-auto px-4">
           <h1 className="text-3xl font-bold text-syria-dark mb-8">{t('cases.title')}</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {medicalCases.map((c) => {
+            {equipmentNeeds.map((c) => {
               const percent = Math.min((c.amountRaised / c.goalAmount) * 100, 100);
               return (
                 <Card key={c.id} className="p-6 shadow flex flex-col">

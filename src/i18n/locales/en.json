@@ -1,7 +1,7 @@
 {
   "nav": {
     "home": "Home",
-    "medicalCases": "Medical Cases",
+    "medicalCases": "Medical Equipment",
     "about": "About Us",
     "volunteer": "Volunteer",
     "registerOrg": "Register Organisation",
@@ -11,16 +11,16 @@
     "signout": "Sign Out"
   },
   "hero": {
-    "title": "Help Save Lives in Syria",
-    "subtitle": "Your donation directly funds critical medical care for those who need it most. Join us in providing hope and healing to Syrian families affected by crisis.",
+    "title": "Help Supply Essential Medical Equipment to Syria",
+    "subtitle": "Your contribution directly helps provide critical medical equipment for hospitals and clinics that need it most. Join us in equipping Syrian healthcare facilities affected by crisis.",
     "donateButton": "Donate Now",
-    "viewCases": "View Medical Cases",
-    "joinedDonors": "donors who've already made a difference"
+    "viewCases": "View Equipment Needs",
+    "joinedDonors": "contributors who've already made a difference"
   },
   "cases": {
-    "title": "Current Medical Cases",
-    "subtitle": "These individuals and communities urgently need medical assistance. Your contribution can make the difference between life and death.",
-    "viewAll": "View All Medical Cases",
+    "title": "Current Equipment Needs",
+    "subtitle": "These hospitals and clinics urgently need medical equipment. Your contribution can make the difference in healthcare delivery.",
+    "viewAll": "View All Equipment Needs",
     "urgent": "Urgent",
     "highNeed": "High Need",
     "details": "View Details",
@@ -126,46 +126,46 @@
     "submitDescription": "Your contribution of {title} is pending approval."
   },
   "caseDetail": {
-    "notFound": "Case Not Found",
-    "back": "Back to Medical Cases",
+    "notFound": "Equipment Need Not Found",
+    "back": "Back to Equipment Needs",
     "donate": "Donate",
     "contact": "Contact via WhatsApp"
   },
   "mission": {
     "title": "Our Mission",
-    "text1": "SyriaHealthcare.com connects medical professionals and donors to provide critical healthcare to families affected by the ongoing crisis in Syria.",
-    "text2": "We ensure your donation directly funds medical procedures, supplies, and transportation for patients who would otherwise have no access to care.",
-    "text3": "Through transparency and accountability, we focus on making the biggest impact possible with every dollar contributed.",
+    "text1": "SyriaHealthcare.com connects medical organizations and contributors to provide critical medical equipment to facilities affected by the ongoing crisis in Syria.",
+    "text2": "We ensure your contribution directly helps supply medical equipment and technology for hospitals and clinics that would otherwise have no access to essential tools.",
+    "text3": "Through transparency and accountability, we focus on making the biggest impact possible with every contribution.",
     "learnMore": "Learn More",
-    "donationImpact": "of donations go to medical aid",
+    "donationImpact": "of contributions go to medical facilities",
     "stats": {
-      "cases": "Medical Cases Funded",
-      "donations": "Total Donations",
+      "cases": "Equipment Needs Fulfilled",
+      "donations": "Total Contributions",
       "hospitals": "Partner Hospitals",
       "doctors": "Volunteer Doctors"
     }
   },
   "joinMission": {
     "title": "Join Our Mission Today",
-    "text": "Every donation, no matter how small, contributes to saving lives and providing critical healthcare to those who need it most in Syria.",
+    "text": "Every contribution, no matter how small, helps equip hospitals and clinics with the tools they need to save lives in Syria.",
     "donate": "Make a Donation",
     "volunteer": "Volunteer With Us"
   },
   "medicalCases": {
     "case1": {
-      "patient": "Layla (9yo)",
-      "title": "Emergency Surgery for 9-year-old Layla",
-      "description": "Layla needs urgent surgery following injuries sustained in Aleppo. Your support will help cover surgical costs and essential post-operative care."
+      "patient": "Deir al-Zor Hospital",
+      "title": "MRI Machine for Deir al-Zor Hospital",
+      "description": "The main hospital in Deir al-Zor urgently needs an MRI machine to diagnose hundreds of patients monthly. Your support will help purchase and install this critical equipment."
     },
     "case2": {
-      "patient": "Ahmad (45yo)",
-      "title": "Dialysis Treatment for Ahmad",
-      "description": "Ahmad requires ongoing dialysis after kidney failure. Donations cover 6 months of therapy."
+      "patient": "Idlib Medical Center",
+      "title": "Ventilators for Idlib Medical Center",
+      "description": "This facility requires additional ventilators to treat respiratory conditions. Contributions will fund 5 units for their ICU."
     },
     "case3": {
-      "patient": "Anonymous",
-      "title": "Medical Supplies for Rural Clinic",
-      "description": "This clinic in rural Idlib serves over 200 patients weekly. Your donation will provide essential medicines and supplies for three months."
+      "patient": "Rural Damascus Clinic",
+      "title": "Ultrasound Equipment for Rural Clinics",
+      "description": "Mobile clinics in rural Damascus need portable ultrasound devices. Your contribution will provide 3 units serving over 200 patients weekly."
     }
   },
   "auth": {

@@ -9,32 +9,32 @@ const LatestCases = () => {
   const { t } = useTranslation();
   
   // Sample data for the latest cases with translations
-  const LATEST_CASES = [
+  const LATEST_EQUIPMENT = [
     {
       id: "case-001",
       title: t('medicalCases.case1.title'),
       description: t('medicalCases.case1.description'),
-      image: "https://images.unsplash.com/photo-1612531385446-f7e6d131e1d0?auto=format&fit=crop&q=80",
-      amountRaised: 4230,
-      goalAmount: 7500,
+      image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80",
+      amountRaised: 42300,
+      goalAmount: 175000,
       urgency: 'high' as const,
     },
     {
       id: "case-002",
       title: t('medicalCases.case2.title'),
       description: t('medicalCases.case2.description'),
-      image: "https://images.unsplash.com/photo-1504813184591-01572f98c85f?auto=format&fit=crop&q=80",
-      amountRaised: 2845,
-      goalAmount: 5000,
+      image: "https://images.unsplash.com/photo-1631815588090-d4bfec5b19b1?auto=format&fit=crop&q=80",
+      amountRaised: 28450,
+      goalAmount: 50000,
       urgency: 'medium' as const,
     },
     {
       id: "case-003",
       title: t('medicalCases.case3.title'),
       description: t('medicalCases.case3.description'),
-      image: "https://images.unsplash.com/photo-1504439468489-c8920d796a29?auto=format&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&q=80",
       amountRaised: 12300,
-      goalAmount: 15000,
+      goalAmount: 25000,
       urgency: 'low' as const,
     }
   ];
@@ -50,7 +50,7 @@ const LatestCases = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {LATEST_CASES.map(caseItem => (
+          {LATEST_EQUIPMENT.map(caseItem => (
             <CaseCard 
               key={caseItem.id}
               id={caseItem.id}

@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -9,39 +9,39 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useTranslation } from 'react-i18next';
 
-const CASES = [
+const EQUIPMENT_NEEDS = [
   {
     id: "001",
-    patient: "Layla (9yo)",
-    title: "Emergency Surgery",
-    description: "Layla needs urgent surgery following injuries sustained in Aleppo. Help fund her post-operative treatment and care.",
-    amountRaised: 4230,
-    goalAmount: 7500,
+    patient: "Deir al-Zor Hospital",
+    title: "MRI Machine for Deir al-Zor Hospital",
+    description: "The main hospital in Deir al-Zor urgently needs an MRI machine to diagnose hundreds of patients monthly. This 1.5T MRI system will enable accurate diagnosis of neurological conditions, injuries, and other critical health issues. The hospital currently transfers patients over 100km for these scans, delaying critical care and putting patients at risk during transport. Your support will help purchase and install this critical equipment, serving a population of over 500,000 people in eastern Syria.",
+    amountRaised: 42300,
+    goalAmount: 175000,
   },
   {
     id: "002",
-    patient: "Ahmad (45yo)",
-    title: "Dialysis Treatment",
-    description: "Ahmad requires ongoing dialysis after kidney failure. Donations cover 6 months of therapy.",
-    amountRaised: 2845,
-    goalAmount: 5000,
+    patient: "Idlib Medical Center",
+    title: "Ventilators for Idlib Medical Center",
+    description: "Idlib Medical Center requires additional ventilators to treat respiratory conditions and support critical care patients. These advanced life-support devices will be used in the ICU for patients with severe breathing difficulties. Contributions will fund 5 units for their intensive care department, helping save lives during emergencies and for ongoing respiratory support.",
+    amountRaised: 28450,
+    goalAmount: 50000,
   },
   {
     id: "003",
-    patient: "Anonymous",
-    title: "Clinic Supplies",
-    description: "A rural Idlib clinic needs medicines and consumables to serve over 200 patients weekly.",
+    patient: "Rural Damascus Clinic",
+    title: "Ultrasound Equipment for Rural Clinics",
+    description: "Mobile clinics serving rural Damascus need portable ultrasound devices to provide essential diagnostic services to remote communities. These portable units will enable prenatal care, emergency diagnostics, and general healthcare in areas with limited access to medical facilities. Your contribution will provide 3 high-quality portable ultrasound machines serving over 200 patients weekly across multiple villages.",
     amountRaised: 12300,
-    goalAmount: 15000,
+    goalAmount: 25000,
   },
 ];
 
 const CaseDetailPage: React.FC = () => {
   const { id } = useParams();
-  const caseDetail = CASES.find((c) => c.id === id);
+  const equipmentNeed = EQUIPMENT_NEEDS.find((c) => c.id === id);
   const { t } = useTranslation();
 
-  if (!caseDetail) {
+  if (!equipmentNeed) {
     return (
       <div className="min-h-screen flex flex-col">
         <Header />
@@ -58,11 +58,11 @@ const CaseDetailPage: React.FC = () => {
     );
   }
 
-  const percent = Math.min((caseDetail.amountRaised / caseDetail.goalAmount) * 100, 100);
+  const percent = Math.min((equipmentNeed.amountRaised / equipmentNeed.goalAmount) * 100, 100);
   
   const whatsappNumber = "+1234567890";
   const whatsappMessage = encodeURIComponent(
-    `Hi, I'm interested in case "${caseDetail.title}" (ID: ${caseDetail.id})`
+    `Hi, I'm interested in helping with "${equipmentNeed.title}" (ID: ${equipmentNeed.id})`
   );
 
   return (
@@ -71,13 +71,13 @@ const CaseDetailPage: React.FC = () => {
       <main className="flex-grow bg-white py-16">
         <div className="container mx-auto px-4 max-w-2xl">
           <Card className="p-8 shadow flex flex-col mb-8">
-            <div className="mb-2 text-syria-teal font-medium text-sm">{caseDetail.patient}</div>
-            <h1 className="text-2xl font-bold mb-2">{caseDetail.title}</h1>
-            <p className="mb-4 text-gray-600">{caseDetail.description}</p>
+            <div className="mb-2 text-syria-teal font-medium text-sm">{equipmentNeed.patient}</div>
+            <h1 className="text-2xl font-bold mb-2">{equipmentNeed.title}</h1>
+            <p className="mb-4 text-gray-600">{equipmentNeed.description}</p>
             <Progress value={percent} className="mb-3" />
             <div className="flex justify-between text-sm mb-2">
-              <span className="font-semibold">${caseDetail.amountRaised.toLocaleString()} {t('cases.amountRaised')}</span>
-              <span className="text-gray-500">{t('cases.of')} ${caseDetail.goalAmount.toLocaleString()}</span>
+              <span className="font-semibold">${equipmentNeed.amountRaised.toLocaleString()} {t('cases.amountRaised')}</span>
+              <span className="text-gray-500">{t('cases.of')} ${equipmentNeed.goalAmount.toLocaleString()}</span>
             </div>
             
             <div className="flex gap-4 mt-4">
