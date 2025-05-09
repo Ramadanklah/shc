@@ -3,7 +3,6 @@ import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
 import { MessageCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -15,7 +14,6 @@ const EQUIPMENT_NEEDS = [
     patient: "Deir al-Zor Hospital",
     title: "MRI Machine for Deir al-Zor Hospital",
     description: "The main hospital in Deir al-Zor urgently needs an MRI machine to diagnose hundreds of patients monthly. This 1.5T MRI system will enable accurate diagnosis of neurological conditions, injuries, and other critical health issues. The hospital currently transfers patients over 100km for these scans, delaying critical care and putting patients at risk during transport. Your support will help purchase and install this critical equipment, serving a population of over 500,000 people in eastern Syria.",
-    amountRaised: 42300,
     goalAmount: 175000,
   },
   {
@@ -23,7 +21,6 @@ const EQUIPMENT_NEEDS = [
     patient: "Idlib Medical Center",
     title: "Ventilators for Idlib Medical Center",
     description: "Idlib Medical Center requires additional ventilators to treat respiratory conditions and support critical care patients. These advanced life-support devices will be used in the ICU for patients with severe breathing difficulties. Contributions will fund 5 units for their intensive care department, helping save lives during emergencies and for ongoing respiratory support.",
-    amountRaised: 28450,
     goalAmount: 50000,
   },
   {
@@ -31,7 +28,6 @@ const EQUIPMENT_NEEDS = [
     patient: "Rural Damascus Clinic",
     title: "Ultrasound Equipment for Rural Clinics",
     description: "Mobile clinics serving rural Damascus need portable ultrasound devices to provide essential diagnostic services to remote communities. These portable units will enable prenatal care, emergency diagnostics, and general healthcare in areas with limited access to medical facilities. Your contribution will provide 3 high-quality portable ultrasound machines serving over 200 patients weekly across multiple villages.",
-    amountRaised: 12300,
     goalAmount: 25000,
   },
 ];
@@ -57,8 +53,6 @@ const CaseDetailPage: React.FC = () => {
       </div>
     );
   }
-
-  const percent = Math.min((equipmentNeed.amountRaised / equipmentNeed.goalAmount) * 100, 100);
   
   const whatsappNumber = "+1234567890";
   const whatsappMessage = encodeURIComponent(
@@ -74,10 +68,9 @@ const CaseDetailPage: React.FC = () => {
             <div className="mb-2 text-syria-teal font-medium text-sm">{equipmentNeed.patient}</div>
             <h1 className="text-2xl font-bold mb-2">{equipmentNeed.title}</h1>
             <p className="mb-4 text-gray-600">{equipmentNeed.description}</p>
-            <Progress value={percent} className="mb-3" />
-            <div className="flex justify-between text-sm mb-2">
-              <span className="font-semibold">${equipmentNeed.amountRaised.toLocaleString()} {t('cases.amountRaised')}</span>
-              <span className="text-gray-500">{t('cases.of')} ${equipmentNeed.goalAmount.toLocaleString()}</span>
+            
+            <div className="text-sm mb-4">
+              <span className="text-gray-500">{t('cases.estimatedCost')}: ${equipmentNeed.goalAmount.toLocaleString()}</span>
             </div>
             
             <div className="flex gap-4 mt-4">

@@ -9,7 +9,6 @@ interface CaseCardProps {
   title: string;
   description: string;
   image: string;
-  amountRaised: number;
   goalAmount: number;
   urgency: 'low' | 'medium' | 'high';
 }
@@ -19,12 +18,8 @@ const CaseCard: React.FC<CaseCardProps> = ({
   title,
   description,
   image,
-  amountRaised,
-  goalAmount,
   urgency
 }) => {
-  const progressPercentage = Math.min((amountRaised / goalAmount) * 100, 100);
-  
   const getUrgencyBadge = () => {
     switch (urgency) {
       case 'high':
@@ -60,22 +55,7 @@ const CaseCard: React.FC<CaseCardProps> = ({
         <h3 className="text-xl font-bold mb-2 text-syria-dark">{title}</h3>
         <p className="text-gray-600 text-sm mb-4 line-clamp-2">{description}</p>
         
-        <div className="mb-3">
-          <div className="progress-bar">
-            <div 
-              className="progress-bar-fill" 
-              style={{ width: `${progressPercentage}%` }}
-            ></div>
-          </div>
-        </div>
-        
-        <div className="flex justify-between text-sm">
-          <span className="font-semibold">${amountRaised.toLocaleString()} raised</span>
-          <span className="text-gray-500">of ${goalAmount.toLocaleString()}</span>
-        </div>
-        
-        <div className="mt-4 flex justify-between items-center">
-          <span className="text-xs text-gray-500">{Math.round(progressPercentage)}% funded</span>
+        <div className="mt-4 flex justify-end items-center">
           <Button 
             size="sm" 
             className="bg-syria-teal hover:bg-syria-teal-dark text-white"
