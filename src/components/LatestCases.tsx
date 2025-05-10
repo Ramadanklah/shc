@@ -5,46 +5,13 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Card } from "@/components/ui/card";
 import { Hospital, MapPin, TestTube } from "lucide-react";
+import { HOSPITALS } from "@/data/hospitals";
 
 const LatestCases = () => {
   const { t } = useTranslation();
   
-  // Sample data for featured hospitals
-  const FEATURED_HOSPITALS = [
-    {
-      id: "001",
-      name: "Al-Assad Krankenhaus",
-      location: "Damaskus",
-      beds: 800,
-      description: "Ein großes, staatliches Krankenhaus, das eine breite Palette an Fachrichtungen abdeckt.",
-      equipment_needs: [
-        { id: "e001", name: "MRI-Gerät", urgency: "high", quantity: 1 },
-        { id: "e002", name: "Beatmungsgeräte", urgency: "medium", quantity: 5 }
-      ]
-    },
-    {
-      id: "006",
-      name: "Al-Kindi Krankenhaus",
-      location: "Aleppo",
-      beds: 350,
-      description: "Ein bedeutendes Krankenhaus, das sowohl die Bevölkerung in Aleppo als auch die umliegenden Regionen versorgt.",
-      equipment_needs: [
-        { id: "e012", name: "Röntgengerät", urgency: "high", quantity: 1 },
-        { id: "e013", name: "Notfallwagen", urgency: "high", quantity: 3 }
-      ]
-    },
-    {
-      id: "020",
-      name: "Deir ez-Zor Krankenhaus",
-      location: "Deir ez-Zor",
-      beds: 150,
-      description: "Ein Krankenhaus, das die Gesundheitsversorgung für die Region Deir ez-Zor übernimmt.",
-      equipment_needs: [
-        { id: "e040", name: "MRI-Gerät", urgency: "high", quantity: 1 },
-        { id: "e042", name: "Dialysegeräte", urgency: "high", quantity: 3 }
-      ]
-    }
-  ];
+  // Sample data for featured hospitals - take the first 3 hospitals
+  const FEATURED_HOSPITALS = HOSPITALS.slice(0, 3);
 
   return (
     <section className="py-16 bg-white">
