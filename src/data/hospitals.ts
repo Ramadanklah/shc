@@ -1,4 +1,3 @@
-
 export interface EquipmentNeed {
   id: string;
   name: string;
@@ -246,6 +245,117 @@ export const HOSPITALS: Hospital[] = [
       { id: "e040", name: "MRI-Gerät", urgency: "high", quantity: 1, description: "Dringend benötigt für genaue Diagnosen." },
       { id: "e041", name: "Chirurgische Instrumente", urgency: "medium", quantity: 5, description: "Sets für verschiedene Operationen." },
       { id: "e042", name: "Dialysegeräte", urgency: "high", quantity: 3, description: "Für Patienten mit Nierenversagen." }
+    ]
+  },
+  
+  // Hama
+  {
+    id: "021",
+    name: "Hama National Hospital",
+    location: "Hama",
+    beds: 300,
+    description: "Das zentrale staatliche Krankenhaus der Stadt Hama, das umfassende medizinische Dienstleistungen anbietet.",
+    equipment_needs: [
+      { id: "e043", name: "Röntgengerät", urgency: "high", quantity: 2, description: "Ersatz für veraltete Geräte, die nicht mehr zuverlässig funktionieren." },
+      { id: "e044", name: "Medizinische Monitore", urgency: "medium", quantity: 5, description: "Für die Überwachung von Patienten auf der Intensivstation." }
+    ]
+  },
+  {
+    id: "022",
+    name: "Mhardeh Hospital",
+    location: "Hama",
+    beds: 120,
+    description: "Ein regionales Krankenhaus, das der Gemeinschaft Mhardeh und Umgebung dient.",
+    equipment_needs: [
+      { id: "e045", name: "Beatmungsgeräte", urgency: "high", quantity: 3, description: "Dringend benötigt für die Intensivpflege und Notfallversorgung." }
+    ]
+  },
+  {
+    id: "023",
+    name: "Kafr Zita Cave Hospital",
+    location: "Hama",
+    beds: 50,
+    description: "Ein unterirdisches Feldkrankenhaus, das in Krisengebieten grundlegende medizinische Versorgung anbietet.",
+    equipment_needs: [
+      { id: "e046", name: "Tragbare Stromgeneratoren", urgency: "high", quantity: 2, description: "Für eine zuverlässige Stromversorgung in Notfallsituationen." },
+      { id: "e047", name: "Chirurgische Instrumente", urgency: "medium", quantity: 3, description: "Sets für Notfalloperationen." }
+    ]
+  },
+  {
+    id: "024",
+    name: "Latamneh Hospital",
+    location: "Hama",
+    beds: 80,
+    description: "Ein Gemeindekrankenhaus, das primäre und sekundäre Gesundheitsversorgung bietet.",
+    equipment_needs: [
+      { id: "e048", name: "Ultraschallgeräte", urgency: "medium", quantity: 1, description: "Für diagnostische Zwecke." }
+    ]
+  },
+  {
+    id: "025",
+    name: "Al-Annazah Health Centre",
+    location: "Hama",
+    beds: 30,
+    description: "Ein kleines Gesundheitszentrum, das grundlegende medizinische Dienste für die lokale Gemeinschaft anbietet.",
+    equipment_needs: [
+      { id: "e049", name: "Laborausstattung", urgency: "low", quantity: 1, description: "Für grundlegende diagnostische Tests." }
+    ]
+  },
+  
+  // Tartus
+  {
+    id: "026",
+    name: "Tartus National Hospital",
+    location: "Tartus",
+    beds: 250,
+    description: "Das Hauptkrankenhaus der Stadt Tartus, das ein breites Spektrum an medizinischen Dienstleistungen anbietet.",
+    equipment_needs: [
+      { id: "e050", name: "MRI-Gerät", urgency: "high", quantity: 1, description: "Dringend benötigt für genaue Diagnosen." },
+      { id: "e051", name: "Notfallwagen", urgency: "medium", quantity: 2, description: "Voll ausgestattete Wagen für schnelle Reaktionen bei kritischen Fällen." }
+    ]
+  },
+  {
+    id: "027",
+    name: "Alkindi Hospital",
+    location: "Tartus",
+    beds: 150,
+    description: "Ein privates Krankenhaus, das spezialisierte medizinische Behandlungen anbietet.",
+    equipment_needs: [
+      { id: "e052", name: "Endoskopiegeräte", urgency: "medium", quantity: 1, description: "Für minimalinvasive diagnostische Verfahren." }
+    ]
+  },
+  {
+    id: "028",
+    name: "Al-Annazah Health Centre",
+    location: "Tartus",
+    beds: 25,
+    description: "Ein Gesundheitszentrum, das primäre Gesundheitsversorgung für die lokale Bevölkerung bietet.",
+    equipment_needs: [
+      { id: "e053", name: "EKG-Geräte", urgency: "low", quantity: 2, description: "Für die kardiale Überwachung und Diagnose." }
+    ]
+  },
+  
+  // As-Suwaida
+  {
+    id: "029",
+    name: "As-Suwaida National Hospital",
+    location: "As-Suwaida",
+    beds: 200,
+    description: "Das zentrale Krankenhaus der Provinz As-Suwaida, das umfassende medizinische Dienste anbietet.",
+    equipment_needs: [
+      { id: "e054", name: "CT-Scanner", urgency: "high", quantity: 1, description: "Für präzise Diagnosen und Behandlungsplanung." },
+      { id: "e055", name: "Dialysegeräte", urgency: "high", quantity: 3, description: "Für Patienten mit Nierenversagen." }
+    ]
+  },
+  {
+    id: "030",
+    name: "Salchad Hospital",
+    location: "As-Suwaida",
+    beds: 100,
+    description: "Ein regionales Krankenhaus, das medizinische Versorgung für die Gemeinde Salchad und Umgebung bietet.",
+    equipment_needs: [
+      { id: "e056", name: "Chirurgische Lampen", urgency: "medium", quantity: 2, description: "Für den Operationssaal." },
+      { id: "e057", name: "Sterilisationsgeräte", urgency: "medium", quantity: 1, description: "Für die sichere Aufbereitung medizinischer Instrumente." }
     ]
   }
 ];
