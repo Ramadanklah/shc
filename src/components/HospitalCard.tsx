@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Hospital, MapPin, TestTube } from "lucide-react";
 import type { Hospital as HospitalType } from "@/data/hospitals";
+import { getHospitalNameKey } from "@/utils/hospitalTranslations";
 
 interface HospitalCardProps {
   hospital: HospitalType;
@@ -18,7 +19,9 @@ const HospitalCard: React.FC<HospitalCardProps> = ({ hospital }) => {
     <Card key={hospital.id} className="p-6 shadow flex flex-col">
       <div className="flex items-center mb-2">
         <Hospital className="w-5 h-5 text-syria-teal mr-2" />
-        <div className="text-syria-teal font-medium">{hospital.name}</div>
+        <div className="text-syria-teal font-medium">
+          {t(`hospitals.names.${getHospitalNameKey(hospital.id)}`)}
+        </div>
       </div>
       <div className="mb-1 text-sm text-gray-500 flex items-center">
         <MapPin className="w-4 h-4 mr-1" />

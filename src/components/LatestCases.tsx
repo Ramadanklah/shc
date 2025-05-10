@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import { Card } from "@/components/ui/card";
 import { Hospital, MapPin, TestTube } from "lucide-react";
 import { HOSPITALS } from "@/data/hospitals";
+import { getHospitalNameKey } from "@/utils/hospitalTranslations";
 
 const LatestCases = () => {
   const { t } = useTranslation();
@@ -29,7 +30,9 @@ const LatestCases = () => {
               <div className="p-5">
                 <div className="flex items-center mb-2">
                   <Hospital className="w-5 h-5 text-syria-teal mr-2" />
-                  <div className="text-syria-teal font-medium">{hospital.name}</div>
+                  <div className="text-syria-teal font-medium">
+                    {t(`hospitals.names.${getHospitalNameKey(hospital.id)}`)}
+                  </div>
                 </div>
                 <div className="flex items-center mb-2 text-sm text-gray-500">
                   <MapPin className="w-4 h-4 mr-1" />
