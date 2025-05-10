@@ -22,10 +22,6 @@ const HospitalInfo: React.FC<HospitalInfoProps> = ({ hospital }) => {
         <MapPin className="w-4 h-4 text-gray-500 mr-2" />
         <span className="text-gray-600">{hospital.location}</span>
       </div>
-
-      <div className="mb-4 p-3 bg-gray-50 rounded-md">
-        <div className="font-medium">Bettenzahl: ~{hospital.beds}</div>
-      </div>
       
       <p className="mb-6 text-gray-600">{hospital.description}</p>
     </div>
