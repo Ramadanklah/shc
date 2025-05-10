@@ -17,11 +17,13 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 const Header = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const { user, signOut } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDonateModalOpen, setIsDonateModalOpen] = useState(false);
+  
+  const isRTL = i18n.language === 'ar';
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -104,7 +106,7 @@ const Header = () => {
             className="bg-syria-teal hover:bg-syria-teal-dark text-white ml-2"
             onClick={openDonateModal}
           >
-            {t('about.about')}
+            {t('nav.donate')}
           </Button>
         </nav>
 
@@ -197,7 +199,7 @@ const Header = () => {
               className="bg-syria-teal hover:bg-syria-teal-dark text-white mt-2 w-full"
               onClick={openDonateModal}
             >
-              {t('about.about')}
+              {t('nav.donate')}
             </Button>
           </div>
         </div>

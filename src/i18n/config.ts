@@ -32,10 +32,24 @@ i18n
     }
   });
 
-// Handle RTL for Arabic
+// Enhanced RTL handling for Arabic
 const handleLanguageChange = (lng: string) => {
+  // Set the correct text direction
   document.documentElement.dir = lng === 'ar' ? 'rtl' : 'ltr';
   document.documentElement.lang = lng;
+  
+  // Add a data attribute for easier CSS selection
+  document.documentElement.setAttribute('data-language', lng);
+
+  // Add class for specific RTL handling if needed
+  if (lng === 'ar') {
+    document.body.classList.add('rtl-lang');
+  } else {
+    document.body.classList.remove('rtl-lang');
+  }
+
+  // Store language preference
+  localStorage.setItem('i18nextLng', lng);
 };
 
 // Set initial language direction

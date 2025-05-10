@@ -1,7 +1,7 @@
 
 import React from "react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useTranslation } from "react-i18next";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 interface HospitalFilterProps {
   locations: string[];
@@ -9,37 +9,34 @@ interface HospitalFilterProps {
   onLocationChange: (location: string | null) => void;
 }
 
-const HospitalFilter: React.FC<HospitalFilterProps> = ({ 
-  locations, 
-  selectedLocation, 
-  onLocationChange 
+const HospitalFilter: React.FC<HospitalFilterProps> = ({
+  locations,
+  selectedLocation,
+  onLocationChange,
 }) => {
   const { t } = useTranslation();
 
   return (
     <div className="mb-8">
-      <h2 className="text-lg font-medium mb-2">{t('hospitals.filterByLocation')}</h2>
-      <Tabs 
-        defaultValue="all" 
-        className="w-full"
-        onValueChange={(value) => onLocationChange(value === "all" ? null : value)}
-        value={selectedLocation || "all"}
-      >
-        <TabsList className="bg-gray-100 p-1 flex flex-wrap">
-          <TabsTrigger value="all" className="data-[state=active]:bg-white">
-            {t('hospitals.allLocations')}
-          </TabsTrigger>
-          {locations.map(location => (
-            <TabsTrigger 
-              key={location} 
-              value={location}
-              className="data-[state=active]:bg-white"
-            >
-              {location}
-            </TabsTrigger>
-          ))}
-        </TabsList>
-      </Tabs>
+      <div className="flex items-center gap-3">
+        <span className="text-gray-700 font-medium">{t('hospitals.filterByLocation')}:</span>
+        <Select 
+          value={selectedLocation || ''} 
+          onValueChange={(value) => onLocationChange(value === '' ? null : value)}
+        >
+          <SelectTrigger className="w-[200px]">
+            <SelectValue placeholder={t('hospitals.allLocations')} />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="">{t('hospitals.allLocations')}</SelectItem>
+            {locations.map((location) => (
+              <SelectItem key={location} value={location}>
+                {location}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
     </div>
   );
 };

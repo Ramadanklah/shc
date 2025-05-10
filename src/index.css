@@ -1,68 +1,69 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 210 33% 99%;
-    --foreground: 210 33% 9%;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 33% 9%;
+    --card-foreground: 222.2 84% 4.9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 33% 9%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 196 90% 40%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 33% 96%;
-    --secondary-foreground: 210 33% 9%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 210 33% 96%;
-    --muted-foreground: 210 33% 45%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 24 100% 50%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 210 33% 90%;
-    --input: 210 33% 90%;
-    --ring: 196 90% 40%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 210 33% 9%;
-    --foreground: 210 33% 98%;
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
 
-    --card: 210 33% 12%;
-    --card-foreground: 210 33% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 210 33% 12%;
-    --popover-foreground: 210 33% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 196 90% 40%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 210 33% 15%;
-    --secondary-foreground: 210 33% 98%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 33% 15%;
-    --muted-foreground: 210 33% 65%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 24 100% 50%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 210 33% 15%;
-    --input: 210 33% 15%;
-    --ring: 196 90% 40%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
   }
 }
 
@@ -70,60 +71,70 @@
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground;
   }
 }
 
-/* Custom styles for SyriaHealthcare */
-.clip-path-slant {
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+/* Syria specific colors */
+:root {
+  --syria-teal: #009688;
+  --syria-teal-dark: #00796B;
+  --syria-red: #D32F2F;
+  --syria-orange: #FF9800;
+  --syria-dark: #263238;
+  --syria-light: #F5F7FA;
 }
 
+/* Case card hover effect */
 .case-card:hover .case-card-overlay {
   opacity: 1;
 }
 
-.progress-bar {
-  position: relative;
-  height: 8px;
-  border-radius: 4px;
-  overflow: hidden;
-  background-color: #e9ecef;
+/* RTL Support */
+[dir="rtl"] .ltr-only {
+  display: none;
 }
 
-.progress-bar-fill {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  background-color: #0AA2C0;
-  transition: width 0.5s ease;
+[dir="ltr"] .rtl-only {
+  display: none;
 }
 
-.donation-option:hover {
-  border-color: #0AA2C0;
-  background-color: rgba(10, 162, 192, 0.05);
+/* Language transition effect */
+.language-transition {
+  transition: opacity 0.2s ease-out;
+  opacity: 0.7;
 }
 
-.donation-option.selected {
-  border-color: #0AA2C0;
-  background-color: rgba(10, 162, 192, 0.1);
+.language-transition * {
+  transition: all 0.2s ease-out;
 }
 
-/* Mapbox custom styles */
-.mapboxgl-popup {
-  max-width: 200px;
+/* Mobile optimizations for RTL */
+@media (max-width: 768px) {
+  [dir="rtl"] .md\:space-x-4 > * + * {
+    margin-right: 1rem;
+    margin-left: 0;
+  }
 }
 
-.mapboxgl-popup-content {
-  padding: 0;
-  border-radius: 8px;
+/* Fix for button alignments in RTL */
+[dir="rtl"] .flex-row {
+  flex-direction: row-reverse;
 }
 
-.mapboxgl-popup-close-button {
-  right: 5px;
-  top: 5px;
-  color: #666;
+[dir="rtl"] .ml-auto {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+[dir="rtl"] .mr-auto {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* Preserving left-to-right for specific elements even in RTL mode */
+[dir="rtl"] .preserve-ltr {
+  direction: ltr;
+  text-align: left;
 }

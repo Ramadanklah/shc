@@ -19,6 +19,21 @@ const languageNames = {
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
 
+  // Enhanced language switching with visual feedback
+  const handleLanguageChange = (lang: string) => {
+    if (i18n.language === lang) return;
+    
+    // Add a brief visual indication of language change
+    document.documentElement.classList.add('language-transition');
+    
+    i18n.changeLanguage(lang);
+    
+    // Remove the transition class after animation completes
+    setTimeout(() => {
+      document.documentElement.classList.remove('language-transition');
+    }, 500);
+  };
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -34,7 +49,7 @@ const LanguageSwitcher = () => {
         {Object.entries(languageNames).map(([code, name]) => (
           <DropdownMenuItem
             key={code}
-            onClick={() => i18n.changeLanguage(code)}
+            onClick={() => handleLanguageChange(code)}
             className={`${code === 'ar' ? 'text-right' : ''} ${
               i18n.language === code ? 'bg-accent' : ''
             }`}
