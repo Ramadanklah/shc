@@ -21,14 +21,14 @@ const HospitalFilter: React.FC<HospitalFilterProps> = ({
       <div className="flex items-center gap-3">
         <span className="text-gray-700 font-medium">{t('hospitals.filterByLocation')}:</span>
         <Select 
-          value={selectedLocation || ''} 
-          onValueChange={(value) => onLocationChange(value === '' ? null : value)}
+          value={selectedLocation || 'all'} 
+          onValueChange={(value) => onLocationChange(value === 'all' ? null : value)}
         >
           <SelectTrigger className="w-[200px]">
             <SelectValue placeholder={t('hospitals.allLocations')} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="">{t('hospitals.allLocations')}</SelectItem>
+            <SelectItem value="all">{t('hospitals.allLocations')}</SelectItem>
             {locations.map((location) => (
               <SelectItem key={location} value={location}>
                 {location}
