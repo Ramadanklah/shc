@@ -1,16 +1,18 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import DonationModal from './DonationModal';
 
 interface HeroProps {
   openDonateModal?: () => void;
 }
 
-const Hero: React.FC<HeroProps> = ({ openDonateModal }) => {
+const Hero: React.FC<HeroProps> = () => {
   const { t } = useTranslation();
-
+  const [isDonateModalOpen, setIsDonateModalOpen] = useState(false);
+  
   return (
     <div className="bg-syria-light clip-path-slant relative overflow-hidden">
       <div 
@@ -30,9 +32,9 @@ const Hero: React.FC<HeroProps> = ({ openDonateModal }) => {
           <div className="flex flex-col sm:flex-row gap-4">
             <Button 
               className="bg-syria-teal hover:bg-syria-teal-dark text-white text-lg py-6 px-8"
-              asChild
+              onClick={() => setIsDonateModalOpen(true)}
             >
-              <Link to="/register-organisation">{t('register.submit')}</Link>
+              {t('donate.contribute')}
             </Button>
             <Button 
               variant="outline" 
@@ -55,6 +57,8 @@ const Hero: React.FC<HeroProps> = ({ openDonateModal }) => {
           </div>
         </div>
       </div>
+      
+      <DonationModal open={isDonateModalOpen} onOpenChange={setIsDonateModalOpen} />
     </div>
   );
 };

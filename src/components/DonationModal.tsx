@@ -1,8 +1,8 @@
 
 import React from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogClose, DialogFooter } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { useTranslation } from "react-i18next";
+import DonationForm from "./DonationForm";
 
 interface DonationModalProps {
   open: boolean;
@@ -14,23 +14,14 @@ const DonationModal: React.FC<DonationModalProps> = ({ open, onOpenChange }) => 
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-md">
+      <DialogContent className="max-w-md sm:max-w-lg">
         <DialogHeader>
-          <DialogTitle className="mb-2">{t('about.title')}</DialogTitle>
-          <DialogDescription>{t('about.missionText')}</DialogDescription>
+          <DialogTitle className="text-2xl text-center text-syria-dark mb-2">
+            {t('donate.title')}
+          </DialogTitle>
         </DialogHeader>
-        <div className="space-y-4 mt-4">
-          <p>Our platform focuses on connecting healthcare providers with needed resources rather than monetary donations. 
-             We help facilitate the exchange of medical equipment, supplies, and services between organizations.</p>
-          <p className="text-sm text-gray-600">
-            If you're interested in contributing, please register your organization to offer services or resources directly.
-          </p>
-        </div>
-        <DialogFooter>
-          <DialogClose asChild>
-            <Button variant="secondary">{t('donate.close')}</Button>
-          </DialogClose>
-        </DialogFooter>
+        
+        <DonationForm onSuccess={() => onOpenChange(false)} />
       </DialogContent>
     </Dialog>
   );

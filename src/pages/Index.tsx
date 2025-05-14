@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Header from "../components/Header";
@@ -7,23 +7,17 @@ import Hero from "../components/Hero";
 import LatestCases from "../components/LatestCases";
 import AboutSection from "../components/AboutSection";
 import Footer from "../components/Footer";
-import DonationModal from "../components/DonationModal";
 import { useTranslation } from 'react-i18next';
 
 const Index = () => {
-  const [isDonateModalOpen, setIsDonateModalOpen] = useState(false);
   const { t } = useTranslation();
-
-  const openDonateModal = () => {
-    setIsDonateModalOpen(true);
-  };
 
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
       
       <main className="flex-grow">
-        <Hero openDonateModal={openDonateModal} />
+        <Hero />
         <LatestCases />
         
         <section className="py-16 bg-gradient-to-br from-syria-teal/20 to-syria-blue/10">
@@ -190,8 +184,6 @@ const Index = () => {
       </main>
       
       <Footer />
-      
-      <DonationModal open={isDonateModalOpen} onOpenChange={setIsDonateModalOpen} />
     </div>
   );
 };

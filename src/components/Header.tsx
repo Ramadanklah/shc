@@ -102,12 +102,6 @@ const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
           )}
-          <Button 
-            className="bg-syria-teal hover:bg-syria-teal-dark text-white ml-2"
-            onClick={openDonateModal}
-          >
-            {t('nav.donate')}
-          </Button>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -195,17 +189,11 @@ const Header = () => {
                 {t('nav.signout')}
               </Button>
             )}
-            <Button 
-              className="bg-syria-teal hover:bg-syria-teal-dark text-white mt-2 w-full"
-              onClick={openDonateModal}
-            >
-              {t('nav.donate')}
-            </Button>
           </div>
         </div>
       )}
 
-      {/* About Modal (replaced Donation Modal) */}
+      {/* Donation Modal */}
       <DonationModal open={isDonateModalOpen} onOpenChange={setIsDonateModalOpen} />
     </header>
   );

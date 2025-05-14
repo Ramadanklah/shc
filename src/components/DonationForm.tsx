@@ -5,13 +5,19 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Loader2 } from "lucide-react";
+import { Loader2, Heart } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from '@/integrations/supabase/client';
+import { useAuth } from '@/contexts/AuthContext';
+
+interface DonationFormProps {
+  onSuccess?: () => void;
+}
 
 const DONATION_OPTIONS = [50, 100, 250, 500, 1000];
 
-const DonationForm = () => {
+const DonationForm: React.FC<DonationFormProps> = ({ onSuccess }) => {
+  const { user } = useAuth();
   const [selectedAmount, setSelectedAmount] = useState<number | null>(100);
   const [customAmount, setCustomAmount] = useState("");
   const [isMonthly, setIsMonthly] = useState(false);
@@ -20,7 +26,7 @@ const DonationForm = () => {
   
   // Form data for step 2
   const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(user?.email || "");
   const [isAnonymous, setIsAnonymous] = useState(false);
   const [receiveUpdates, setReceiveUpdates] = useState(true);
 
@@ -57,9 +63,6 @@ const DonationForm = () => {
     try {
       const amount = getActualAmount();
       
-      // In a real implementation, this would integrate with a payment processor
-      // For now, we'll just add an entry to the donations table
-      
       // Generate a mock transaction ID
       const transactionId = `DEMO-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
       
@@ -94,6 +97,9 @@ const DonationForm = () => {
       setIsAnonymous(false);
       setReceiveUpdates(true);
       
+      // Call onSuccess callback if provided
+      if (onSuccess) onSuccess();
+      
     } catch (error) {
       console.error("Donation error:", error);
       toast.error("Donation processing error", {
@@ -109,10 +115,10 @@ const DonationForm = () => {
       <form onSubmit={handleSubmit}>
         {step === 1 ? (
           <>
-            <h2 className="text-2xl font-bold mb-6 text-syria-dark text-center">Make a Donation</h2>
+            <h2 className="text-2xl font-bold mb-6 text-syria-dark text-center">Make a Contribution</h2>
             <div className="mb-6">
               <Label htmlFor="donation-type" className="block mb-3 text-sm font-medium">
-                Donation Type
+                Contribution Type
               </Label>
               <div className="flex gap-4 mb-6">
                 <Button
@@ -136,7 +142,7 @@ const DonationForm = () => {
 
             <div className="mb-6">
               <Label htmlFor="donation-amount" className="block mb-3 text-sm font-medium">
-                Donation Amount
+                Contribution Amount
               </Label>
               <div className="grid grid-cols-3 gap-3 mb-4">
                 {DONATION_OPTIONS.map((amount) => (
@@ -176,9 +182,9 @@ const DonationForm = () => {
         ) : (
           <>
             <div className="text-center mb-6">
-              <h2 className="text-2xl font-bold text-syria-dark">Payment Details</h2>
+              <h2 className="text-2xl font-bold text-syria-dark">Your Information</h2>
               <p className="text-gray-600 mt-2">
-                {isMonthly ? "Monthly" : "One-time"} donation of ${getActualAmount()}
+                {isMonthly ? "Monthly" : "One-time"} contribution of ${getActualAmount()}
               </p>
             </div>
             
@@ -207,7 +213,7 @@ const DonationForm = () => {
               
               <div className="p-4 bg-gray-50 rounded-lg">
                 <p className="text-sm text-gray-600 mb-4">
-                  This is a demo version. In a real implementation, secure payment fields
+                  This is a demonstration. In a real implementation, secure payment fields
                   would appear here (credit card, PayPal, etc.).
                 </p>
               </div>
@@ -219,7 +225,7 @@ const DonationForm = () => {
                   onCheckedChange={(checked) => setIsAnonymous(checked === true)}
                 />
                 <Label htmlFor="anonymous" className="text-sm leading-tight">
-                  Make this donation anonymous
+                  Make this contribution anonymous
                 </Label>
               </div>
               
@@ -230,7 +236,7 @@ const DonationForm = () => {
                   onCheckedChange={(checked) => setReceiveUpdates(checked === true)}
                 />
                 <Label htmlFor="newsletter" className="text-sm leading-tight">
-                  Send me updates about the impact of my donation
+                  Send me updates about the impact of my contribution
                 </Label>
               </div>
             </div>
@@ -256,7 +262,10 @@ const DonationForm = () => {
                     Processing...
                   </>
                 ) : (
-                  "Complete Donation"
+                  <>
+                    <Heart className="w-4 h-4 mr-2" />
+                    Complete Contribution
+                  </>
                 )}
               </Button>
             </div>
@@ -266,16 +275,17 @@ const DonationForm = () => {
         {step === 1 && (
           <Button 
             type="submit" 
-            className="w-full mt-6 bg-syria-teal hover:bg-syria-teal-dark text-white py-6"
+            className="w-full mt-6 bg-syria-teal hover:bg-syria-teal-dark text-white py-6 flex items-center justify-center gap-2"
             disabled={(!selectedAmount && !customAmount) || (customAmount && parseInt(customAmount) <= 0)}
           >
+            <Heart className="w-5 h-5" />
             Continue
           </Button>
         )}
         
         <div className="mt-6 pt-4 border-t border-gray-200">
           <p className="text-xs text-gray-600 text-center">
-            Your donation is secure and helps provide essential medical care to those in need.
+            Your contribution helps provide essential medical care to those in need.
             SyriaHealthcare.com ensures that 100% of your contribution goes directly to medical aid.
           </p>
         </div>
