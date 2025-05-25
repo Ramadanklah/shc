@@ -89,8 +89,11 @@
     "generalInquiries": "General Inquiries",
     "email": "info@syriahc.com",
     "howItWorksSteps": {
+      "step1Title": "Identify Needs",
       "step1": "We coordinate with hospitals and health centers to identify precise medical needs",
+      "step2Title": "Collect Donations",
       "step2": "We collect medical donations from abroad based on these needs",
+      "step3Title": "Coordinate Delivery",
       "step3": "We work with trusted organizations and partners to coordinate the shipping and delivery of donations to Syria"
     }
   },

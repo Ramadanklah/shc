@@ -67,73 +67,88 @@ const AboutPage: React.FC = () => {
 
           {/* How It Works Section */}
           <motion.section 
-            className="mb-16 bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
+            className="mb-16 bg-white rounded-2xl shadow-lg p-4 sm:p-8 hover:shadow-xl transition-shadow duration-300"
             {...fadeInUp}
           >
-            <div className="flex items-center gap-4 mb-8">
-              <div className="p-3 bg-syria-teal/10 rounded-full">
-                <Settings className="w-6 h-6 text-syria-teal" />
+            <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+              <div className="p-2 sm:p-3 bg-syria-teal/10 rounded-full">
+                <Settings className="w-5 h-5 sm:w-6 sm:h-6 text-syria-teal" />
               </div>
-              <h2 className="text-2xl font-semibold text-syria-dark">{t('about.howItWorks')}</h2>
+              <h2 className="text-xl sm:text-2xl font-semibold text-syria-dark">{t('about.howItWorks')}</h2>
             </div>
             
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               {/* Step 1 */}
               <motion.div 
-                className="flex gap-6 p-6 bg-syria-light/30 rounded-xl hover:bg-syria-light/40 transition-colors duration-300"
+                className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-4 sm:p-6 bg-syria-light/30 rounded-xl hover:bg-syria-light/40 transition-colors duration-300"
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="flex-shrink-0 w-12 h-12 bg-syria-teal rounded-full flex items-center justify-center text-white font-bold text-xl">
-                  1
+                <div className="flex items-center gap-4 sm:flex-col sm:gap-2">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-syria-teal rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl">
+                    1
+                  </div>
+                  <div className="sm:hidden flex-shrink-0">
+                    <CheckCircle2 className="w-5 h-5 text-syria-teal" />
+                  </div>
                 </div>
                 <div className="flex-grow">
-                  <h3 className="text-lg font-semibold text-syria-dark mb-2">Identify Needs</h3>
-                  <p className="text-gray-700 leading-relaxed">
+                  <h3 className="text-base sm:text-lg font-semibold text-syria-dark mb-1 sm:mb-2">{t('about.howItWorksSteps.step1Title')}</h3>
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                     {t('about.howItWorksSteps.step1')}
                   </p>
                 </div>
-                <div className="flex-shrink-0 flex items-center">
+                <div className="hidden sm:flex flex-shrink-0 items-center">
                   <CheckCircle2 className="w-6 h-6 text-syria-teal" />
                 </div>
               </motion.div>
 
               {/* Step 2 */}
               <motion.div 
-                className="flex gap-6 p-6 bg-syria-light/30 rounded-xl hover:bg-syria-light/40 transition-colors duration-300"
+                className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-4 sm:p-6 bg-syria-light/30 rounded-xl hover:bg-syria-light/40 transition-colors duration-300"
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="flex-shrink-0 w-12 h-12 bg-syria-teal rounded-full flex items-center justify-center text-white font-bold text-xl">
-                  2
+                <div className="flex items-center gap-4 sm:flex-col sm:gap-2">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-syria-teal rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl">
+                    2
+                  </div>
+                  <div className="sm:hidden flex-shrink-0">
+                    <CheckCircle2 className="w-5 h-5 text-syria-teal" />
+                  </div>
                 </div>
                 <div className="flex-grow">
-                  <h3 className="text-lg font-semibold text-syria-dark mb-2">Collect Donations</h3>
-                  <p className="text-gray-700 leading-relaxed">
+                  <h3 className="text-base sm:text-lg font-semibold text-syria-dark mb-1 sm:mb-2">{t('about.howItWorksSteps.step2Title')}</h3>
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                     {t('about.howItWorksSteps.step2')}
                   </p>
                 </div>
-                <div className="flex-shrink-0 flex items-center">
+                <div className="hidden sm:flex flex-shrink-0 items-center">
                   <CheckCircle2 className="w-6 h-6 text-syria-teal" />
                 </div>
               </motion.div>
 
               {/* Step 3 */}
               <motion.div 
-                className="flex gap-6 p-6 bg-syria-light/30 rounded-xl hover:bg-syria-light/40 transition-colors duration-300"
+                className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-4 sm:p-6 bg-syria-light/30 rounded-xl hover:bg-syria-light/40 transition-colors duration-300"
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="flex-shrink-0 w-12 h-12 bg-syria-teal rounded-full flex items-center justify-center text-white font-bold text-xl">
-                  3
+                <div className="flex items-center gap-4 sm:flex-col sm:gap-2">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-syria-teal rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl">
+                    3
+                  </div>
+                  <div className="sm:hidden flex-shrink-0">
+                    <CheckCircle2 className="w-5 h-5 text-syria-teal" />
+                  </div>
                 </div>
                 <div className="flex-grow">
-                  <h3 className="text-lg font-semibold text-syria-dark mb-2">Coordinate Delivery</h3>
-                  <p className="text-gray-700 leading-relaxed">
+                  <h3 className="text-base sm:text-lg font-semibold text-syria-dark mb-1 sm:mb-2">{t('about.howItWorksSteps.step3Title')}</h3>
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                     {t('about.howItWorksSteps.step3')}
                   </p>
                 </div>
-                <div className="flex-shrink-0 flex items-center">
+                <div className="hidden sm:flex flex-shrink-0 items-center">
                   <CheckCircle2 className="w-6 h-6 text-syria-teal" />
                 </div>
               </motion.div>

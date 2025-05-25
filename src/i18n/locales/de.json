@@ -87,8 +87,11 @@
     "generalInquiries": "Allgemeine Anfragen",
     "email": "info@syriahc.com",
     "howItWorksSteps": {
+      "step1Title": "Bedarf ermitteln",
       "step1": "Wir koordinieren mit Krankenhäusern und Gesundheitszentren, um präzise medizinische Bedürfnisse zu identifizieren",
+      "step2Title": "Spenden sammeln",
       "step2": "Wir sammeln medizinische Spenden aus dem Ausland basierend auf diesen Bedürfnissen",
+      "step3Title": "Lieferung koordinieren",
       "step3": "Wir arbeiten mit vertrauenswürdigen Organisationen und Partnern zusammen, um den Versand und die Lieferung von Spenden nach Syrien zu koordinieren"
     }
   },
