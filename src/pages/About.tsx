@@ -1,56 +1,183 @@
-
 import React from "react";
 import { Card } from "@/components/ui/card";
-import { Mail, Info } from "lucide-react";
+import { Mail, Info, Heart, Users, Settings, ArrowRight, CheckCircle2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { motion } from "framer-motion";
 
 const AboutPage: React.FC = () => {
   const { t } = useTranslation();
   
+  const fadeInUp = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.5 }
+  };
+
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-syria-light to-white">
       <Header />
-      <main className="min-h-[70vh] bg-syria-light py-16 flex-grow">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <h1 className="text-3xl font-bold mb-4 text-syria-dark">{t('about.title')}</h1>
-          <section className="mb-8">
-            <h2 className="text-xl font-semibold text-syria-teal mb-2">{t('about.mission')}</h2>
-            <p className="text-gray-700">
+      <main className="min-h-[70vh] py-16 flex-grow">
+        <div className="container mx-auto px-4 max-w-4xl">
+          {/* Hero Section */}
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-syria-dark">
+              {t('about.title')}
+            </h1>
+            <div className="w-24 h-1 bg-syria-teal mx-auto rounded-full"></div>
+          </motion.div>
+
+          {/* Mission Section */}
+          <motion.section 
+            className="mb-16 bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
+            {...fadeInUp}
+          >
+            <div className="flex items-center gap-4 mb-6">
+              <div className="p-3 bg-syria-teal/10 rounded-full">
+                <Heart className="w-6 h-6 text-syria-teal" />
+              </div>
+              <h2 className="text-2xl font-semibold text-syria-dark">{t('about.mission')}</h2>
+            </div>
+            <p className="text-gray-700 leading-relaxed">
               {t('about.missionText')}
             </p>
-          </section>
-          <section className="mb-8">
-            <h2 className="text-xl font-semibold text-syria-teal mb-2">{t('about.whoWeAre')}</h2>
-            <p className="text-gray-700">
+          </motion.section>
+
+          {/* Who We Are Section */}
+          <motion.section 
+            className="mb-16 bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
+            {...fadeInUp}
+          >
+            <div className="flex items-center gap-4 mb-6">
+              <div className="p-3 bg-syria-teal/10 rounded-full">
+                <Users className="w-6 h-6 text-syria-teal" />
+              </div>
+              <h2 className="text-2xl font-semibold text-syria-dark">{t('about.whoWeAre')}</h2>
+            </div>
+            <p className="text-gray-700 leading-relaxed">
               {t('about.whoWeAreText')}
             </p>
-          </section>
-          <section className="mb-8">
-            <h2 className="text-xl font-semibold text-syria-teal mb-2">How The System Works</h2>
-            <ul className="list-disc ml-8 text-gray-700">
-              <li>Verified medical cases are submitted by individuals or organisations.</li>
-              <li>Donors choose cases to support and donate securely.</li>
-              <li>All donations are tracked, with real-time updates.</li>
-              <li>Our team and partners ensure funds go to the right patients.</li>
-            </ul>
-          </section>
-          <Card className="p-6 bg-white flex flex-col gap-2">
-            <div className="flex items-center gap-2 text-syria-teal text-lg font-medium mb-1">
-              <Info size={20} /> {t('about.generalInquiries')} / {t('about.contact')}
+          </motion.section>
+
+          {/* How It Works Section */}
+          <motion.section 
+            className="mb-16 bg-white rounded-2xl shadow-lg p-4 sm:p-8 hover:shadow-xl transition-shadow duration-300"
+            {...fadeInUp}
+          >
+            <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+              <div className="p-2 sm:p-3 bg-syria-teal/10 rounded-full">
+                <Settings className="w-5 h-5 sm:w-6 sm:h-6 text-syria-teal" />
+              </div>
+              <h2 className="text-xl sm:text-2xl font-semibold text-syria-dark">{t('about.howItWorks')}</h2>
             </div>
-            <p className="text-gray-700 mb-3">Feel free to contact us with questions or suggestions:</p>
-            <div className="flex items-center gap-3 text-gray-800">
-              <Mail size={18} />{" "}
-              <a
-                href="mailto:info@syriahealthcare.com"
-                className="underline hover:text-syria-teal"
+            
+            <div className="space-y-4 sm:space-y-6">
+              {/* Step 1 */}
+              <motion.div 
+                className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-4 sm:p-6 bg-syria-light/30 rounded-xl hover:bg-syria-light/40 transition-colors duration-300"
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
-                info@syriahealthcare.com
-              </a>
+                <div className="flex items-center gap-4 sm:flex-col sm:gap-2">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-syria-teal rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl">
+                    1
+                  </div>
+                  <div className="sm:hidden flex-shrink-0">
+                    <CheckCircle2 className="w-5 h-5 text-syria-teal" />
+                  </div>
+                </div>
+                <div className="flex-grow">
+                  <h3 className="text-base sm:text-lg font-semibold text-syria-dark mb-1 sm:mb-2">{t('about.howItWorksSteps.step1Title')}</h3>
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                    {t('about.howItWorksSteps.step1')}
+                  </p>
+                </div>
+                <div className="hidden sm:flex flex-shrink-0 items-center">
+                  <CheckCircle2 className="w-6 h-6 text-syria-teal" />
+                </div>
+              </motion.div>
+
+              {/* Step 2 */}
+              <motion.div 
+                className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-4 sm:p-6 bg-syria-light/30 rounded-xl hover:bg-syria-light/40 transition-colors duration-300"
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="flex items-center gap-4 sm:flex-col sm:gap-2">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-syria-teal rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl">
+                    2
+                  </div>
+                  <div className="sm:hidden flex-shrink-0">
+                    <CheckCircle2 className="w-5 h-5 text-syria-teal" />
+                  </div>
+                </div>
+                <div className="flex-grow">
+                  <h3 className="text-base sm:text-lg font-semibold text-syria-dark mb-1 sm:mb-2">{t('about.howItWorksSteps.step2Title')}</h3>
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                    {t('about.howItWorksSteps.step2')}
+                  </p>
+                </div>
+                <div className="hidden sm:flex flex-shrink-0 items-center">
+                  <CheckCircle2 className="w-6 h-6 text-syria-teal" />
+                </div>
+              </motion.div>
+
+              {/* Step 3 */}
+              <motion.div 
+                className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-4 sm:p-6 bg-syria-light/30 rounded-xl hover:bg-syria-light/40 transition-colors duration-300"
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="flex items-center gap-4 sm:flex-col sm:gap-2">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-syria-teal rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl">
+                    3
+                  </div>
+                  <div className="sm:hidden flex-shrink-0">
+                    <CheckCircle2 className="w-5 h-5 text-syria-teal" />
+                  </div>
+                </div>
+                <div className="flex-grow">
+                  <h3 className="text-base sm:text-lg font-semibold text-syria-dark mb-1 sm:mb-2">{t('about.howItWorksSteps.step3Title')}</h3>
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                    {t('about.howItWorksSteps.step3')}
+                  </p>
+                </div>
+                <div className="hidden sm:flex flex-shrink-0 items-center">
+                  <CheckCircle2 className="w-6 h-6 text-syria-teal" />
+                </div>
+              </motion.div>
             </div>
-          </Card>
+          </motion.section>
+
+          {/* Contact Section */}
+          <motion.div 
+            className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
+            {...fadeInUp}
+          >
+            <div className="flex items-center gap-4 mb-6">
+              <div className="p-3 bg-syria-teal/10 rounded-full">
+                <Info className="w-6 h-6 text-syria-teal" />
+              </div>
+              <h2 className="text-2xl font-semibold text-syria-dark">
+                {t('about.generalInquiries')} / {t('about.contact')}
+              </h2>
+            </div>
+            <p className="text-gray-700 mb-6">{t('about.contactText')}</p>
+            <a
+              href="mailto:info@syriahc.com"
+              className="inline-flex items-center gap-2 text-syria-teal hover:text-syria-teal-dark transition-colors duration-300 group"
+            >
+              <Mail size={20} />
+              <span className="underline">{t('about.email')}</span>
+              <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
+            </a>
+          </motion.div>
         </div>
       </main>
       <Footer />

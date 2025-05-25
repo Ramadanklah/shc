@@ -77,12 +77,23 @@
   "about": {
     "title": "Über Uns",
     "mission": "Unsere Mission",
-    "missionText": "SyriaHealthcare.com verbindet Spender und Gesundheitsexperten, um lebenswichtige medizinische Hilfe für die von der Krise in Syrien Betroffenen zu leisten. Wir stellen sicher, dass Ihre Spenden direkt in die lebensrettende Versorgung fließen.",
+    "missionText": "SyriaHC ist in Mitgefühl und Solidarität verwurzelt. Nach Jahren des Konflikts setzen wir uns für die Erholung des syrischen Gesundheitssystems ein, indem wir lebenswichtige medizinische Spenden sammeln. Wir verbinden großzügige Spender mit Gesundheitsfachkräften vor Ort und liefern wichtige medizinische Ausrüstung und Materialien an Krankenhäuser und Kliniken, die sie benötigen. Jeder Beitrag hilft, Hoffnung wiederherzustellen, Würde zurückzugeben und Leben dort zu retten, wo es am wichtigsten ist.",
     "whoWeAre": "Wer Wir Sind",
-    "whoWeAreText": "Unser Team ist eine Koalition aus syrischen und internationalen Freiwilligen, medizinischen Mitarbeitern, Technikspezialisten und Fürsprechern, die transparent arbeiten, um die Wirkung jeder Spende zu maximieren.",
+    "whoWeAreText": "Unser Team ist eine engagierte Koalition aus syrischen und internationalen Freiwilligen, Gesundheitsfachkräften, Technologieexperten und Fürsprechern. Durch unser gemeinsames Engagement für Transparenz und Wirkung arbeiten wir unermüdlich daran, sicherzustellen, dass jede Spende den größtmöglichen Nutzen für die Bedürftigen bringt.",
+    "howItWorks": "Wie Das System Funktioniert",
+    "howItWorksText": "Wir koordinieren mit Krankenhäusern und Gesundheitszentren, um präzise medizinische Bedürfnisse zu identifizieren. Wir sammeln medizinische Spenden aus dem Ausland basierend auf diesen Bedürfnissen. Wir arbeiten mit vertrauenswürdigen Organisationen und Partnern zusammen, um den Versand und die Lieferung von Spenden nach Syrien zu koordinieren.",
     "contact": "Kontakt",
+    "contactText": "Kontaktieren Sie uns gerne mit Fragen oder Vorschlägen:",
     "generalInquiries": "Allgemeine Anfragen",
-    "email": "E-Mail"
+    "email": "info@syriahc.com",
+    "howItWorksSteps": {
+      "step1Title": "Bedarf ermitteln",
+      "step1": "Wir koordinieren mit Krankenhäusern und Gesundheitszentren, um präzise medizinische Bedürfnisse zu identifizieren",
+      "step2Title": "Spenden sammeln",
+      "step2": "Wir sammeln medizinische Spenden aus dem Ausland basierend auf diesen Bedürfnissen",
+      "step3Title": "Lieferung koordinieren",
+      "step3": "Wir arbeiten mit vertrauenswürdigen Organisationen und Partnern zusammen, um den Versand und die Lieferung von Spenden nach Syrien zu koordinieren"
+    }
   },
   "donate": {
     "title": "Für diesen Fall spenden",
@@ -179,13 +190,13 @@
   },
   "mission": {
     "title": "Unsere Mission",
-    "text1": "SyriaHealthcare.com verbindet medizinisches Fachpersonal und Spender, um kritische Gesundheitsversorgung für Familien zu leisten, die von der anhaltenden Krise in Syrien betroffen sind.",
-    "text2": "Wir stellen sicher, dass Ihre Spende direkt medizinische Verfahren, Hilfsmittel und Transport für Patienten finanziert, die sonst keinen Zugang zu Versorgung hätten.",
-    "text3": "Durch Transparenz und Verantwortlichkeit konzentrieren wir uns darauf, mit jedem beigetragenen Euro die größtmögliche Wirkung zu erzielen.",
+    "text1": "SyriaHC ist in Mitgefühl und Solidarität verwurzelt. Nach Jahren des Konflikts setzen wir uns für die Erholung des syrischen Gesundheitssystems ein, indem wir lebenswichtige medizinische Spenden sammeln. Wir verbinden großzügige Spender mit Gesundheitsfachkräften vor Ort und liefern wichtige medizinische Ausrüstung und Materialien an Krankenhäuser und Kliniken, die sie benötigen. Jeder Beitrag hilft, Hoffnung wiederherzustellen, Würde zurückzugeben und Leben dort zu retten, wo es am wichtigsten ist.",
+    "text2": "Unser Team ist eine engagierte Koalition aus syrischen und internationalen Freiwilligen, Gesundheitsfachkräften, Technologieexperten und Fürsprechern. Durch unser gemeinsames Engagement für Transparenz und Wirkung arbeiten wir unermüdlich daran, sicherzustellen, dass jede Spende den größtmöglichen Nutzen für die Bedürftigen bringt.",
+    "text3": "Durch unser System koordinieren wir mit Krankenhäusern und Gesundheitszentren, um präzise medizinische Bedürfnisse zu identifizieren, sammeln medizinische Spenden aus dem Ausland basierend auf diesen Bedürfnissen und arbeiten mit vertrauenswürdigen Organisationen und Partnern zusammen, um den Versand und die Lieferung von Spenden nach Syrien zu koordinieren.",
     "learnMore": "Mehr erfahren",
-    "donationImpact": "der Spenden fließen in medizinische Hilfe",
+    "donationImpact": "der Beiträge gehen an medizinische Einrichtungen",
     "stats": {
-      "cases": "Finanzierte medizinische Fälle",
+      "cases": "Erfüllte Ausrüstungsbedürfnisse",
       "donations": "Gesamtspenden",
       "hospitals": "Partnerkrankenhäuser",
       "doctors": "Freiwillige Ärzte"

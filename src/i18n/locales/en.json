@@ -79,12 +79,23 @@
   "about": {
     "title": "About Us",
     "mission": "Our Mission",
-    "missionText": "SyriaHealthcare.com connects donors and health professionals to deliver vital medical assistance to those affected by the crisis in Syria. We ensure your donations go directly to lifesaving care.",
+    "missionText": "SyriaHC is rooted in compassion and solidarity. In the aftermath of years of conflict, we are dedicated to supporting the recovery of Syria's healthcare system by gathering vital medical donations. We work to connect generous donors with healthcare professionals on the ground, delivering essential medical equipment and supplies to hospitals and clinics in need. Every contribution helps rebuild hope, restore dignity, and save lives where it matters most.",
     "whoWeAre": "Who We Are",
-    "whoWeAreText": "Our team is a coalition of Syrian and international volunteers, medical workers, tech specialists, and advocates, working transparently to maximize the impact of every donation.",
+    "whoWeAreText": "Our team is a dedicated coalition of Syrian and international volunteers, healthcare professionals, technology experts, and advocates. United by a shared commitment to transparency and impact, we work tirelessly to ensure that every donation delivers the greatest possible benefit to those in need.",
+    "howItWorks": "How The System Works",
+    "howItWorksText": "We coordinate with hospitals and health centers to identify precise medical needs. We collect medical donations from abroad based on these needs. We work with trusted organizations and partners to coordinate the shipping and delivery of donations to Syria.",
     "contact": "Contact",
+    "contactText": "Feel free to contact us with questions or suggestions:",
     "generalInquiries": "General Inquiries",
-    "email": "Email"
+    "email": "info@syriahc.com",
+    "howItWorksSteps": {
+      "step1Title": "Identify Needs",
+      "step1": "We coordinate with hospitals and health centers to identify precise medical needs",
+      "step2Title": "Collect Donations",
+      "step2": "We collect medical donations from abroad based on these needs",
+      "step3Title": "Coordinate Delivery",
+      "step3": "We work with trusted organizations and partners to coordinate the shipping and delivery of donations to Syria"
+    }
   },
   "donate": {
     "title": "Donate to This Case",
@@ -181,9 +192,9 @@
   },
   "mission": {
     "title": "Our Mission",
-    "text1": "SyriaHealthcare.com connects medical organizations and contributors to provide critical medical equipment to facilities affected by the ongoing crisis in Syria.",
-    "text2": "We ensure your contribution directly helps supply medical equipment and technology for hospitals and clinics that would otherwise have no access to essential tools.",
-    "text3": "Through transparency and accountability, we focus on making the biggest impact possible with every contribution.",
+    "text1": "SyriaHC is rooted in compassion and solidarity. In the aftermath of years of conflict, we are dedicated to supporting the recovery of Syria's healthcare system by gathering vital medical donations. We work to connect generous donors with healthcare professionals on the ground, delivering essential medical equipment and supplies to hospitals and clinics in need. Every contribution helps rebuild hope, restore dignity, and save lives where it matters most.",
+    "text2": "Our team is a dedicated coalition of Syrian and international volunteers, healthcare professionals, technology experts, and advocates. United by a shared commitment to transparency and impact, we work tirelessly to ensure that every donation delivers the greatest possible benefit to those in need.",
+    "text3": "Through our system, we coordinate with hospitals and health centers to identify precise medical needs, collect medical donations from abroad based on these needs, and work with trusted organizations and partners to coordinate the shipping and delivery of donations to Syria.",
     "learnMore": "Learn More",
     "donationImpact": "of contributions go to medical facilities",
     "stats": {
