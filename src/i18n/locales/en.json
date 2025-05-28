@@ -11,15 +11,15 @@
     "signout": "Sign Out"
   },
   "hero": {
-    "title": "Help Supply Essential Medical Equipment to Syria",
-    "subtitle": "Your contribution directly helps provide critical medical equipment for hospitals and clinics that need it most. Join us in equipping Syrian healthcare facilities affected by crisis.",
+    "title": "Urgent: 57% of Syria's Hospitals Need Support",
+    "subtitle": "15.8 million people need humanitarian health assistance in 2025. Your contribution directly helps provide critical medical equipment for hospitals and clinics that need it most. Join us in equipping Syrian healthcare facilities affected by crisis.",
     "donateButton": "Donate Now",
     "viewCases": "View Equipment Needs",
     "joinedDonors": "contributors who've already made a difference"
   },
   "cases": {
-    "title": "Current Equipment Needs",
-    "subtitle": "These hospitals and clinics urgently need medical equipment. Your contribution can make the difference in healthcare delivery.",
+    "title": "Critical Equipment Needs",
+    "subtitle": "With only 57% of hospitals and 37% of primary healthcare centers fully functional, your contribution can make the difference in healthcare delivery for 15.8 million people in need.",
     "viewAll": "View All Equipment Needs",
     "urgent": "Urgent",
     "highNeed": "High Need",
@@ -99,6 +99,7 @@
   },
   "donate": {
     "title": "Donate to This Case",
+    "contribute": "Donate Now",
     "chooseOption": "Choose a payment option.",
     "bankTransfer": "Bank Transfer",
     "bankName": "Bank Name",
@@ -192,7 +193,7 @@
   },
   "mission": {
     "title": "Our Mission",
-    "text1": "SyriaHC is rooted in compassion and solidarity. In the aftermath of years of conflict, we are dedicated to supporting the recovery of Syria's healthcare system by gathering vital medical donations. We work to connect generous donors with healthcare professionals on the ground, delivering essential medical equipment and supplies to hospitals and clinics in need. Every contribution helps rebuild hope, restore dignity, and save lives where it matters most.",
+    "text1": "SyriaHC is rooted in compassion and solidarity. In the aftermath of years of conflict, we are dedicated to supporting the recovery of Syria's healthcare system by gathering vital medical donations. With 6.9 million refugees and 7.4 million IDPs, we work to connect generous donors with healthcare professionals on the ground, delivering essential medical equipment and supplies to hospitals and clinics in need.",
     "text2": "Our team is a dedicated coalition of Syrian and international volunteers, healthcare professionals, technology experts, and advocates. United by a shared commitment to transparency and impact, we work tirelessly to ensure that every donation delivers the greatest possible benefit to those in need.",
     "text3": "Through our system, we coordinate with hospitals and health centers to identify precise medical needs, collect medical donations from abroad based on these needs, and work with trusted organizations and partners to coordinate the shipping and delivery of donations to Syria.",
     "learnMore": "Learn More",
@@ -206,7 +207,7 @@
   },
   "joinMission": {
     "title": "Join Our Mission Today",
-    "text": "Every contribution, no matter how small, helps equip hospitals and clinics with the tools they need to save lives in Syria.",
+    "text": "With 15.8 million people needing humanitarian health assistance, every contribution, no matter how small, helps equip hospitals and clinics with the tools they need to save lives in Syria.",
     "donate": "Make a Donation",
     "volunteer": "Volunteer With Us"
   },
@@ -257,5 +258,25 @@
     "fetchFailed": "Failed to fetch data",
     "submissionFailed": "Failed to submit form",
     "unknown": "An unknown error occurred"
+  },
+  "slider": {
+    "slide1": {
+      "title": "Urgent: 57% of Syria's Hospitals Need Support",
+      "subtitle": "15.8 million people need humanitarian health assistance in 2025",
+      "description": "Your contribution directly helps provide critical medical equipment for hospitals and clinics that need it most. Join us in equipping Syrian healthcare facilities affected by crisis.",
+      "highlight": "1 in 3 Syrians urgently needs healthcare"
+    },
+    "slide2": {
+      "title": "81% Funding Gap: Syria's Health System on the Brink",
+      "subtitle": "WHO's $141.5M appeal for medicines, equipment, and staff salaries",
+      "description": "Only 19% of the required funding has been secured, leaving millions without access to essential healthcare services.",
+      "highlight": "Critical funding needed for medical supplies and staff"
+    },
+    "slide3": {
+      "title": "30% ICU Survival Rate: Syria's Equipment Catastrophe",
+      "subtitle": "3 in 10 hospitals in Aleppo/Damascus have working ICU beds or ventilators",
+      "description": "The severe lack of medical equipment is directly impacting patient survival rates and the ability to provide critical care.",
+      "highlight": "Urgent need for ICU equipment and ventilators"
+    }
   }
 }
