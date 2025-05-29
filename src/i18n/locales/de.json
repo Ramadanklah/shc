@@ -1,10 +1,10 @@
 {
   "nav": {
     "home": "Startseite",
-    "medicalCases": "Medizinische Fälle",
+    "medicalCases": "Medizinische Fälle benötigen",
     "about": "Über Uns",
     "volunteer": "Freiwilligenarbeit",
-    "registerOrg": "Organisation Registrieren",
+    "registerOrg": "Spenden Geräte",
     "orgContributions": "Organisationsbeiträge",
     "donate": "Jetzt Spenden"
   },
@@ -224,5 +224,25 @@
       "title": "Medizinische Versorgung für ländliche Klinik",
       "description": "Diese Klinik im ländlichen Idlib versorgt wöchentlich über 200 Patienten. Ihre Spende ermöglicht wichtige Medikamente und Versorgungsmaterial für drei Monate."
     }
+  },
+  "slider": {
+  "slide1": {
+    "title": "Dringend: 57% der syrischen Krankenhäuser benötigen Unterstützung",
+    "subtitle": "15,8 Millionen Menschen benötigen 2025 humanitäre Gesundheitsversorgung",
+    "description": "Ihre Spende hilft direkt, wichtige medizinische Ausrüstung für die am meisten bedürftigen Krankenhäuser und Kliniken bereitzustellen. Helfen Sie uns, syrische Gesundheitseinrichtungen in der Krise auszustatten.",
+    "highlight": "Jeder dritte Syrer benötigt dringend medizinische Versorgung"
+  },
+  "slide2": {
+    "title": "81% Finanzierungslücke: Syriens Gesundheitssystem am Abgrund",
+    "subtitle": "WHO-Appell: 141,5 Mio. $ für Medikamente, Ausrüstung und Gehälter",
+    "description": "Nur 19% der benötigten Mittel wurden gesichert, Millionen bleiben ohne Zugang zu grundlegender Gesundheitsversorgung.",
+    "highlight": "Dringende Finanzierung für medizinische Versorgung und Personal benötigt"
+  },
+  "slide3": {
+    "title": "30% Überlebensrate auf Intensivstationen: Ausrüstungsnotstand in Syrien",
+    "subtitle": "Nur 3 von 10 Krankenhäusern in Aleppo/Damaskus haben funktionierende Intensivbetten oder Beatmungsgeräte",
+    "description": "Der gravierende Mangel an medizinischer Ausrüstung wirkt sich direkt auf die Überlebensrate der Patienten und die Fähigkeit zur Notfallversorgung aus.",
+    "highlight": "Dringender Bedarf an Intensivgeräten und Beatmungsgeräten"
   }
+}
 }

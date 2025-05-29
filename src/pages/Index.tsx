@@ -70,11 +70,11 @@ const Index = () => {
                   size="lg"
                   asChild
                 >
-                  <Link to="/register-organisation">{t('nav.registerOrg')}</Link>
+                  <Link to="#">{t('nav.registerOrg')}</Link>
                 </Button>
               </div>
               
-              <div className="bg-white p-8 rounded-lg shadow-md">
+              {/* <div className="bg-white p-8 rounded-lg shadow-md">
                 <h3 className="text-2xl font-bold mb-4 text-syria-dark text-center">
                   {t('register.title')}
                 </h3>
@@ -88,7 +88,7 @@ const Index = () => {
                 >
                   <Link to="/register-organisation">{t('register.submit')}</Link>
                 </Button>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>
@@ -162,7 +162,7 @@ const Index = () => {
             <p className="text-white/90 max-w-2xl mx-auto mb-8">
               {t('joinMission.text')}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 className="bg-white text-syria-teal hover:bg-gray-100"
                 size="lg"
@@ -178,7 +178,7 @@ const Index = () => {
               >
                 <Link to="/volunteer">{t('joinMission.volunteer')}</Link>
               </Button>
-            </div>
+            </div> */}
           </div>
         </section>
       </main>

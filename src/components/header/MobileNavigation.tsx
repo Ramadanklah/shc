@@ -34,23 +34,16 @@ const MobileNavigation = ({ user, isMenuOpen, setIsMenuOpen, handleSignOut }: Mo
         >
           {t('nav.medicalCases')}
         </Link>
-        <Link 
-          to="/about" 
-          className="text-gray-700 hover:text-syria-teal font-medium py-2 transition-colors"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          {t('nav.about')}
-        </Link>
-        <Link 
+        {/* <Link 
           to="/volunteer" 
           className="text-gray-700 hover:text-syria-teal font-medium py-2 transition-colors"
           onClick={() => setIsMenuOpen(false)}
         >
           {t('nav.volunteer')}
-        </Link>
+        </Link> */}
         {!user ? (
           <Link 
-            to="/register-organisation"
+            to="#"
             className="text-gray-700 hover:text-syria-teal font-semibold py-2 transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
@@ -58,14 +51,21 @@ const MobileNavigation = ({ user, isMenuOpen, setIsMenuOpen, handleSignOut }: Mo
           </Link>
         ) : (
           <Link 
-            to="/organisations/contributions"
+            to="#"
             className="text-gray-700 hover:text-syria-teal font-semibold py-2 transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             {t('nav.orgContributions')}
           </Link>
         )}
-        {!user ? (
+        <Link 
+          to="/about" 
+          className="text-gray-700 hover:text-syria-teal font-medium py-2 transition-colors"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          {t('nav.about')}
+        </Link>
+        {/* {!user ? (
           <Link 
             to="/auth"
             onClick={() => setIsMenuOpen(false)}
@@ -86,7 +86,7 @@ const MobileNavigation = ({ user, isMenuOpen, setIsMenuOpen, handleSignOut }: Mo
             <LogOut className="w-4 h-4 mr-2" />
             {t('nav.signout')}
           </Button>
-        )}
+        )} */}
       </div>
     </div>
   );

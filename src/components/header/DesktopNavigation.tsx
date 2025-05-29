@@ -1,17 +1,7 @@
-
-import React from 'react';
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { User, LogOut } from "lucide-react";
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '../LanguageSwitcher';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+
 
 interface DesktopNavigationProps {
   user: any;
@@ -31,10 +21,15 @@ const DesktopNavigation = ({ user, handleSignOut }: DesktopNavigationProps) => {
       <Link to="/cases" className="text-gray-700 hover:text-syria-teal font-medium transition-colors">
         {t('nav.medicalCases')}
       </Link>
+      <Link to="#" className="text-gray-700 hover:text-syria-teal font-semibold transition-colors">
+        {t('nav.registerOrg')}
+      </Link>
       <Link to="/about" className="text-gray-700 hover:text-syria-teal font-medium transition-colors">
         {t('nav.about')}
       </Link>
-      <Link to="/volunteer" className="text-gray-700 hover:text-syria-teal font-medium transition-colors">
+      <LanguageSwitcher />
+      {/* TODO: Check if we need this */}
+      {/* <Link to="/volunteer" className="text-gray-700 hover:text-syria-teal font-medium transition-colors">
         {t('nav.volunteer')}
       </Link>
       {!user ? (
@@ -45,9 +40,8 @@ const DesktopNavigation = ({ user, handleSignOut }: DesktopNavigationProps) => {
         <Link to="/organisations/contributions" className="text-gray-700 hover:text-syria-teal font-semibold transition-colors">
           {t('nav.orgContributions')}
         </Link>
-      )}
-      <LanguageSwitcher />
-      {!user ? (
+      )} */}
+      {/* {!user ? (
         <Link to="/auth">
           <Button variant="outline" className="border-syria-teal text-syria-teal hover:bg-syria-teal hover:text-white">
             {t('nav.signin')}
@@ -74,7 +68,7 @@ const DesktopNavigation = ({ user, handleSignOut }: DesktopNavigationProps) => {
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-      )}
+      )} */}
     </nav>
   );
 };

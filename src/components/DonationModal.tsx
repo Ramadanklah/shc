@@ -17,7 +17,7 @@ const DonationModal: React.FC<DonationModalProps> = ({ open, onOpenChange }) => 
       <DialogContent className="max-w-md sm:max-w-lg">
         <DialogHeader>
           <DialogTitle className="text-2xl text-center text-syria-dark mb-2">
-            {t('donate.title')}
+            Donate Now
           </DialogTitle>
         </DialogHeader>
         

@@ -29,13 +29,13 @@ const AboutSection = () => {
               >
                 <Link to="/about">{t('mission.learnMore')}</Link>
               </Button>
-              <Button 
+              {/* <Button 
                 variant="outline" 
                 className="border-syria-teal text-syria-teal hover:bg-syria-teal/10"
                 asChild
               >
                 <Link to="/volunteer">{t('joinMission.volunteer')}</Link>
-              </Button>
+              </Button> */}
             </div>
           </div>
           

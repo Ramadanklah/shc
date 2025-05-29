@@ -57,7 +57,7 @@ const Header = () => {
       />
 
       {/* Donation Modal */}
-      <DonationModal open={isDonateModalOpen} onOpenChange={setIsDonateModalOpen} />
+      {/* <DonationModal open={isDonateModalOpen} onOpenChange={setIsDonateModalOpen} /> */}
     </header>
   );
 };
