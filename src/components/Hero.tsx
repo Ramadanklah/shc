@@ -29,7 +29,7 @@ const Hero: React.FC<HeroProps> = () => {
         <div className="flex flex-col sm:flex-row gap-4 w-full max-w-3xl justify-center z-10">
           <Button 
             className="bg-red-500 hover:bg-red-600 text-white text-lg py-6 px-8 animate-pulse"
-            onClick={() => setIsDonateModalOpen(true)}
+            onClick={() => setIsDonateModalOpen(false)}
           >
             {t('donate.contribute')}
           </Button>

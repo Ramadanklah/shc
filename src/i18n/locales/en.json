@@ -1,10 +1,10 @@
 {
   "nav": {
     "home": "Home",
-    "medicalCases": "Medical Equipment",
+    "medicalCases": "Medical Equipment Needs",
     "about": "About Us",
     "volunteer": "Volunteer",
-    "registerOrg": "Register Organisation",
+    "registerOrg": "Donate Equipment",
     "orgContributions": "Organisation Contributions",
     "donate": "Donate Now",
     "signin": "Sign In",
