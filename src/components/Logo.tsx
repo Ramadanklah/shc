@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -7,7 +6,7 @@ const Logo = () => {
   const { i18n } = useTranslation();
   
   // Fallback to a placeholder if the main logo fails
-  const logoSrc = "/public/SHC_LOGO.png";
+  const logoSrc = "/assets/logo.png";
   const placeholderLogo = "/placeholder.svg";
 
   return (
