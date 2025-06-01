@@ -7,7 +7,7 @@ const Logo = () => {
   const { i18n } = useTranslation();
   
   // Fallback to a placeholder if the main logo fails
-  const logoSrc = "https://raw.githubusercontent.com/gptengineer-public/5a4a8a22-d922-4c24-b50e-39bab94d2d7c/main/338db15b-c9ba-4e53-a069-85d1fcf8e4df.png";
+  const logoSrc = "/public/SHC_LOGO.png";
   const placeholderLogo = "/placeholder.svg";
 
   return (
