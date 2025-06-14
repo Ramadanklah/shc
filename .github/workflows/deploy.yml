@@ -1,0 +1,47 @@
+# Advanced configuration options for the FTP deploy action
+
+- name: Deploy to cPanel via FTP
+  uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+  with:
+    server: ${{ secrets.FTP_HOST }}
+    username: ${{ secrets.FTP_USERNAME }}
+    password: ${{ secrets.FTP_PASSWORD }}
+    local-dir: ./dist/
+    server-dir: /public_html/
+    port: ${{ secrets.FTP_PORT || 21 }}
+    protocol: ftp  # Options: ftp, ftps, sftp
+    
+    # Advanced options:
+    timeout: 600000  # 10 minutes timeout
+    log-level: verbose  # Options: minimal, standard, verbose
+    security: strict  # Options: strict, loose
+    
+    # File management:
+    dangerous-clean-slate: false  # Set to true to delete all files before upload (DANGEROUS!)
+    dry-run: false  # Set to true to test without actually uploading
+    
+    # Include/exclude patterns:
+    exclude: |
+      **/.git*
+      **/.git*/**
+      **/node_modules/**
+      **/.env*
+      **/README.md
+      **/.github/**
+      **/src/**
+      **/package*.json
+      **/.gitignore
+    
+    include: |
+      **/*.html
+      **/*.css
+      **/*.js
+      **/*.png
+      **/*.jpg
+      **/*.jpeg
+      **/*.gif
+      **/*.svg
+      **/*.ico
+      **/*.woff*
+      **/*.ttf
+      **/*.json
