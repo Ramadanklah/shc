@@ -1,10 +1,9 @@
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import Logo from './Logo';
 import { useAuth } from '@/contexts/AuthContext';
-import DonationModal from './DonationModal';
+import GoogleFormModal from './GoogleFormModal';
 import DesktopNavigation from './header/DesktopNavigation';
 import MobileNavigation from './header/MobileNavigation';
 import MobileMenuButton from './header/MobileMenuButton';
@@ -42,7 +41,11 @@ const Header = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <DesktopNavigation user={user} handleSignOut={handleSignOut} />
+        <DesktopNavigation 
+          user={user} 
+          handleSignOut={handleSignOut} 
+          openDonateModal={openDonateModal}
+        />
 
         {/* Mobile Menu Button */}
         <MobileMenuButton isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
@@ -53,11 +56,15 @@ const Header = () => {
         user={user} 
         isMenuOpen={isMenuOpen} 
         setIsMenuOpen={setIsMenuOpen} 
-        handleSignOut={handleSignOut} 
+        handleSignOut={handleSignOut}
+        openDonateModal={openDonateModal}
       />
 
       {/* Donation Modal */}
-      {/* <DonationModal open={isDonateModalOpen} onOpenChange={setIsDonateModalOpen} /> */}
+      <GoogleFormModal 
+        open={isDonateModalOpen} 
+        onOpenChange={setIsDonateModalOpen} 
+      />
     </header>
   );
 };

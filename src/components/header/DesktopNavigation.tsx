@@ -1,15 +1,19 @@
+import React from 'react';
 import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
+import { Button } from "@/components/ui/button";
+import { useAuth } from '@/contexts/AuthContext';
 import LanguageSwitcher from '../LanguageSwitcher';
-
 
 interface DesktopNavigationProps {
   user: any;
-  handleSignOut: () => Promise<void>;
+  handleSignOut: () => void;
+  openDonateModal: () => void;
 }
 
-const DesktopNavigation = ({ user, handleSignOut }: DesktopNavigationProps) => {
-  const { t } = useTranslation();
+const DesktopNavigation: React.FC<DesktopNavigationProps> = ({ user, handleSignOut, openDonateModal }) => {
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === 'ar';
 
   return (
     <nav className="hidden md:flex items-center gap-6">
@@ -21,54 +25,16 @@ const DesktopNavigation = ({ user, handleSignOut }: DesktopNavigationProps) => {
       <Link to="/cases" className="text-gray-700 hover:text-syria-teal font-medium transition-colors">
         {t('nav.medicalCases')}
       </Link>
-      <Link to="#" className="text-gray-700 hover:text-syria-teal font-semibold transition-colors">
-        {t('nav.registerOrg')}
-      </Link>
       <Link to="/about" className="text-gray-700 hover:text-syria-teal font-medium transition-colors">
         {t('nav.about')}
       </Link>
       <LanguageSwitcher />
-      {/* TODO: Check if we need this */}
-      {/* <Link to="/volunteer" className="text-gray-700 hover:text-syria-teal font-medium transition-colors">
-        {t('nav.volunteer')}
-      </Link>
-      {!user ? (
-        <Link to="/register-organisation" className="text-gray-700 hover:text-syria-teal font-semibold transition-colors">
-          {t('nav.registerOrg')}
-        </Link>
-      ) : (
-        <Link to="/organisations/contributions" className="text-gray-700 hover:text-syria-teal font-semibold transition-colors">
-          {t('nav.orgContributions')}
-        </Link>
-      )} */}
-      {/* {!user ? (
-        <Link to="/auth">
-          <Button variant="outline" className="border-syria-teal text-syria-teal hover:bg-syria-teal hover:text-white">
-            {t('nav.signin')}
-          </Button>
-        </Link>
-      ) : (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="border-syria-teal">
-              <User className="w-4 h-4 mr-2" />
-              {user.email?.split('@')[0]}
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent>
-            <DropdownMenuItem>
-              <Link to="/organisations/contributions" className="flex items-center w-full">
-                {t('nav.orgContributions')}
-              </Link>
-            </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={handleSignOut} className="text-red-600 cursor-pointer">
-              <LogOut className="w-4 h-4 mr-2" />
-              {t('nav.signout')}
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      )} */}
+      <Button 
+        className="bg-red-500 hover:bg-red-600 text-white"
+        onClick={openDonateModal}
+      >
+        {t('nav.donate')}
+      </Button>
     </nav>
   );
 };
