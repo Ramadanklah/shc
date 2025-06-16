@@ -57,25 +57,6 @@ const AboutSection = () => {
             </div>
           </div>
         </div>
-        
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="bg-white p-6 rounded-lg shadow-md text-center">
-            <div className="text-syria-teal text-4xl font-bold mb-2">2,471</div>
-            <div className="text-gray-600">{t('mission.stats.cases')}</div>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-md text-center">
-            <div className="text-syria-teal text-4xl font-bold mb-2">$1.3M</div>
-            <div className="text-gray-600">{t('mission.stats.donations')}</div>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-md text-center">
-            <div className="text-syria-teal text-4xl font-bold mb-2">17</div>
-            <div className="text-gray-600">{t('mission.stats.hospitals')}</div>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-md text-center">
-            <div className="text-syria-teal text-4xl font-bold mb-2">97</div>
-            <div className="text-gray-600">{t('mission.stats.doctors')}</div>
-          </div>
-        </div>
       </div>
     </section>
   );
