@@ -85,8 +85,7 @@ jobs:
         echo "🔍 Verifying Lovable website deployment..."
         sleep 15  # Wait for FTP changes to propagate
         
-        # Replace 'yourdomain.com' with your actual domain
-        DOMAIN="yourdomain.com"
+        DOMAIN="syriahc.com"
         
         if curl -f -s -I "https://$DOMAIN" > /dev/null; then
           echo "✅ Lovable website is live and accessible!"
