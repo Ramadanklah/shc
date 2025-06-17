@@ -1,94 +1,63 @@
-
 import React from 'react';
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { LogOut } from "lucide-react";
 import { useTranslation } from 'react-i18next';
+import { Button } from "@/components/ui/button";
+import { useAuth } from '@/contexts/AuthContext';
+import LanguageSwitcher from '../LanguageSwitcher';
 
 interface MobileNavigationProps {
   user: any;
   isMenuOpen: boolean;
   setIsMenuOpen: (isOpen: boolean) => void;
-  handleSignOut: () => Promise<void>;
+  handleSignOut: () => void;
+  openDonateModal: () => void;
 }
 
-const MobileNavigation = ({ user, isMenuOpen, setIsMenuOpen, handleSignOut }: MobileNavigationProps) => {
-  const { t } = useTranslation();
+const MobileNavigation: React.FC<MobileNavigationProps> = ({ 
+  user, 
+  isMenuOpen, 
+  setIsMenuOpen, 
+  handleSignOut,
+  openDonateModal 
+}) => {
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === 'ar';
 
   if (!isMenuOpen) return null;
 
   return (
-    <div className="md:hidden bg-white shadow-md">
-      <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
-        <Link 
-          to="/" 
-          className="text-gray-700 hover:text-syria-teal font-medium py-2 transition-colors"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          {t('nav.home')}
-        </Link>
+    <nav className="md:hidden bg-white border-t">
+      <div className="container mx-auto px-4 py-4 space-y-4">
         <Link 
           to="/cases" 
-          className="text-gray-700 hover:text-syria-teal font-medium py-2 transition-colors"
+          className="block text-gray-700 hover:text-syria-teal py-2"
           onClick={() => setIsMenuOpen(false)}
         >
           {t('nav.medicalCases')}
         </Link>
-        {/* <Link 
-          to="/volunteer" 
-          className="text-gray-700 hover:text-syria-teal font-medium py-2 transition-colors"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          {t('nav.volunteer')}
-        </Link> */}
-        {!user ? (
-          <Link 
-            to="#"
-            className="text-gray-700 hover:text-syria-teal font-semibold py-2 transition-colors"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            {t('nav.registerOrg')}
-          </Link>
-        ) : (
-          <Link 
-            to="#"
-            className="text-gray-700 hover:text-syria-teal font-semibold py-2 transition-colors"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            {t('nav.orgContributions')}
-          </Link>
-        )}
         <Link 
           to="/about" 
-          className="text-gray-700 hover:text-syria-teal font-medium py-2 transition-colors"
+          className="block text-gray-700 hover:text-syria-teal py-2"
           onClick={() => setIsMenuOpen(false)}
         >
           {t('nav.about')}
         </Link>
-        {/* {!user ? (
-          <Link 
-            to="/auth"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            <Button className="w-full bg-syria-teal hover:bg-syria-teal-dark">
-              {t('nav.signin')}
-            </Button>
-          </Link>
-        ) : (
+        <div className="pt-4 border-t">
           <Button 
-            onClick={async () => {
-              await handleSignOut();
+            className="w-full bg-red-500 hover:bg-red-600 text-white"
+            onClick={() => {
+              openDonateModal();
               setIsMenuOpen(false);
             }}
-            variant="outline"
-            className="w-full text-red-600 border-red-600 hover:bg-red-50"
           >
-            <LogOut className="w-4 h-4 mr-2" />
-            {t('nav.signout')}
+            {t('nav.donate')}
           </Button>
-        )} */}
+        </div>
+        <div className="pt-4 border-t">
+          <LanguageSwitcher />
+        </div>
       </div>
-    </div>
+    </nav>
   );
 };
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import DonationModal from './DonationModal';
+import GoogleFormModal from './GoogleFormModal';
 import StatsSlider from './StatsSlider';
 
 interface HeroProps {
@@ -29,7 +29,7 @@ const Hero: React.FC<HeroProps> = () => {
         <div className="flex flex-col sm:flex-row gap-4 w-full max-w-3xl justify-center z-10">
           <Button 
             className="bg-red-500 hover:bg-red-600 text-white text-lg py-6 px-8 animate-pulse"
-            onClick={() => setIsDonateModalOpen(false)}
+            onClick={() => setIsDonateModalOpen(true)}
           >
             {t('donate.contribute')}
           </Button>
@@ -43,7 +43,7 @@ const Hero: React.FC<HeroProps> = () => {
         </div>
         
       </div>
-      <DonationModal open={isDonateModalOpen} onOpenChange={setIsDonateModalOpen} />
+      <GoogleFormModal open={isDonateModalOpen} onOpenChange={setIsDonateModalOpen} />
     </div>
   );
 };

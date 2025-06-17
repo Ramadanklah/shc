@@ -100,6 +100,8 @@
   "donate": {
     "title": "Donate to This Case",
     "contribute": "Donate Now",
+    "redirecting": "Redirecting to Donation Form",
+    "redirectMessage": "You will be redirected to our secure donation form in a new tab. If the form doesn't open automatically, please click the button again.",
     "chooseOption": "Choose a payment option.",
     "bankTransfer": "Bank Transfer",
     "bankName": "Bank Name",
