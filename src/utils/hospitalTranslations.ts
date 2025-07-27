@@ -2,10 +2,6 @@
 // Map hospital ID to translation key
 export const getHospitalNameKey = (hospitalId: string): string => {
   const idToKeyMap: Record<string, string> = {
-<<<<<<< HEAD
-    "001": "al-byroni",
-    "002": "al-tal"
-=======
     "001": "al-assad",
     "002": "al-mowassat",
     "003": "tishreen",
@@ -36,7 +32,6 @@ export const getHospitalNameKey = (hospitalId: string): string => {
     "028": "al-annazah-tartus",
     "029": "as-suwaida-national",
     "030": "salchad"
->>>>>>> parent of 9847152 (fixing minor text stuff - Scrum-2)
   };
   
   return idToKeyMap[hospitalId] || "unknown-hospital";
