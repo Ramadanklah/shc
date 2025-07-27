@@ -13,22 +13,13 @@ interface ContactSectionProps {
 const ContactSection: React.FC<ContactSectionProps> = ({ hospitalId, hospitalName }) => {
   const { t } = useTranslation();
   
-  const whatsappNumber = "+1234567890";
+  const whatsappNumber = "+491629233934";
   const whatsappMessage = encodeURIComponent(
     `Hi, I'm interested in helping ${hospitalName} (ID: ${hospitalId})`
   );
 
   return (
     <div className="flex gap-4 mt-8">
-      <Button
-        variant="outline"
-        className="flex-1 border-syria-teal text-syria-teal hover:bg-syria-teal/10"
-        asChild
-      >
-        <Link to="/register-organisation">
-          {t('register.submit')}
-        </Link>
-      </Button>
       <Button
         variant="outline"
         className="flex items-center gap-2 text-green-600 border-green-600 hover:bg-green-50"
