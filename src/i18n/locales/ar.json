@@ -26,6 +26,26 @@
     "of": "من",
     "funded": "تم تمويله"
   },
+  "hospitals": {
+    "title": "المستشفيات في سوريا",
+    "subtitle": ".تقدم هذه المستشفيات خدمات الرعاية الصحية الأساسية في جميع أنحاء سوريا",
+    "viewAll": "عرض جميع المستشفيات",
+    "bedCount": "الأسرّة",
+    "location": "الموقع",
+    "generalInfo": "معلومات عامة",
+    "equipmentNeeds": "احتياجات المعدات",
+    "requiredEquipment": "المعدات الطبية المطلوبة",
+    "quantity": "الكمية المطلوبة",
+    "equipmentNeeded": "المعدات المطلوبة",
+    "topNeeds": "أهم احتياجات المعدات",
+    "filterByLocation": "فرز حسب الموقع",
+    "allLocations": "جميع المواقع",
+    "moreItems": "المزيد من العناصر",
+    "names": {
+       "al-tal": "مستشفى التل",
+       "al-biruni": "مستشفى البيروني"
+      }  
+    },
   "about": {
     "title": "من نحن",
     "mission": "مهمتنا",

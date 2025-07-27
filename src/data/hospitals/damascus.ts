@@ -3,8 +3,8 @@ import { Hospital } from "../types";
 
 export const damascusHospitals: Hospital[] = [
   {
-    id: "006",
-    name: "Al-Byroni Krankenhaus",
+    id: "001",
+    name: "Al-Biruni Krankenhaus",
     location: "Damaskus",
     beds: 350,
     description: "Ein spezialisiertes Krankenhaus für die Diagnose und Behandlung von Krebserkrankungen.",
@@ -15,7 +15,7 @@ export const damascusHospitals: Hospital[] = [
     ]
   },
   {
-    id: "007",
+    id: "002",
     name: "Al-Tal Krankenhaus",
     location: "Damaskus",
     beds: 400,
