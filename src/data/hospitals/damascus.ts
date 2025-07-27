@@ -11,7 +11,7 @@ export const damascusHospitals: Hospital[] = [
     equipment_needs: [
       { id: "e001", name: "MRT-Gerät", urgency: "high", quantity: 1, description: "Bestehendes MRT-Gerät aus dem Jahr 2004 mit nur 0,23 Tesla ist technisch überholt (weniger als ein Viertel Tesla) und über 20 Jahre alt. Dringender Ersatz durch ein modernes Hochfeld-MRT-System erforderlich." },
       { id: "e002", name: "Linearbeschleuniger", urgency: "high", quantity: 3, description: "Ein Hochenergie-Beschleuniger aus dem Jahr 2004 hat seine Lebensdauer überschritten. Zwei neuere Low-Energy-Geräte (Varian, gespendet, seit 2 Jahren in Betrieb) sind vorhanden. Aufgrund hoher Auslastung (Behandlungsbeginn für Patienten oft erst nach 2–3 Monaten) wird dringend ein zusätzlicher Linearbeschleuniger benötigt."},
-      { id: "e003", name: "Linearbeschleuniger", urgency: "high", quantity: 1, description: "Vorhandene Geräte sind stark veraltet. Die Strahlenquellen verlieren mit der Zeit an Intensität, was zu längeren Bestrahlungszeiten führt. Dies erhöht das Risiko für Schäden an gesundem Gewebe und reduziert die Behandlungsqualität. Ein moderner Ersatz ist dringend erforderlich."},
+      { id: "e003", name: "Kobalt-Therapiegerät", urgency: "high", quantity: 1, description: "Vorhandene Geräte sind stark veraltet. Die Strahlenquellen verlieren mit der Zeit an Intensität, was zu längeren Bestrahlungszeiten führt. Dies erhöht das Risiko für Schäden an gesundem Gewebe und reduziert die Behandlungsqualität. Ein moderner Ersatz ist dringend erforderlich."},
     ]
   },
   {
